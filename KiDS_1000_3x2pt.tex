@@ -1,0 +1,100 @@
+%                                                                 aa.dem
+% AA vers. 8.2, LaTeX class for Astronomy & Astrophysics
+% demonstration file
+%                                                       (c) EDP Sciences
+%-----------------------------------------------------------------------
+%
+%\documentclass[referee]{aa} % for a referee version
+%\documentclass[onecolumn]{aa} % for a paper on 1 column  
+%\documentclass[longauth]{aa} % for the long lists of affiliations 
+%\documentclass[rnote]{aa} % for the research notes
+%\documentclass[letter]{aa} % for the letters 
+%\documentclass[bibyear]{aa} % if the references are not structured 
+% according to the author-year natbib style
+
+%
+\documentclass[letter]{aa}  
+
+%
+\usepackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{txfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\pdfoutput=1
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{fancyhdr}
+\usepackage{times}
+\usepackage{ulem}
+%\usepackage{caption}
+\usepackage{subcaption} 
+\usepackage{float} 
+\usepackage{color}
+ 
+
+\definecolor{purple}{RGB}{76, 0,153}
+\newcommand{\ch}[1]{{\color{purple}{#1}}}
+\newcommand{\bg}[1]{\textcolor{orange}{#1}}
+
+
+\newcommand{\be}{\begin{equation}}  \newcommand{\ee}{\end{equation}}
+
+
+\begin{document} 
+
+   \title{KiDS-1000 Cosmology: Multi-probe weak gravitational lensing and spectroscopic galaxy clustering constraints}
+
+   \author{Catherine Heymans \inst{1,2}\thanks{heymans@roe.ac.uk} \and K1000 team\inst{1,2}
+          \and
+          the KiDS Collaboration\inst{2}
+          }
+
+   \institute{Institute for Astronomy, University of Edinburgh, Blackford Hill, Edinburgh, EH9 3HJ, UK 
+   \and
+   Ruhr-University Bochum, Astronomical Institute, German Centre for Cosmological Lensing, Universitätsstr. 150, 44801 Bochum, Germany
+    }
+
+ %  \date{Received September 15, 1996; accepted March 16, 1997}
+
+% 5 {} token are mandatory
+ 
+  \abstract{TBD}
+
+ \keywords{gravitational lensing: weak, methods: data analysis, methods: statistical, surveys, cosmology: observations}
+
+   \titlerunning{KiDS-1000: 3x2pt}
+   \authorrunning{Heymans et al.}
+   \maketitle
+%
+%________________________________________________________________
+\input{Section_Introduction}
+\input{Section_Data}
+\input{Section_Results}
+\input{Section_Conclusions}
+
+\begin{acknowledgements}
+
+This project has received funding from the European Union's Horizon 2020 research and innovation programme: We acknowledge support from the European Research Council under grant agreement No.~647112 (BG, CH, MA and CL). TT also acknowledges support under the Marie Sk\l{}odowska-Curie grant agreement No.~797794. CH acknowledges support from the Max Planck Society and the Alexander von Humboldt Foundation in the framework of the Max Planck-Humboldt Research Award endowed by the Federal Ministry of Education and Research. HH is supported by a Heisenberg grant of the Deutsche Forschungsgemeinschaft (Hi 1495/5-1). AK acknowledges support from Vici grant 639.043.512, financed by the Netherlands Organisation for Scientific Research (NWO). KK acknowledges support by the Alexander von Humboldt Foundation.\\
+
+%
+The results in this paper are based on observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 177.A-3016, 177.A-3017, 177.A-3018 and 179.A-2004, and on data products produced by the KiDS consortium. The KiDS production team acknowledges support from: Deutsche Forschungsgemeinschaft, ERC, NOVA and NWO-M grants; Target; the University of Padova, and the University Federico II (Naples).
+
+{ {\it Author contributions:}  All authors contributed to the development and writing of this paper.  The authorship list is given in three groups:  the lead authors (CH+....) followed by two alphabetical groups.  The first alphabetical group includes those who are key contributors to both the scientific analysis and the data products.  The second group covers those who have either made a significant contribution to the data products, or to the scientific analysis.}
+\end{acknowledgements}
+
+
+\bibliographystyle{aa} % style aa.bst
+\bibliography{references} % your references 
+
+
+%-------------------------------------------------------------------
+
+
+\end{document}
+
