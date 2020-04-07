@@ -65,8 +65,8 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
-MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
 
 #Set the x/y limits
 xmin=101
@@ -150,19 +150,6 @@ for iz in range(1,nlensbin+1):
         else:   
             ax.add_patch(Rectangle((lmax_bin[iz-1], Eymin), rect_width, rect_height, facecolor="grey",alpha=0.2))
 
-        #BP_high = (BPtheory + diagerr)/elltheory*1e7
-        #BP_low = (BPtheory - diagerr)/elltheory*1e7
-        #ax.fill_between(elltheory, BP_low, BP_high, color='lightgrey',label='$P_E$')
-        
-        #breaking up the large Bmode covariance matrix to find the significance
-        #of the B mode for this tomographic bin combination
-        #ipos=startpt+gridpos*nmodes
-        #cov_izjz=Bcov[ipos:ipos+nmodes,ipos:ipos+nmodes]
-
-        # now plot the results (present l PBB/2pi rather than l^2 PBB/2pi which is given in the data file)
-        # inclue with annotations of the bin combination and p-value 
-        #ax.errorbar(ell, PBB/ell*1e7, yerr=diagerr/ell*1e7, fmt='o', color='magenta',label=tomochar,markerfacecolor='none')
-        
         #PLOT THE BMODES!
 
         #which grid cell do we want to plot this in?
@@ -180,7 +167,6 @@ for iz in range(1,nlensbin+1):
             ax.set_xlabel('$\ell$')
 
         # set the limits of the plot
-        #ax.set_ylim(-2.8,5.9)
         ax.set_ylim(Bymin,Bymax)
         ax.set_xscale('log')
         ax.set_xlim(xmin,xmax)
@@ -207,7 +193,7 @@ axes[2,0].set_ylabel('$\ell P_{gm} / 2\pi \,\, [10^{-5}]$')
 for blankgrid in range(5):
     axes[blankgrid,2].set_visible(False)
 
-#plt.tight_layout()
+plt.tight_layout()
 
 outfile='Pgk_K1000_%s.png'%(LFVER)
 plt.savefig(outfile,dpi=300)
