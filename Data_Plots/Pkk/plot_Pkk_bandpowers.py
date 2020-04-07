@@ -44,8 +44,11 @@ Bcov=np.loadtxt(Bcovdat)
 Ecovdat='Pkk_cov/thps_cov_kids1000_mar30_bandpower_E_apod_0_matrix.dat'
 Ecov=np.loadtxt(Ecovdat)
 
-# The first 8x3 rows are w (2 bins, auto, auto cross)
-# the next 8x5x2 rows are gammat (8 nodes, 5 sources, 2 lenses)
+
+# The first 8x2 rows are w (11, 12)
+# The next 8x5 rows are GGL (11, 12, 13, 14, 15) 
+# The next 8 rows are w (22)
+# Then 8x5 rows for GGL again (21, 22, 23, 24, 25)
 # then it there are the 8x15 cosmic shear band powers
 startpt=nmodes*(3+10)
 # and set up a smaller array for each tomobin combination
@@ -61,8 +64,8 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
-MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
 
 #Set the x/y limits
 xmin=101
@@ -95,12 +98,6 @@ for iz in range(1,ntomobin+1):
         # B mode
         Bcov_izjz=Bcov[ipos:ipos+nmodes,ipos:ipos+nmodes]
         Bdiagerr=np.sqrt(np.diagonal(Bcov_izjz))
-
-        # and read in the expected bandpower_shear_e are l^2 Cl_E/2pi
-        #BPtheory=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
-        #ellmin=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/l_min_vec.txt'%(MD))
-        #ellmax=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/l_max_vec.txt'%(MD))
-        #elltheory = (ellmax+ellmin)*0.5
         
         BPtheory=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
         ellmin=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_shear_e/l_min_vec.txt'%(MD))
@@ -135,20 +132,6 @@ for iz in range(1,ntomobin+1):
         ax.annotate(tomochar, xy=(0.95,0.9),xycoords='axes fraction',
             size=14, ha='right', va='top')
         ax.axhline(y=0, color='black', ls=':')
-
-
-        #BP_high = (BPtheory + diagerr)/elltheory*1e7
-        #BP_low = (BPtheory - diagerr)/elltheory*1e7
-        #ax.fill_between(elltheory, BP_low, BP_high, color='lightgrey',label='$P_E$')
-        
-        #breaking up the large Bmode covariance matrix to find the significance
-        #of the B mode for this tomographic bin combination
-        #ipos=startpt+gridpos*nmodes
-        #cov_izjz=Bcov[ipos:ipos+nmodes,ipos:ipos+nmodes]
-
-        # now plot the results (present l PBB/2pi rather than l^2 PBB/2pi which is given in the data file)
-        # inclue with annotations of the bin combination and p-value 
-        #ax.errorbar(ell, PBB/ell*1e7, yerr=diagerr/ell*1e7, fmt='o', color='magenta',label=tomochar,markerfacecolor='none')
         
         #PLOT THE BMODES!
 
@@ -167,7 +150,6 @@ for iz in range(1,ntomobin+1):
             ax.set_xlabel('$\ell$')
 
         # set the limits of the plot
-        #ax.set_ylim(-2.8,5.9)
         ax.set_ylim(ymin,Bymax)
         ax.set_xscale('log')
         ax.set_xlim(xmin,xmax)
@@ -179,9 +161,9 @@ for iz in range(1,ntomobin+1):
 
 
 #add plot labels
-axes[2,0].set_ylabel('$\ell P_E / 2\pi \,\, [10^{-7}]$')
+axes[2,0].set_ylabel('$\ell P_{EE} \, / \,  2\pi \,\, [10^{-7}]$')
 axes[3,6].yaxis.label.set_visible(True)
-axes[3,6].set_ylabel('$\ell P_B / 2\pi \,\, [10^{-7}]$')
+axes[3,6].set_ylabel('$\ell P_{BB} \, /\,  2\pi \,\, [10^{-7}]$')
 axes[3,6].yaxis.set_label_position('right')
 
 #Finally Blank out the empty cells
@@ -190,7 +172,7 @@ for i in range(6):
     axes[i,blankgrid].set_visible(False)
     axes[i,blankgrid-1].set_visible(False)
 
-#plt.tight_layout()
+plt.tight_layout()
 
 outfile='Pkk_K1000_%s.png'%(LFVER)
 plt.savefig(outfile,dpi=300)
