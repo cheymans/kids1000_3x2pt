@@ -65,7 +65,8 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
 
 #Set the x/y limits
 xmin=101
@@ -112,10 +113,10 @@ for iz in range(1,nlensbin+1):
         Bdiagerr=np.sqrt(np.diagonal(Bcov_izjz))
 
         # and read in the expected bandpower_shear_e are l^2 Cl_E/2pi
-        #BPtheory=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
-        #ellmin=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/l_min_vec.txt'%(MD))
-        #ellmax=np.loadtxt('%s/ForBG/outputs/test_output_S8_fid_test/bandpower_shear_e/l_max_vec.txt'%(MD))
-        #elltheory = (ellmax+ellmin)*0.5
+        BPtheory=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/bin_%d_%d.txt'%(MD,iz,jz))
+        ellmin=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/l_min_vec.txt'%(MD))
+        ellmax=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/l_max_vec.txt'%(MD))
+        elltheory = ell #(ellmax+ellmin)*0.5
 
         #PLOT THE EMODES!
         #which grid cell do we want to plot this in?
@@ -123,7 +124,7 @@ for iz in range(1,nlensbin+1):
         grid_y_E=(5-jz)
         ax=axes[grid_y_E,grid_x_E]
 
-        #ax.plot(elltheory,BPtheory/elltheory*1e7,color='m',linewidth=2)
+        ax.plot(elltheory,BPtheory/elltheory*1e5,color='m',linewidth=2)
         ax.errorbar(ell, PEE/ell*1e5, yerr=Ediagerr/ell*1e5, fmt='o', markersize=4,color='b')
 
         # only label the subplots at the edges
@@ -206,7 +207,7 @@ axes[2,0].set_ylabel('$\ell P_{gm} / 2\pi \,\, [10^{-5}]$')
 for blankgrid in range(5):
     axes[blankgrid,2].set_visible(False)
 
-plt.tight_layout()
+#plt.tight_layout()
 
 outfile='Pgk_K1000_%s.png'%(LFVER)
 plt.savefig(outfile,dpi=300)
