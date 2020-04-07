@@ -1,0 +1,17 @@
+*.aux
+*.log
+*.dvi
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+KiDS_1000_3x2pt.ps
+KiDS_1000_3x2pt.pdf
+*~
+*.maf
+*.mtc
+*.mtc0
+*.ptc1
+*.toc
+*.llt
+.DS_Store
