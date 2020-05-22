@@ -29,7 +29,7 @@ fig,axes= plt.subplots(6,7,figsize=(10, 7.5),gridspec_kw={'hspace': 0, 'wspace':
 #    BLIND=sys.argv[2] # blind
 
 LFVER="2Dbins_v2_goldclasses_Flag_SOM_Fid" 
-BLIND="A"
+BLIND="C"
 
 # number of tomographic bins, and band power modes to plot
 ntomobin=5
@@ -64,8 +64,8 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
-#MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
 
 #Set the x/y limits
 xmin=101
@@ -172,9 +172,9 @@ for i in range(6):
     axes[i,blankgrid].set_visible(False)
     axes[i,blankgrid-1].set_visible(False)
 
-plt.tight_layout()
+#plt.tight_layout()
 
-outfile='Pkk_K1000_%s.png'%(LFVER)
+outfile='Pkk_K1000_%s_%s.png'%(LFVER,BLIND)
 plt.savefig(outfile,dpi=300)
 plt.show()
 

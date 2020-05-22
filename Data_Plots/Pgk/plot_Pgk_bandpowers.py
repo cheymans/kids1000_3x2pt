@@ -30,7 +30,7 @@ fig, axes = plt.subplots(nrows=5, ncols=5, gridspec_kw=gridspec, figsize=(10, 7.
 #    BLIND=sys.argv[2] # blind
 
 LFVER="2Dbins_v2_goldclasses_Flag_SOM_Fid" 
-BLIND="A"
+BLIND="B"
 
 # number of tomographic bins, and band power modes to plot
 ntomobin=5
@@ -65,8 +65,8 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
-#MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
 
 #Set the x/y limits
 xmin=101
@@ -78,8 +78,8 @@ Bymax=1.4
 
 #Set the greyed out region
 lmax_bin=np.ones(2)
-lmax_bin[0] = 1050
-lmax_bin[1] = 1500
+lmax_bin[0] = 300 #1050
+lmax_bin[1] = 600 #1500
 lmax_all=0.0
 rect_width=10000
 rect_height=10000
@@ -193,9 +193,9 @@ axes[2,0].set_ylabel('$\ell P_{gm} / 2\pi \,\, [10^{-5}]$')
 for blankgrid in range(5):
     axes[blankgrid,2].set_visible(False)
 
-plt.tight_layout()
+#plt.tight_layout()
 
-outfile='Pgk_K1000_%s.png'%(LFVER)
+outfile='Pgk_K1000_%s_%s.png'%(LFVER,BLIND)
 plt.savefig(outfile,dpi=300)
 plt.show()
 
