@@ -70,7 +70,7 @@ The observed cosmic shear angular power spectrum, $C_{\epsilon \epsilon}(\ell)$,
 C^{(ij)}_{\epsilon \epsilon}(\ell) = C^{(ij)}_{\rm GG}(\ell) +
 C^{(ij)}_{\rm GI}(\ell) + C^{(ij)}_{\rm IG}(\ell) + C^{(ij)}_{\rm II}(\ell)\;,
 \ee
-where the indices $i$ and $j$ indicate the five tomographic source samples.   The theoretical power spectrum are given by Limber-approximated projections with
+where the indices $i$ and $j$ indicate cross-correlations between the five tomographic source samples.   The theoretical power spectra are given by Limber-approximated projections with
 \be
 \label{eq:generallimber}
 C^{(ij)}_{\rm ab}(\ell) = \int^{\chi_{\rm hor}}_0 \!\!\! \dd \chi\;
@@ -98,8 +98,63 @@ Figure~\ref{fig:Pkk} presents the \citet{asgari/etal:inprep} KiDS-1000 cosmic sh
         \label{fig:Pkk}
 \end{figure*}
 
+
+\subsection{Anisotropic Galaxy Clustering}
+\label{sec:clustering}
+Galaxy clustering observations probe the 3D non-linear galaxy-galaxy power spectrum and we follow \citep{sanchez/etal:2017} in modelling this quantity based on a perturbation theory approach whereby
+\be
+\label{eq:pgg}
+P_{\rm gg}(k,z) = \sum_{\alpha,\beta} \alpha\, \beta\, P_{\alpha
+  \beta}(k,z) + b_1 \gamma_3^-\, P_{b_1 \gamma_3^-}(k,z) + P_{\rm noise}(k,z)\;,
+\ee
+with $\alpha,\beta \in \bb{b_1, b_2, \gamma_2}$, introducing the linear and quadratic bias parameters $b_1$ and $b_2$, in addition to the non-local bias parameters $ \gamma_2$ and $\gamma_3^-$.  Each of the power spectrum terms are given by different convolutions of the linear matter power spectrum in appendix A of \citet{sanchez/etal:2017}.   In the case of an effective linear galaxy bias model \citep[see for example][]{vanuitert/etal:2018, abbott/etal:2018} only the $b_1$ bias parameter is considered to be non-zero and equation~\ref{eq:pgg} reduces to $P_{\rm gg}(k,z) =b_1^2 P_{\rm m, nl}(k,z)$.
+
+\citet{sanchez/etal:2017} present the anisotropic redshift-space correlation function of galaxy clustering, with the galaxy pairs separated into three `wedges' equidistant in $\mu$, where $\mu$ is the cosine of the angle between the line of sight and the line connecting the galaxy pairs.   As such the 3D correlation function is measured for pairs that are either mainly transverse to the line of sight, mainly parallel to the line of sight, or placed into an intermediate sample.  The redshift-space correlation functions $\xi_{\rm gg} \br{s,\mu,z}$, where $s$ is the co-moving galaxy-pair separation, is given by
+\eqa{
+\label{eq:bosswedgefouriertrafo}
+ \xi_{\rm gg} \br{s,\mu,z} &= \sum_{l=0}^{2} L_{2l}(\mu) \frac{(-1)^l
+   (4l+1)}{(2 \pi)^2} \int_0^\infty \dd k\, k^2 {\rm j}_{2l}(ks) \\ \nonumber
+& \times \int_{-1}^1
+ \dd \mu_1 L_{2l}(\mu_1) P_{\rm gg, s}(k,\mu_1,z)\;,
+}
+where $L_i$ denotes the Legendre polynomial of degree $i$, ${\rm j}_i$ is the spherical Bessel function of order $i$ and $P_{\rm gg, s}(k,\mu_1,z)$ is the 3D redshift-space power spectrum that includes the non-linear real-space power spectrum (equation~\ref{eq:pgg}) and the galaxy-velocity and velocity-velocity power spectrum \citep[see][for details]{sanchez/etal:2017}.
+
+
+Summary of \citet{sanchez/etal:2017}
+
+In Figure~\ref{fig:wedges} we present the BOSS-DR12 anisotropic
+clustering wedges.
+\begin{figure*}
+        \includegraphics[width=\textwidth]{Data_Plots/clustering_wedges/BOSS_Sanchez_wedges.png}
+        \caption{BOSS-DR12 anisotropic clustering from \citet{sanchez/etal:2017}:
+          The transverse (pink), intermediate (blue) and parrallel
+          (black) clustering wedges in two redshift bins, compared 
+          with the best-fit
+          cosmological model from our combined multi-probe analysis
+          \ch{TO DO}.}
+        \label{fig:wedges}
+\end{figure*}
+
 \subsection{Galaxy-Galaxy Lensing}
 \label{sec:GGL}
+The observed galaxy-galaxy lensing angular power spectra, $C_{\rm n \epsilon}(\ell)$, measures a combination of weak lensing distortions around foreground galaxies (labelled with a subscript `gG') with a low-level intrinsic alignment signal arising from the fraction of the source galaxy population that reside physically close to the lenses (labelled with a subscript `gI').   We also consider the low-level lensing-induced magnification bias (labelled with a subscript `mG').   These three contributions can be separated as 
+\be
+\label{eq:cl_ggl}
+C^{(ij)}_{\rm n \epsilon}(\ell) = C^{(ij)}_{\rm gG}(\ell) +
+C^{(ij)}_{\rm gI}(\ell) + C^{(ij)}_{\rm mG}(\ell)  \;,
+\ee
+where the index $i$ indicates the two lens galaxy samples, and the index $j$ indicates the five tomographic source samples.   The theoretical power spectra are given by Limber-approximated projections following equation~\ref{eq:generallimber}, with two key differences \citep[see equations 24 and 25 of][for the full expression]{joachimi/etal:inprep}.   The first is that the lens weight function is replaced by the redshift distribution of the lenses.   The second is that the non-linear matter power spectrum is replaced with the non-linear cross power spectrum between the galaxy and matter distribution $P_{\rm gm, nl}$.   The requires a non-linear model for galaxy bias, which we summarise in Section~\ref{sec:clustering}.   We also refer the reader to the magnification bias appendix in \citet{joachimi/etal:inprep}, where the inclusion or exclusion of this term found to have a negligible impact on our cosmological constraints, but we retain it nevertheless.
+
+\eqa{
+\label{eq:pgm}
+P_{\rm gm}(k,z) &= b_1 P_{\rm m, nl}(k,z) + \left\{ b_2\, {\cal F}_{b_2}(k)
+  - \gamma_2\, {\cal F}_{\gamma_2}(k) \right.\\ \nonumber
+& \left. -\, \gamma_3^-\, {\cal F}_{\gamma_3^-}(k)
+ \right\} P_{\rm m, lin}^{2}(k,z)\;,
+}
+The logarithm of the functions ${\cal F}$ here are second-order polynomial fits that we use to model the ratio between linear matter power spectrum, $P_{\rm m, lin}(k,z)$, and the different terms in the full pertubation theory model \citep[given explicitly in appendix A of][]{sanchez/etal:2017}.  This approach permits some degree of extrapolation of the pertubation model into the non-linear regime, a necessity for the 2D projection of the model for the galaxy-galaxy lensing observable in Section~\ref{sec:GGL}.  It also provides a speed-up over the perturbative calculations
+
+
 Summary of Blake et al?
 
 
@@ -122,22 +177,7 @@ power spectra, around lenses from the BOSS and 2dFLenS surveys.
         \label{fig:Pgk}
 \end{figure*}
 
-\subsection{Anisotropic Galaxy Clustering}
-\label{sec:clustering}
-Summary of \citet{sanchez/etal:2017}
 
-In Figure~\ref{fig:wedges} we present the BOSS-DR12 anisotropic
-clustering wedges.
-\begin{figure*}
-        \includegraphics[width=\textwidth]{Data_Plots/clustering_wedges/BOSS_Sanchez_wedges.png}
-        \caption{BOSS-DR12 anisotropic clustering from \citet{sanchez/etal:2017}:
-          The transverse (pink), intermediate (blue) and parrallel
-          (black) clustering wedges in two redshift bins, compared 
-          with the best-fit
-          cosmological model from our combined multi-probe analysis
-          \ch{TO DO}.}
-        \label{fig:wedges}
-\end{figure*}
 
 \subsection{Covariance}
 \label{sec:Cov}
