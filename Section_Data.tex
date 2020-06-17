@@ -1,4 +1,4 @@
-\section{Data and Methodology}
+op\section{Data and Methodology}
 \label{sec:data}
 
 \subsection{Surveys:  KiDS, BOSS and 2dFLenS}
@@ -23,7 +23,7 @@ Observatory, with data products freely accessible through the ESO
 archive\footnote{KiDS data access: \href{http://kids.strw.leidenuniv.nl/DR4}{kids.strw.leidenuniv.nl/DR4}}.   
 
 \citet{giblin/etal:inprep} presents a series of null-tests to validate the KiDS-1000 shear catalogue in five tomographic bins spanning a 
-photometric redshift range of $0.1 < z_{\rm B} < 1.2$ \citep[see table 1 of][for the properties of each bin]{giblin/etal:inprep}.    
+photometric redshift range of $0.1 < z_{\rm B} < 1.2$ \citep[see table 1 of][for details of the properties of each bin]{giblin/etal:inprep}.    
 Meeting their requirement that any systematic detected induces less than a $0.1\sigma$ change in the inferred 
 cosmic shear constraints on the clustering cosmological parameter $S_8 = \sqrt{\sigma_8 \Omega_m/0.3}$, they conclude that the shear catalogues are `science-ready'.
 \citet{hildebrandt/etal:inprep} presents a cross-correlation clustering analysis to validate the fiducial KiDS-1000 photometric redshift calibration determined using the self-organising map (SOM) methodology of \citet{wright/etal:2020}.   The SOM identifies and excludes any galaxies that are poorly represented in the spectroscopic sample, in terms of their 9-band colours and magnitudes. The resulting `gold' photometric sample, with an accurately calibrated redshift distribution, is then re-simulated in the KiDS image simulations of \citet{kannawadi/etal:2019} in order to determine the shear calibration corrections for each tomographic bin, and an associated uncertainty \citep[see][for full details]{giblin/etal:inprep,hildebrandt/etal:inprep}.
@@ -61,6 +61,7 @@ our galaxy-galaxy lensing analysis, with an effective lens number density of 0.0
 galaxies per square arcmin.  2dFLenS is a public survey\footnote{2dFLenS data
   access: \href{http://2dflens.swin.edu.au/data.html}{2dflens.swin.edu.au/data.html}}.   
 
+\ch{TO DO:  add a table updating Table 2 in \citet{joachimi/etal:inprep}}
 
 \subsection{Cosmic Shear}
 \label{sec:cosmic_shear}
@@ -77,7 +78,7 @@ C^{(ij)}_{\rm ab}(\ell) = \int^{\chi_{\rm hor}}_0 \!\!\! \dd \chi\;
 \frac{W^{(i)}_{\rm a} (\chi)\; W^{(j)}_{\rm b} (\chi)}{f^2_{\rm
     K}(\chi)}\; P_{\rm m, nl} \br{\frac{\ell+1/2}{f_{\rm K}(\chi)},z(\chi)}\;,
 \ee
-where ${\rm a,b} \in \bc{\rm I,G}$, $f_{\rm K}(\chi)$ is the comoving angular diameter distance and $\chi$ is the comoving radial distance which runs out to the horizon, $\chi_{\rm hor}$.  The weight functions, $W(\chi)$, encode information about the KiDS-1000 survey depth \citep[see equations 15 and 16 of][]{joachimi/etal:inprep}.   In the cases of power spectra that include intrinsic `I' terms, the weight function also encodes the intrinsic galaxy alignment model which we take to be the `NLA' model from \citet{bridle/king:2007}.   The cosmological information for this statistic is contained in both the geometric weight functions, $W(\chi)$, and in the evolution and shape of the non-linear matter power spectrum, $P_{\rm m, nl}(k,z)$, which we model using the halo formalism of \citet{mead/etal:2015}.   Weak lensing is therefore fairly unique as a cosmological probe, as it is sensitive to changes in both the distance-redshift relation and in the growth of structures.
+where ${\rm a,b} \in \bc{\rm I,G}$, $f_{\rm K}(\chi)$ is the comoving angular diameter distance and $\chi$ is the comoving radial distance which runs out to the horizon, $\chi_{\rm hor}$.  The weight functions, $W(\chi)$, encode information about the KiDS-1000 survey depth \citep[see equations 15 and 16 of][]{joachimi/etal:inprep}.   In the cases of power spectra that include intrinsic `I' terms, the weight function also encodes the intrinsic galaxy alignment model which we take to be the `NLA' model from \citet{bridle/king:2007}.   The cosmological information for this statistic is contained in both the geometric weight functions, $W(\chi)$, and in the evolution and shape of the non-linear matter power spectrum, $P_{\rm m, nl}(k,z)$, which we model using the halo formalism\footnote{We calculate the non-linear power spectrum using {\sc HMCode} \citep{mead/etal:2015}, which is incorporated in {\sc CAMB} \citep{lewis/bridle:2002}.   \citet{joachimi/etal:inprep} demonstrate that the \citet{mead/etal:2015} halo model prescription provides a sufficiently accurate model of the non-linear matter power spectrum into the highly non-linear regime through a comparison to weak lensing observables emulated using the N-body CosmicEmu simulations \citep{heitmann/etal:2014}.   It also has the added benefit of allowing us to marginalise over our uncertainty on the impact of baryon feedback on the shape of the non-linear total matter power spectrum \citep{semboloni/etal:2011,mead/etal:2015,mead/etal:2020}.} of \citet{mead/etal:2015}.   Weak lensing is therefore fairly unique as a cosmological probe, as it is sensitive to changes in both the distance-redshift relation and in the growth of structures.
 
 We estimate the cosmic shear angular power spectrum through a linear transformation of the real-space two-point shear correlation function \citep{schneider/etal:2002}.  This approach circumvents the challenge of accurately determining the survey mask for a direct power spectrum estimate.  \citet{joachimi/etal:inprep} detail the apodisation advances that we have adopted for the transformation, in addition to the modelling that we use to account for the minor differences between the theoretical expectation of the true angular power spectrum in equation~\ref{eq:cl_cosmicshear} and the measured `band powers'.    
  
@@ -101,15 +102,15 @@ Figure~\ref{fig:Pkk} presents the \citet{asgari/etal:inprep} KiDS-1000 cosmic sh
 
 \subsection{Anisotropic Galaxy Clustering}
 \label{sec:clustering}
-Galaxy clustering observations probe the 3D non-linear galaxy-galaxy power spectrum and we follow \citep{sanchez/etal:2017} in modelling this quantity based on a perturbation theory approach whereby
+Galaxy clustering observations probe the 3D non-linear galaxy-galaxy power spectrum and we follow \citet{sanchez/etal:2017} in modelling this quantity based on a perturbation theory approach with
 \be
 \label{eq:pgg}
 P_{\rm gg}(k,z) = \sum_{\alpha,\beta} \alpha\, \beta\, P_{\alpha
-  \beta}(k,z) + b_1 \gamma_3^-\, P_{b_1 \gamma_3^-}(k,z) + P_{\rm noise}(k,z)\;,
+  \beta}(k,z) + b_1 \gamma_3^-\, P_{b_1 \gamma_3^-}(k,z) + P_{\rm noise}(k,z)\;.
 \ee
-with $\alpha,\beta \in \bb{b_1, b_2, \gamma_2}$, introducing the linear and quadratic bias parameters $b_1$ and $b_2$, in addition to the non-local bias parameters $ \gamma_2$ and $\gamma_3^-$.  Each of the power spectrum terms are given by different convolutions of the linear matter power spectrum in appendix A of \citet{sanchez/etal:2017}.   In the case of an effective linear galaxy bias model \citep[see for example][]{vanuitert/etal:2018, abbott/etal:2018} only the $b_1$ bias parameter is considered to be non-zero and equation~\ref{eq:pgg} reduces to $P_{\rm gg}(k,z) =b_1^2 P_{\rm m, nl}(k,z)$.
+Here $\alpha,\beta \in \bb{b_1, b_2, \gamma_2}$, introducing the linear and quadratic bias parameters $b_1$ and $b_2$, in addition to the non-local bias parameters $ \gamma_2$ and $\gamma_3^-$.  Each of the power spectrum terms on the right hand side of the equation are given by different convolutions of the linear matter power spectrum in appendix A of \citet{sanchez/etal:2017}.   In the case of an effective linear galaxy bias model \citep[see for example][]{vanuitert/etal:2018, abbott/etal:2018} only the $b_1$ bias parameter is considered to be non-zero and equation~\ref{eq:pgg} reduces to $P_{\rm gg}(k,z) =b_1^2 P_{\rm m, nl}^{\rm pert}(k,z)$, where $P_{\rm m, nl}^{\rm pert}(k,z)$ is the pertubation theory estimate of the non-linear matter power spectrum which is accurate at the percent level to $k \lesssim 0.3 h \,{\rm Mpc}^{-1}$.
 
-\citet{sanchez/etal:2017} present the anisotropic redshift-space correlation function of galaxy clustering, with the galaxy pairs separated into three `wedges' equidistant in $\mu$, where $\mu$ is the cosine of the angle between the line of sight and the line connecting the galaxy pairs.   As such the 3D correlation function is measured for pairs that are either mainly transverse to the line of sight, mainly parallel to the line of sight, or placed into an intermediate sample.  The redshift-space correlation functions $\xi_{\rm gg} \br{s,\mu,z}$, where $s$ is the co-moving galaxy-pair separation, is given by
+\citet{sanchez/etal:2017} present the anisotropic redshift-space correlation function of galaxy clustering, with the galaxy pairs separated into three `wedges' equidistant in $\mu$, where $\mu$ is the cosine of the angle between the line of sight and the line connecting the galaxy pairs.   As such the 3D correlation function is measured for pairs that are either mainly transverse to the line of sight, mainly parallel to the line of sight, or placed into an intermediate sample between these two cases.  The redshift-space correlation functions $\xi_{\rm gg} \br{s,\mu,z}$, where $s$ is the co-moving galaxy-pair separation, is given by
 \eqa{
 \label{eq:bosswedgefouriertrafo}
  \xi_{\rm gg} \br{s,\mu,z} &= \sum_{l=0}^{2} L_{2l}(\mu) \frac{(-1)^l
@@ -117,13 +118,10 @@ with $\alpha,\beta \in \bb{b_1, b_2, \gamma_2}$, introducing the linear and quad
 & \times \int_{-1}^1
  \dd \mu_1 L_{2l}(\mu_1) P_{\rm gg, s}(k,\mu_1,z)\;,
 }
-where $L_i$ denotes the Legendre polynomial of degree $i$, ${\rm j}_i$ is the spherical Bessel function of order $i$ and $P_{\rm gg, s}(k,\mu_1,z)$ is the 3D redshift-space power spectrum that includes the non-linear real-space power spectrum (equation~\ref{eq:pgg}) and the galaxy-velocity and velocity-velocity power spectrum \citep[see][for details]{sanchez/etal:2017}.
+where $L_i$ denotes the Legendre polynomial of degree $i$, ${\rm j}_i$ is the spherical Bessel function of order $i$ and $P_{\rm gg, s}(k,\mu_1,z)$ is the 3D redshift-space power spectrum that includes the non-linear real-space power spectrum (equation~\ref{eq:pgg}) and the galaxy-velocity and velocity-velocity power spectrum \citep[see][for details]{sanchez/etal:2017}.   
 
+Figure~\ref{fig:wedges} presents the \citet{sanchez/etal:2017} BOSS-DR12 anisotropic clustering correlation functions in three wedges.   The measured correlation functions can be compared to the theoretical expectation given the best-fit set of cosmological parameters from our joint multi-probe analysis in Section~\ref{sec:results}.
 
-Summary of \citet{sanchez/etal:2017}
-
-In Figure~\ref{fig:wedges} we present the BOSS-DR12 anisotropic
-clustering wedges.
 \begin{figure*}
         \includegraphics[width=\textwidth]{Data_Plots/clustering_wedges/BOSS_Sanchez_wedges.png}
         \caption{BOSS-DR12 anisotropic clustering from \citet{sanchez/etal:2017}:
@@ -143,8 +141,9 @@ The observed galaxy-galaxy lensing angular power spectra, $C_{\rm n \epsilon}(\e
 C^{(ij)}_{\rm n \epsilon}(\ell) = C^{(ij)}_{\rm gG}(\ell) +
 C^{(ij)}_{\rm gI}(\ell) + C^{(ij)}_{\rm mG}(\ell)  \;,
 \ee
-where the index $i$ indicates the two lens galaxy samples, and the index $j$ indicates the five tomographic source samples.   The theoretical power spectra are given by Limber-approximated projections following equation~\ref{eq:generallimber}, with two key differences \citep[see equations 24 and 25 of][for the full expression]{joachimi/etal:inprep}.   The first is that the lens weight function is replaced by the redshift distribution of the lenses.   The second is that the non-linear matter power spectrum is replaced with the non-linear cross power spectrum between the galaxy and matter distribution $P_{\rm gm, nl}$.   The requires a non-linear model for galaxy bias, which we summarise in Section~\ref{sec:clustering}.   We also refer the reader to the magnification bias appendix in \citet{joachimi/etal:inprep}, where the inclusion or exclusion of this term found to have a negligible impact on our cosmological constraints, but we retain it nevertheless.
+where the index $i$ indicates the two lens galaxy samples, and the index $j$ indicates the five tomographic source samples.   The theoretical power spectra are given by Limber-approximated projections following equation~\ref{eq:generallimber}, with two key differences.   The first is that the lens weight function is replaced by the redshift distribution of the lenses.   The second is that the non-linear matter power spectrum is replaced with the non-linear cross power spectrum between the galaxy and matter distribution $P_{\rm gm}(k,z)$ \citep[see equations 24 and 25 of][for the full expressions]{joachimi/etal:inprep}.   For the magnification bias power spectrum, $C_{\rm mG}(\ell)$, we refer the reader to appendix B in \citet{joachimi/etal:inprep}.   We find that the inclusion or exclusion of this term has a negligible impact on our cosmological constraints, but we retain it nevertheless.
 
+We adopt from non-linear galaxy bias model from \citet{sanchez/etal:2017}, and approximate the non-linear cross power spectrum as
 \eqa{
 \label{eq:pgm}
 P_{\rm gm}(k,z) &= b_1 P_{\rm m, nl}(k,z) + \left\{ b_2\, {\cal F}_{b_2}(k)
@@ -152,14 +151,12 @@ P_{\rm gm}(k,z) &= b_1 P_{\rm m, nl}(k,z) + \left\{ b_2\, {\cal F}_{b_2}(k)
 & \left. -\, \gamma_3^-\, {\cal F}_{\gamma_3^-}(k)
  \right\} P_{\rm m, lin}^{2}(k,z)\;,
 }
-The logarithm of the functions ${\cal F}$ here are second-order polynomial fits that we use to model the ratio between linear matter power spectrum, $P_{\rm m, lin}(k,z)$, and the different terms in the full pertubation theory model \citep[given explicitly in appendix A of][]{sanchez/etal:2017}.  This approach permits some degree of extrapolation of the pertubation model into the non-linear regime, a necessity for the 2D projection of the model for the galaxy-galaxy lensing observable in Section~\ref{sec:GGL}.  It also provides a speed-up over the perturbative calculations
+where the logarithm of the functions ${\cal F}_\alpha(k)$ are second-order polynomial fits that we use to model $P_\alpha(k,z_{\rm ref})/P^2_{\rm m, lin}(k,z_{\rm ref})$, the ratio between the different bias terms in the full pertubation theory model in equation~\ref{eq:pgg}, and the square of the linear matter power spectrum.  This approach permits a reasonable extrapolation of the \citet{sanchez/etal:2017} pertubation model into the non-linear regime beyond $k = 0.3 h \,{\rm Mpc}^{-1}$.   This is necessary in order to carry out the redshift-weighted projection of the 3D model to estimate the 2D galaxy-galaxy lensing observable (equation~\ref{eq:generallimber}).  No matter which $\ell$-scales we restrict our analysis to, high $k$-scales will contribute to all scales at some degree \citep{joachimi/etal:inprep, asgari/etal:2020}.   This approach also yields a several order of magnitude speed-up over the direct perturbative calculations, significantly reducing the galaxy-galaxy lensing likelihood evaluations.  
 
+Figure~\ref{fig:Pgk} presents the KiDS-1000 galaxy-galaxy lensing power spectra, around lenses from the BOSS and 2dFLenS surveys \citep[see][for the real-space KiDS-1000 galaxy-galaxy lensing measurements for BOSS and 2dFLenS separately]{blake/etal:2020}.   Each panel presents the cross correlation between each of the five different tomographic source bins, denoted `S', with the two different lens bins, denoted `L' (see Table~\ref{tab:datatab}).  Here we have constructed both E-mode (left) and B-mode (right) band powers in order to isolate any non-lensing B-mode distortions.     As expected from the analysis of \citet{giblin/etal:inprep}, the measured B-modes are found to be consistent with zero.   The measured E-modes can be compared to the theoretical expectation given the best-fit set of cosmological parameters from our joint multi-probe analysis in Section~\ref{sec:results} in the non-shaded regions.    
 
-Summary of Blake et al?
+The shaded regions in Figure~\ref{fig:Pgk} are excluded from our analysis for two reasons.   For overlapping lens-source bins (L1 with S1 and S2, and L2 with S1 to S3), the intrinsic alignment terms $C_{\rm gI}(\ell)$ are expected to become very significant.   This raises the question of the validity of the arguably rudimentary `NLA' intrinsic alignment model when used in combination with a non-linear galaxy bias model \citep[see][for a self-consistent pertubative approach to both intrinsic alignment and galaxy bias modelling]{blazek/etal:2019}.   As these bins carry little cosmological information, we exclude this data from our cosmological inference analysis, using it instead in a redshift-scaling null test of the catalogue in \citet{giblin/etal:inprep}.   For widely separated lens-source bins (L1 with S3 to S5, and L2 with S4 to S5), we introduce a maximum $\ell$-scale beyond which the contributions from scales $k > 0.3 h \,{\rm Mpc}^{-1}$ become significant \citep[see figure 2 in][]{joachimi/etal:inprep}  In this regime uncertainties in the extrapolation of the \citet{sanchez/etal:2017} non-linear galaxy bias model into the non-linear regime (equation~\ref{eq:pgm}) renders the $C_{\rm n \epsilon}(\ell)$ model invalid.   The $\ell$-limit depends on the redshift of the lens bin.    Figure~\ref{fig:Pgk} therefore serves as excellent illustration of the necessity of improving non-linear galaxy bias modelling for future studies, in order to fully exploit the cosmological signal contained within the galaxy-galaxy lensing observable.
 
-
-In Figure~\ref{fig:Pgk} we present the KiDS-1000 galaxy-galaxy lensing
-power spectra, around lenses from the BOSS and 2dFLenS surveys.
 
 \begin{figure*}
         \includegraphics[width=\textwidth]{Data_Plots/Pgk/Pgk_K1000_2Dbins_v2_goldclasses_Flag_SOM_Fid_A.png}
