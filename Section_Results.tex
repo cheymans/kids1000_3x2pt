@@ -12,7 +12,7 @@ Tabulated constraints for the full set of cosmological parameters are presented 
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=\columnwidth]{Parameter_Plots/omegam_sigma8_s8_blind_A}
+		\includegraphics[width=\columnwidth]{Parameter_Plots/cosmology/omegam_sigma8_h_blind_A}
 		\caption{Constraints on flat $\Lambda$CDM blind A}
 		\label{fig:cosmology-params}
 	\end{center}
@@ -22,8 +22,8 @@ We find good agreement between the different probe combinations and single probe
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=\columnwidth]{Parameter_Plots/S8_comparison_blindA}
-		\caption{Constraints on $S_{8}$ blind A}
+		\includegraphics[width=\columnwidth]{Parameter_Plots/systematics/S8_comparison_blindC}
+		\caption{Constraints on $S_{8}$ blind C. \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
 		\label{fig:S8comp}
 	\end{center}
 \end{figure}
@@ -32,7 +32,7 @@ For the majority of the cosmological parameters shown in Fig.~\ref{fig:cosmology
 
 \begin{figure*}
 	\begin{center}
-		\includegraphics[width=\textwidth]{Parameter_Plots/omegam_sigma8_s8_ns_h_a_ia_b1l_b1h_blind_A}
+		\includegraphics[width=\textwidth]{Parameter_Plots/cosmology/omegam_sigma8_s8_ns_h_a_baryon_a_ia_b1l_b1h_blind_A}
 		\caption{Constraints blind A}
 		\label{fig:cosmology-params-all}
 	\end{center}
@@ -42,8 +42,8 @@ Fig~\ref{fig:sensitivity_tests}
 
 \begin{figure*}
 	\begin{center}
-		%\includegraphics[width=\textwidth]{Parameter_Plots/tbd}
-		\caption{Sensitivity tests Blind C}
+		\includegraphics[width=\textwidth]{Parameter_Plots/systematics/blind_C_EE_nE_w_systematics_chains}
+		\caption{Sensitivity tests Blind C. \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
 		\label{fig:sensitivity_tests}
 	\end{center}
 \end{figure*}
@@ -56,11 +56,10 @@ Fig~\ref{fig:sensitivity_tests}
     \toprule
     Probe             & $\chi^2$       & DoF       & $p$-value   \\
     \midrule
-	EE               & $< 156.3$ & $120-4.5$ & 0.007 \\
-	w                & $< 176.0$ & $168-13$ & 0.119 \\
-	EE+nE            & $< 187.7$ & $142-18$ & 0.000 \\
-	EE+w             & $< 327.2$ & $288-20$ & 0.008 \\
-	EE+nE+w          & $371.3$ & $310-20$ & 0.001 \\
+	CS               & $< 156.3$ & $120-4.5$ & 0.007 \\
+	GC               & $< 169.5$ & $168-13$ & 0.202 \\
+	CS+GGL           & $187.0$ & $142-7$ & 0.002 \\
+	3x2pt            & $367.8$ & $310-20$ & 0.001 \\
 
     \bottomrule
 \end{tabular}
