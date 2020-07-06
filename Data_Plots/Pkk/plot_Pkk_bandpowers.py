@@ -99,9 +99,9 @@ for iz in range(1,ntomobin+1):
         Bcov_izjz=Bcov[ipos:ipos+nmodes,ipos:ipos+nmodes]
         Bdiagerr=np.sqrt(np.diagonal(Bcov_izjz))
         
-        BPtheory=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
-        ellmin=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_shear_e/l_min_vec.txt'%(MD))
-        ellmax=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_shear_e/l_max_vec.txt'%(MD))
+        BPtheory=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
+        ellmin=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/l_min_vec.txt'%(MD))
+        ellmax=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/l_max_vec.txt'%(MD))
         elltheory = ell #(ellmax+ellmin)*0.5
 
         #PLOT THE EMODES!
@@ -161,9 +161,9 @@ for iz in range(1,ntomobin+1):
 
 
 #add plot labels
-axes[2,0].set_ylabel('$\ell P_{EE} \, / \,  2\pi \,\, [10^{-7}]$')
+axes[2,0].set_ylabel('$\ell C_{EE} \, / \,  2\pi \,\, [10^{-7}]$')
 axes[3,6].yaxis.label.set_visible(True)
-axes[3,6].set_ylabel('$\ell P_{BB} \, /\,  2\pi \,\, [10^{-7}]$')
+axes[3,6].set_ylabel('$\ell C_{BB} \, /\,  2\pi \,\, [10^{-7}]$')
 axes[3,6].yaxis.set_label_position('right')
 
 #Finally Blank out the empty cells
@@ -174,7 +174,7 @@ for i in range(6):
 
 plt.tight_layout()
 
-outfile='Pkk_K1000_%s_%s.png'%(LFVER,BLIND)
+outfile='Pkk_K1000_wmean_%s_%s.pdf'%(LFVER,BLIND)
 plt.savefig(outfile,dpi=300)
 plt.show()
 

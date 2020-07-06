@@ -30,7 +30,7 @@ fig, axes = plt.subplots(nrows=5, ncols=5, gridspec_kw=gridspec, figsize=(10, 7.
 #    BLIND=sys.argv[2] # blind
 
 LFVER="2Dbins_v2_goldclasses_Flag_SOM_Fid" 
-BLIND="C"
+BLIND="A"
 
 # number of tomographic bins, and band power modes to plot
 ntomobin=5
@@ -113,9 +113,9 @@ for iz in range(1,nlensbin+1):
         Bdiagerr=np.sqrt(np.diagonal(Bcov_izjz))
 
         # and read in the expected bandpower_shear_e are l^2 Cl_E/2pi
-        BPtheory=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/bin_%d_%d.txt'%(MD,iz,jz))
-        ellmin=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/l_min_vec.txt'%(MD))
-        ellmax=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/bandpower_galaxy_shear/l_max_vec.txt'%(MD))
+        BPtheory=np.loadtxt('%s/Predictions/initial_cov_MAP_BlindA_EE_nE_w/bandpower_galaxy_shear/bin_%d_%d.txt'%(MD,iz,jz))
+        ellmin=np.loadtxt('%s/Predictions/initial_cov_MAP_BlindA_EE_nE_w/bandpower_galaxy_shear/l_min_vec.txt'%(MD))
+        ellmax=np.loadtxt('%s/Predictions/initial_cov_MAP_BlindA_EE_nE_w/bandpower_galaxy_shear/l_max_vec.txt'%(MD))
         elltheory = ell #(ellmax+ellmin)*0.5
 
         #PLOT THE EMODES!
@@ -145,7 +145,7 @@ for iz in range(1,nlensbin+1):
         ax.axhline(y=0, color='black', ls=':')
 
         #Grey out data that isn't used
-        if(jz-iz<2):
+        if((jz-iz<2) & (jz < 3)):
             ax.add_patch(Rectangle((lmax_all, Eymin), rect_width, rect_height, facecolor="grey",alpha=0.2))
         else:   
             ax.add_patch(Rectangle((lmax_bin[iz-1], Eymin), rect_width, rect_height, facecolor="grey",alpha=0.2))
@@ -184,10 +184,10 @@ for iz in range(1,nlensbin+1):
     binid=binid+1
 
 #add plot labels
-axes[2,4].set_ylabel('$\ell P_{gx} / 2\pi \,\, [10^{-5}]$')
+axes[2,4].set_ylabel('$\ell C_{nB} / 2\pi \,\, [10^{-5}]$')
 axes[2,4].yaxis.label.set_visible(True)
 axes[2,4].yaxis.set_label_position('right')
-axes[2,0].set_ylabel('$\ell P_{gm} / 2\pi \,\, [10^{-5}]$')
+axes[2,0].set_ylabel('$\ell C_{nE} / 2\pi \,\, [10^{-5}]$')
 
 #Finally Blank out the empty cells
 for blankgrid in range(5):
@@ -195,7 +195,7 @@ for blankgrid in range(5):
 
 plt.tight_layout()
 
-outfile='Pgk_K1000_%s_%s.png'%(LFVER,BLIND)
+outfile='Pgk_K1000_%s_%s.pdf'%(LFVER,BLIND)
 plt.savefig(outfile,dpi=300)
 plt.show()
 

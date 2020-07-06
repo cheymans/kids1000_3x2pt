@@ -58,7 +58,7 @@ for lensbin in ("low","high"):
     if lensbin=="low":
         labelchar='0.2<z<0.5'
     else:
-        labelchar='0.5<z<0.9'
+        labelchar='0.5<z<0.7'
 
     wedgesfile='%s%s%s'%(filetop,lensbin,filetail)
     indata = np.loadtxt(wedgesfile)
@@ -71,7 +71,7 @@ for lensbin in ("low","high"):
     sigxi3=indata[:,6]  
     
     # and read in the expected clustering measurements
-    theory=np.loadtxt('%s/Predictions/KiDS_BOSS_test_A/xi_wedges/bin_%d.txt'%(MD,lens_count+1))
+    theory=np.loadtxt('%s/Predictions/initial_cov_MAP_BlindA_EE_nE_w/xi_wedges/bin_%d.txt'%(MD,lens_count+1))
     stheory = s[4:32] #guess - need to check with Marika that this is the s-scale
 
     #PLOT THE wedges!
@@ -112,7 +112,7 @@ axes[0].set_ylabel('s$^2 \, \\xi_{gg}$ [h$^{-1}$ Mpc]$^2$')
 
 plt.tight_layout()
 
-outfile='BOSS_Sanchez_wedges.png'
+outfile='BOSS_Sanchez_wedges.pdf'
 plt.savefig(outfile,dpi=300)
 plt.show()
 
