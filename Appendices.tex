@@ -121,7 +121,7 @@ The uniform prior on the scalar spectral index, $n_{\rm s}$, reflects a restrict
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/systematics/GC_ns_prior}
-		\caption{Effect of $n_{s}$ prior on clustering constraints}
+		\caption{The impact of the $n_{\rm s}$ prior: Comparing marginalised posterior distributions for the BOSS galaxy clustering analysis for our fiducial analysis (blue) with the constraints when adopting an uninformative prior on $n_{\rm s}$.   Opening the parameter space to arguably unphysical values of $n_{\rm s}$ favours lower values for $S_8$ and results in weaker constraints on $\Omega_{\rm m}$.}
 		\label{fig:ns-prior}
 	\end{center}
 \end{figure}
@@ -143,7 +143,7 @@ In this Appendix we present, with Fig.~\ref{fig:sensitivity_tests}, the marginal
 \begin{figure*}
 	\begin{center}
 		\includegraphics[width=\textwidth]{Parameter_Plots/systematics/blind_C_EE_nE_w_systematics_chains}
-		\caption{Sensitivity tests Blind C. \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
+		\caption{Marginalised posterior distributions for the extended set of cosmological parameters shown in Fig.~\ref{fig:cosmology-params-all}, comparing the fiducial $3\times2$pt analysis (red) to a selection of our sensitivity test analyses where we ignore the impact of baryon feedback (the `No baryon' case, cyan), limit the analysis to a linear galaxy bias model (the `No higher order bias' case, green), and remove individual tomographic bins from our weak lensing observables (orange, purple and pink).  \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
 		\label{fig:sensitivity_tests}
 	\end{center}
 \end{figure*}
@@ -177,11 +177,13 @@ As reported in \citet{giblin/etal:inprep}, co-author Kannawadi was unblinded ear
 
 
 \section{Plots and Tables for Blinds B and C}
-Uncomment in tex if you want to include all these extra figures
-\input{blindBandC.tex}
+%Uncomment in tex if you want to include all these extra figures
+
 \input{Table_param_constraints_B.tex}
+
 \input{Table_param_constraints_C.tex}
 
+\input{blindBandC.tex}
 
 
 \end{appendix}
