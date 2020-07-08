@@ -78,7 +78,32 @@ Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component i
 
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
-This section we will write post-blinding, as until we know which blind it is, it is hard to write.   The short version is A: no tension,  B: oodles of tension,  C: hum.....
+\begin{itemize}
+	\item We find that the amplitude of matter fluctuations, as measured by $\sigma_{8}$, (and $A_{s}$, $\sigma_{12}$ but needs to be checked) is lower than what has been infererred from the CMB by Planck. (see Fig.~\ref{fig:cosmology-params})
+	\item In discrepancy in $\sigma_{8}$ between our  \tttp analysis and Planck (\software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE}) is $X\sigma$.
+	\item In light of the large parameter spaces that are being considered, focussing on a single parameter paints a simplistic picture on the agreement or disagreement between these probes.
+	\item The question we wish to answer is whether a single model of the Universe can describe both the CMB as well as the low-redshift large-scale structure.
+	Within our Bayesian inference framework, the Bayes factor provides a natural approach to model selection.
+	The two models under consideration are 
+	\begin{description}
+		\item[$\mathrm{M}_1$] Both the Planck CMB and our \tttp data are described by a single flat \LCDM cosmolgy
+		\item[$\mathrm{M}_2$] The two data sets prefer a different cosmology for the low- and high redshift Universe.
+	\end{description}
+	The Bayes factor is then
+	\be
+		R = \frac{P(\vec d | \mathrm{M}_1)P(\mathrm{M}_1)}{P(\vec d | \mathrm{M}_2)P(\mathrm{M}_2)} \ ,
+	\ee
+	where $P(\vec d | \mathrm{M}_1)$ is the probability of the data $\vec d$ under model $\mathrm{M}_1$ -- the Bayesian evidence. 
+	We assume the model priors $P(\mathrm{M}_1)$ and $P(\mathrm{M}_2)$ to be equal, that is, we make no a-priori assumption on the likelihood of $\mathrm{M}_1$ or $\mathrm{M}_2$. 
+	
+	We find $R=X$, indicating XX according to the Jeffrey scale. 
+	
+	\citet{Handley2019} discusses the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but without its prior-dependence. 
+	We find $S=X$. 
+	For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d$ is the model dimensionality, thus allowing to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance.
+	(Discuss numerical issues with getting $d$, mention other tension metrics, discuss restricting prior range to speed up sampling.) 
+\end{itemize}
+
 
 
 
