@@ -31,14 +31,14 @@ to the cosmological model that moves even further away from the
 standard model of particle physics, a model that already struggles to motivate
 the existence of cold dark matter and a cosmological constant.   In these closing phases of the `Stage-III'
 surveys, in the run up to the`full-sky' imaging and spectroscopic
-cosmology surveys of the 2020's \citep{laureijs/etal:2011,lsst/etal:2009,DESI/etal:2016}, the highest
+cosmology surveys of the 2020's \citep[\TT{should these surveys be named?}][]{laureijs/etal:2011,lsst/etal:2009,DESI/etal:2016}, the highest
 priority is to develop a keen understanding, and mitigation, of systematic errors.
 
 In this analysis we present a multi-probe `same-sky' analysis of the
 evolution of large-scale structures, using imaging and spectroscopic surveys.
 Our first observable is the weak gravitational lensing of background
 galaxies by foreground large scale
-structures, commonly referred to as `{\it cosmic shear}'.    Our second
+structures, commonly referred to as `{\it cosmic shear}' \TT{I think quotes and italics goes against the style guide}.    Our second
 observable is the {\it anisotropic clustering of galaxies} within these
 large-scale structures, combining measurements of both redshift-space
 distortions and the redshift-dependent scale of the baryon acoustic
@@ -46,7 +46,7 @@ oscillation.   Our third observable is the weak gravitational lensing of backgro
 galaxies by foreground galaxies, commonly referred to as
 `{\it galaxy-galaxy lensing}'.   As these three sets of two point
 statistics are analysed simultaneously, this combination of probes
-is commonly referred to as a `$3\times 2{\rm pt}$' analysis. 
+is commonly referred to as a `\tttp' analysis. 
 
 Each observable in our multi-probe analysis is subject to systematic
 uncertainties.  For a cosmic shear analysis, the observable is a
@@ -61,11 +61,11 @@ camera.   The signal can also be scaled by both shear
    evolving, galaxy bias function.  It is this function that maps how
    the galaxies trace the
    underlying total matter distribution \citep[see][and references
-   therein]{desjacques/etal:2018}.   Finally, the galaxy-galaxy
+   therein]{desjacques/etal:2018}.   \TT{This makes is sound like galaxy clustering does not have observational systematics, which is not true. E.g., fibre collisions or inhomogeneous targeting sample} Finally, the galaxy-galaxy
    lensing analysis is subject to the systematics that impact both the
    cosmic shear and clustering analyses.
 
-   When analysising these
+   When analysing these
    observables in combination
    the different astrophysical and systematic dependencies allow for some degree of
    self-calibration \citep{bernstein/jain:2004, hu/jain:2004,
@@ -80,9 +80,9 @@ camera.   The signal can also be scaled by both shear
    breaks cosmological parameter degeneracies from each individual
    probe, decreasing the
    uncertainty on the recovered dark energy equation of state
-   parameter \citep{hu/jain:2004,gaztanaga/etal:2012}.
+   parameter \citep{hu/jain:2004,gaztanaga/etal:2012}. \TT{I agree with Benjamin's comment here. Maybe mention degenracy breaking in flat LCDM parameters first?}
 
-   Three variants of a joint `$3\times 2{\rm pt}$' analysis have been
+   Three variants of a joint `\tttp' analysis have been
    conducted to date.  \citet{vanuitert/etal:2018} present a joint power-spectrum
    analysis of the Kilo-Degree Survey \citep[KiDS,][]{kuijken/etal:2015} with
    the Galaxies And Mass Assembly survey
@@ -96,10 +96,9 @@ camera.   The signal can also be scaled by both shear
    Energy Survey \citep[DES,][]{drlicawagner/etal:2018}, using a high-quality
    photometric redshift sample of luminous red galaxies for their projected
    angular clustering measurements.  In all three cases an effective
-   linear galaxy bias model was adopted.
+   linear galaxy bias model was adopted. \TT{'effective' could be read in the sense of 'successful' here} 
 
-   In this analysis we enhance and build upon the advances of previous `$3\times
-   2{\rm pt}$' studies.   We analyse the most recent KiDS data release \citep[KiDS-1000,][]{kuijken/etal:2019}, more than doubling the
+   In this analysis we enhance and build upon the advances of previous `\tttp' studies.   We analyse the most recent KiDS data release \citep[KiDS-1000,][]{kuijken/etal:2019}, more than doubling the
    survey area from previous KiDS analyses.   We utilise the full BOSS
    area and the `full-shape' anisotropic clustering measurements of \citet{sanchez/etal:2017},
    incorporating information from both redshift-space distortions
@@ -108,8 +107,9 @@ camera.   The signal can also be scaled by both shear
    \citep{crocce/scoccimarro:2006, chan/etal:2012}.   We maximise the signal-to-noise in our galaxy-galaxy lensing analysis, 
    by including the overlapping spectroscopic BOSS-like sample of galaxies from 2dFLenS.
 
-This analysis is part of the KiDS-1000 series.  The KiDS-1000 photometry and imaging is presented in \citet{kuijken/etal:2019}.  The core weak lensing data products are presented and validated in \citet[shear measurements,][]{giblin/etal:inprep},  and  \citet[redshift measurements,][]{hildebrandt/etal:inprep}.   \citet{asgari/etal:inprep} conduct the cosmic shear analysis using a range of different two-point statistics, and \citet{joachimi/etal:inprep} detail the methodology behind our `$3\times
-   2{\rm pt}$'  analysis, with a particular focus on pipeline validation and accurate covariance matrices.   This paper is organised as follows.   We review the data and provide a concise summary of the findings of KiDS-1000 series of papers in Section~\ref{sec:data}.   We present our joint cosmological constraints in Section~\ref{sec:results}, and conclude in Section~\ref{sec:conc}.  Our Appendices tabulate the galaxy properties (\ref{app:properties}), the adopted cosmological parameter priors (\ref{app:priors}),  and the cosmological parameter constraints (\ref{app:parameter-constraints}).   They also discuss the redundancy, validation and software review for our pipeline (\ref{app:codereview}), and detail the minor analysis additions that were included after the analysis was formally unblinded (\ref{app:unblinding}).
+This analysis is part of the KiDS-1000 series.  The KiDS-1000 photometry and imaging is presented in \citet{kuijken/etal:2019}.  The core weak lensing data products are presented and validated in \citet[shear measurements,][]{giblin/etal:inprep},  and  \citet[redshift measurements,][]{hildebrandt/etal:inprep}.   \citet{asgari/etal:inprep} conduct the cosmic shear analysis using a range of different two-point statistics, and \citet{joachimi/etal:inprep} detail the methodology behind our `\tttp'  
+   analysis, with a particular focus on pipeline validation and accurate covariance matrices.   This paper is organised as follows.   We review the data and provide a concise summary of the findings of the KiDS-1000 series of papers in Section~\ref{sec:data}.   
+ We present our joint cosmological constraints in Section~\ref{sec:results}, and conclude in Section~\ref{sec:conc}.  Our Appendices tabulate the galaxy properties (\ref{app:properties}), the adopted cosmological parameter priors (\ref{app:priors}),  and the cosmological parameter constraints (\ref{app:parameter-constraints}).   They also discuss the redundancy, validation and software review for our pipeline (\ref{app:codereview}), and detail the minor analysis additions that were included after the analysis was formally unblinded (\ref{app:unblinding}).
 
 
    
