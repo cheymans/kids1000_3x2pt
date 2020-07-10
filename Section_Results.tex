@@ -63,7 +63,6 @@ Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component i
 	\end{center}
 \end{table}
 
-
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
 \begin{itemize}
@@ -91,6 +90,28 @@ Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component i
 	For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d$ is the model dimensionality, thus allowing to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance.
 	(Discuss numerical issues with getting $d$, mention other tension metrics, discuss restricting prior range to speed up sampling.) 
 \end{itemize}
+
+
+\subsection{Comparison with weak lensing surveys}
+\label{sec:WL_comp}
+Our results are consistent with weak lensing constraints in the literature.   We limit our discussion in this section to published $3\times2$pt analyses, referring the reader to \citet{asgari/etal:inprep} who discuss how the KiDS-1000 cosmic shear results compare with other weak lensing surveys.   We note that direct comparisons of cosmological parameters should be approached with some caution, as the priors adopted by different surveys and analyses are often informative \citep[see section 6.1 in][]{joachimi/etal:inprep}.   Homogenising priors for cosmic shear analyses, for example, has been shown to lead to different conclusions when assessing inter-survey consistency \citep{chang/etal:2019, joudaki/etal:2020, asgari/etal:2020_KD}.   
+
+\citet{abbott/etal:2018} present the first year $3\times2$pt DES analysis (DES-Yr1), finding $S_8=0.773^{+0.026}_{-0.020}$, where they report the marginal posterior maximum and the M-HPD credible interval.   This is in excellent agreement with our equivalent result, differing by $0.2\sigma$, with the KiDS-1000-BOSS error being 30\% tighter than the DES-Yr1 results.  The inclusion of BOSS to our  $3\times2$pt  analysis results in tight constraints on $\Omega_{\rm m}$.   This leads to joint KiDS-1000-BOSS constraints on $\sigma_8=0.760^{+0.021}_{-0.023}$ that are more than twice as constraining in comparison to DES-Yr1 which finds $\sigma_8=0.817^{+0.045}_{-0.056}$.   This comparison serves to highlight the additional power that can be extracted through the combination of overlapping same-sky spectroscopic and photometric surveys,  and the promising future for the $\sim 6000$ square degrees of planned overlap between the Dark Energy Spectroscopic Instrument survey \citep{DESI/etal:2016} and the Vera C. Rubin Legacy Survey of Space and Time \citep{lsst/etal:2009}, in addition to the nearer-term $\sim 1400$ square degrees of overlap between BOSS and the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{aihara/etal:2019}, 
+
+\citet{vanuitert/etal:2018} and \citet{joudaki/etal:2018} present $3\times2$pt analyses for the second KiDS release (KiDS-450), finding, respectively, $S_8 = 0.800_{-0.027}^{+0.029}$ (KiDS with GAMA) and $S_8 = 0.742 \pm 0.035$ (KiDS with BOSS and 2dFLenS limited to the overlap region).   Both results are consistent with our KiDS-1000 results, noting that the increase in our $S_8$ constraining power, by a factor of $\sim 2$ in this analysis, is driven by increases in both the KiDS survey area, and the BOSS survey area.  
+
+The impact of doubling the KiDS area can be seen by comparing to \citet{troester/etal:2020}, who present a $2\times2$pt analyses for the third KiDS release (KiDS-VIKING-450) with the full BOSS area, finding $S_8 = 0.728 \pm 0.026$.   The $\sim 40\%$ improvement in constraining power is consistent with expectations from the increased survey area, but a straightforward area-scaling comparison is inappropriate given that KiDS-1000 features improvements in the accuracy of the shear and photometric redshift calibrations, albeit at the expense of a decrease in the effective number density \citep[see][for details]{giblin/etal:inprep}.  \citet{troester/etal:2020} adopt a wide and uninformative prior on $n_{\rm s}$ which allows BOSS to favour arguably unphysical values for $n_{\rm s}$, and lower values of $\sigma_8$ (see Appendix~\ref{app:priors}).   The difference in the choice in priors is, at least partially, responsible for the offset of $1.2\sigma$ between the prior-dependent KiDS-1000-BOSS and KV-450-BOSS $S_8$ constraints.   This comparison helps to illustrate that had we chosen an uninformative prior on $n_{\rm s}$ for our KiDS-1000-BOSS analysis, a decision taken more than a year before unblinding our analysis, this would have likely served to exacerbate any tension with the Planck CMB constraints. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
