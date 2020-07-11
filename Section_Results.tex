@@ -1,31 +1,29 @@
 \section{Results}
 \label{sec:results}
-We present our joint multi-probe constraints on the cosmological parameters of the flat $\Lambda$CDM parameters \TT{parameters twice} in Fig.~\ref{fig:cosmology-params}, showing the marginalised posterior distributions for $\sigma_8$, $\Omega_{\rm m}$ and $h$. 
-Reporting the MAP values with PJ-HPD credible intervals for the two \TT{three?} parameters that we are most sensitive to, we find \ch{(numbers to be updated with final chain with updated covariance)}
+\ch{We present our multi-probe constraints on the cosmological parameters of the flat $\Lambda$CDM model in Fig.~\ref{fig:cosmology-params}, showing the marginalised posterior distributions for $\sigma_8$, $\Omega_{\rm m}$ and $h$, where the BOSS galaxy clustering constraints (GC: shown blue), break the $\sigma_8-\Omega_{\rm m}$ degeneracy in the KiDS-1000 cosmic shear constraints (CS: shown pink), resulting in tight constraints on $\sigma_8$ in the combined \tttp analysis (shown red).} Reporting the MAP values with PJ-HPD credible intervals for the parameters that we are most sensitive to, we find \ch{(@CB: numbers to be updated with final chain with updated covariance)}
 \eqa{
 \sigma_8 &= 0.76^{+0.021}_{-0.023} \\ \nonumber
 \Omega_{\rm m} &= 0.306^{+0.011}_{-0.014} \\ \nonumber
-S_8 &= 0.769^{+0.018}_{-0.015} \, ,
+S_8 &= 0.769^{+0.018}_{-0.015} \, .
 }
-\TT{the following describes the figure, so should probably at the beginning of the section when the figure is mentioned} 
-where the BOSS galaxy clustering constraints (GC: shown blue), break the $\sigma_8-\Omega_{\rm m}$ degeneracy in the KiDS-1000 cosmic shear constraints (CS: shown pink), resulting in tight constraints on $\sigma_8$ in the combined \tttp analysis (shown red). 
-Our constraints can be compared to the marginalised posterior distributions from Planck (shown green), finding consistency between the marginalised constraints on $\Omega_{\rm m}$ and $h$, but an offset in $\sigma_8$,  which we discuss in more detail in Sect.~\ref{sec:planck_comp}.
+Our constraints can be compared to the marginalised posterior distributions from Planck (shown green in Fig.~\ref{fig:cosmology-params}), finding consistency between the marginalised constraints on $\Omega_{\rm m}$ and $h$, but an offset in $\sigma_8$,  which we discuss in detail in Sect.~\ref{sec:planck_comp}.
 
 Tabulated constraints for the full set of cosmological parameters are presented in Appendix~\ref{app:parameter-constraints}, quoting our fiducial MAP with PJ-HPD credible intervals, along with the marginal posterior mode with M-HPD credible intervals. 
 We note that the quoted marginal mode constraint on $S_8$ is $0.2\sigma$ lower than the MAP for this parameter. 
-As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  \TT{For the plotted chains that's not the case though. This might just be the noisy PJ-HPD. Final chains will show}
+As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  \TT{@CB - this might just be the noisy PJ-HPD. Final chains will show and this section updated accordingly.}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/cosmology/omegam_sigma8_h_blind_C}
-		\caption{Multi-probe constraints on the flat $\Lambda$CDM cosmological model, for the matter fluctuation amplitude parameter, $\sigma_8$, the matter density parameter $\Omega_{\rm m}$, and the Hubble parameter, $h$.  The BOSS galaxy clustering constraints (GC: shown blue), can be compared to the KiDS-1000 cosmic shear constraints (CS: shown pink), the combined $3\times2{\rm pt}$ analysis (shown red), and CMB constraints from \citet{planck/etal:2018}.}
+		\caption{Multi-probe constraints on the flat $\Lambda$CDM cosmological model, for the matter fluctuation amplitude parameter, $\sigma_8$, the matter density parameter $\Omega_{\rm m}$, and the Hubble parameter, $h$.  The BOSS galaxy clustering constraints (GC: shown blue), can be compared to the KiDS-1000 cosmic shear constraints (CS: shown pink), the combined $3\times2{\rm pt}$ analysis (shown red), and CMB constraints from \citet{planck/etal:2018}. \ch{TO DO - make labels larger}}
 		\label{fig:cosmology-params}
 	\end{center}
 \end{figure}
 
 We find good agreement between the different probe combinations and single-probe $S_8$ constraints, demonstrating internal consistency between the different cosmological probes, in Fig.~\ref{fig:S8comp}.  
 As forecast by \citet{joachimi/etal:inprep}, the addition of the galaxy-galaxy lensing observable adds very little constraining power, with similar results found for the full \tttp analysis and the combined cosmic shear and clustering analysis. 
-This is a result of the significant area of BOSS in comparison to KiDS-1000, and the fact that our lack of an accurate non-linear galaxy bias model \TT{we have an accurate non-linear bias model (we use it for clustering, which is just not accurate at the deeply non-linear scales that lensing probes. Maybe: our lack of a non-linear galaxy bias model that is accurate on the deeply non-linear scales that weak lensing probes} prohibits the inclusion of large sections of our galaxy-galaxy lensing data vector, shown in Fig.~\ref{fig:Pgk}.  
+This is a result of the significant area of BOSS in comparison to KiDS-1000, and the fact that our lack of an accurate galaxy bias model \ch{on the deeply non-linear scales that weak lensing probes},
+prohibits the inclusion of large sections of our galaxy-galaxy lensing data vector, shown in Fig.~\ref{fig:Pgk}.  
 The addition of the galaxy-galaxy lensing does however serve to moderately tighten constraints on the amplitude of the intrinsic alignment model $A_{\rm IA}$,  as seen in Fig.~\ref{fig:cosmology-params-all}. 
 
 \begin{figure}
@@ -39,7 +37,7 @@ The addition of the galaxy-galaxy lensing does however serve to moderately tight
 
 The lower section of Fig.~\ref{fig:S8comp} illustrates the results of a series of sensitivity tests, where we explore how our constraints on $S_8$ change when: 
 we ignore the impact of baryon feedback (the `No baryon' case), fixing $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology; 
-we limit the analysis to a linear galaxy bias model, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as restricting the redshift-space distortion model \TT{we don't discuss RSD at all...} to a Gaussian velocity distribution; 
+we limit the analysis to a linear galaxy bias model, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as restricting the redshift-space distortion model to a Gaussian velocity distribution; 
 and when we remove individual tomographic bins from our weak lensing observables. 
 The only outlier in this series of tests is the linear-bias model, which highlights the importance of accurate non-linear galaxy bias modelling in \tttp analyses. 
 This series of tests complements the more detailed KiDS-1000 internal consistency analysis of \citet{asgari/etal:inprep}, and is dissected in Appendix~\ref{app:sensitivity}.
@@ -54,13 +52,13 @@ We note that our constraints on $h$ are consistent with the Hubble parameter con
 For the majority of the cosmological parameters shown in Fig.~\ref{fig:cosmology-params-all}, the constraints are uninformed by our choice of prior.  
 The three key exceptions are the spectral index, $n_{\rm s}$, the Hubble parameter, $h$, and the baryon feedback amplitude, $A_{\rm baryon}$.  
 As noted by \citet{troester/etal:2020}, the BOSS galaxy clustering constraints favour a low value for $n_{\rm s}$, where they find $n_{\rm s} = 0.815 \pm 0.085$. 
-They note that this preference could be driven by the amplitude of the large scale clustering signal with $s > 100 \, h^{-1}\, {\rm Mpc}$. \TT{I weakened the statement here, since we didn't say anything in Troester et al, just showed the plot}
+\ch{From their analysis which varies the maximum clustering scale, we note that this preference appears to be driven by the amplitude of the large scale clustering signal with $s > 100 \, h^{-1}\, {\rm Mpc}$. }
 As spurious excess power in this regime could plausibly arise from variations in the stellar density impacting the BOSS galaxy selection function \citep{ross/etal:2017}, we chose to impose an informative prior for $n_{\rm s}$, as listed in Table~\ref{tab:priors}.  
-This prior does not degrade the overall goodness of fit to the galaxy clustering measurements, and is no more informative than the $n_{\rm s}$ priors that are typically used in weak lensing and clustering analyses \citep[see for example][]{abbott/etal:2018}. \TT{Sanchez et al 2017 only sample $n_{s}$ when combining with Planck and then it's 0.8-1.2 I think}.
+This prior does not degrade the overall goodness of fit to the galaxy clustering measurements, and is no more informative than the $n_{\rm s}$ priors that are typically used in weak lensing and clustering analyses \citep[see for example][]{abbott/etal:2018}. 
 We do recognise, however, that this choice of prior serves to reduce the BOSS-only error on $\Omega_{\rm m}$ by roughly a third (see Appendix~\ref{app:priors}). 
 We note that the galaxy clustering preference for low $n_{\rm s}$ also leads to the joint \tttp constraint favouring the dark-matter only value for the baryon feedback amplitude $A_{\rm baryon}$ due to its correlation with $n_{\rm s}$.
 This preference is not significant however, with all values of $A_{\rm baryon}$ within the prior region compatible at the $<2 \sigma$ level.  
-BOSS also provides reasonable constraints on $h$, with our $1\sigma$ constraints on $h$ lying within the $h$-prior.   As the marginal probability at the lower prior edge exceeds 13\% of the peak probability, however, we consider this parameter formally unconstrained by our analysis. \TT{needs to be checked for the final chain. Also changed to 13\% as per Marika's suggestion for a twoish sigma criterion}
+BOSS also provides reasonable constraints on $h$, with our $1\sigma$ constraints on $h$ lying within the $h$-prior.   As the marginal probability at the lower prior edge exceeds 13\% of the peak probability, however, we consider this parameter formally unconstrained by our analysis. \TT{@CB - this needs to be checked for the final chain - it may change.}
 
 \begin{figure*}
 	\begin{center}
@@ -70,13 +68,12 @@ BOSS also provides reasonable constraints on $h$, with our $1\sigma$ constraints
 	\end{center}
 \end{figure*}
 
-Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component in our \tttp analysis.  The effective number of degrees of freedom (DoF) are calculated using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.   The goodness of fit in all cases is acceptable, but only just.  \TT{galaxy clustering is excellent though!}
-\TT{All probes are with the DES requirement of $\chi^{2}/\nu<1.4$}
+Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component in our \tttp analysis.  The effective number of degrees of freedom (DoF) are calculated using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.   \ch{The goodness of fit is excellent for the BOSS galaxy clustering.  For all other cases, the goodness of fit is acceptable\footnote{\ch{We define acceptable as $p \geq 0.001$, which corresponds to less than a $\sim 3\sigma$ event.   \citet{abbott/etal:2018} define acceptable as $\chi^2/{\rm DoF} < 1.4$.  We meet both these requirements.}}, but only just.}
 We are unconcerned by these results, however, given the cosmic shear analysis of \citet{asgari/etal:inprep}, where a different choice in the cosmic shear two-point statistic results in an excellent goodness of fit, with no significant changes in the inferred cosmological parameters.    As such, we could be subject to an unlucky noise fluctuation that particularly impacts the band power estimator in Eq. (\ref{eq:cl_cosmicshear}).  Cautiously inspecting Fig.~\ref{fig:Pkk}, as `$\chi$-by-eye' is particularly dangerous with correlated data points, we nevertheless note a handful of outlying points, for example the low $\ell$-scales in the fifth tomographic bin.   We also note that \citet{giblin/etal:inprep} document a significant but low-level PSF residual systematic in the KiDS-1000 fourth and fifth tomographic bins that was shown to reduce the overall goodness of fit in a cosmic shear analysis, but not bias the recovered cosmological parameters \citep[see also the discussion in][]{amara/refregier:2008}.  Future work to remove these low-level residual distortions is therefore expected to further improve the goodness of fit.
 
 \begin{table}
 	\begin{center}
-		\caption{The goodness of fit of the MAP cosmological model for each of the single and joint probe combinations with cosmic shear (CS), galaxy clustering (GC) and galaxy-galaxy lensing (GGL).   We list the $\chi^2$ value for each MAP model, the effective number of degrees of freedom (DoF) and the corresponding $p$-value which describes the probability of producing measurements that are more extreme than the data, assuming the MAP model is correct.   For reference, $p > 0.001$ corresponds to $<3\sigma$ events.}
+		\caption{The goodness of fit of the MAP cosmological model for each of the single and joint probe combinations with cosmic shear (CS), galaxy clustering (GC) and galaxy-galaxy lensing (GGL).   We list the $\chi^2$ value for each MAP model, the effective number of degrees of freedom (DoF) and the corresponding $p$-value which describes the probability of producing measurements that are more extreme than the data, assuming the MAP model is correct.}
 		\label{tab:goodness-of-fit}
 \begin{tabular}{lrcl}
     \toprule
@@ -94,14 +91,16 @@ We are unconcerned by these results, however, given the cosmic shear analysis of
 
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
-Among the parameters that are constrained by both our KiDS-1000-BOSS \tttp analysis and Planck, we find good agreement for the matter content $\Omega_{\rm m}$ and the Hubble rate $h$. 
-The amplitude of matter fluctuations that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
+\ch{@CB - this section is the one most influenced by the outcome of the final chains.   You therefore might want to leave the internal review of this section until we've completed the review of the other parts.}
 
-To quantify this discrepancy in the amplitude of matter fluctuations we concentrate on the parameter $S_{8} = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ as it is tightly constrained and only exhibits negligible degeneracies, if at all, with the other cosmological parameters$\Omega_{\rm m}$, $h$, and $n_{\rm s}$ \TT{$n_{s}$ needs to be checked with separate chain}, as illustrated on Fig.~\ref{fig:cosmology-params-all}. 
+Among the parameters that are constrained by both our KiDS-1000-BOSS \tttp analysis and Planck, we find good agreement for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
+The amplitude of matter fluctuations, $\sigma_8$, that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
+
+To quantify this discrepancy in the amplitude of matter fluctuations we concentrate on the parameter $S_{8} = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ as it is tightly constrained and only exhibits negligible degeneracies, if at all, with the other cosmological parameters, $\Omega_{\rm m}$, $h$, and $n_{\rm s}$ \TT{$n_{s}$ needs to be checked with separate chain}, as illustrated in Fig.~\ref{fig:cosmology-params-all}. 
 %
 The difference in the marginal posterior of $S_{8}$ between our \tttp analysis and the Planck \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, measured as the difference in the means divided by the standard deviations added in quadrature, is \TT{$XX\sigma$}. 
 
-Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \TT{insert refs}.  The level of discrepancy remains tantalising -- short of a formal detection at the $5\sigma$-level but above what one could comfortably disregard as a simple statistical fluke.
+Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \ch{\citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, wright/etal:2020b,DESclusters/etal:2020}}.  The level of discrepancy remains tantalising -- short of a formal detection at the $5\sigma$-level but above what one could comfortably disregard as a simple statistical fluke.
 
 \citet{Sanchez2020} pointed out that comparing $S_{8}$ between different experiments can be misleading due to the implicit dependence of $\sigma_{8}$ on $h$ through the $8\,h^{-1}{\rm Mpc}$ radius of the sphere within which the matter fluctuations are measured. 
 A high value of $h$ would results in $\sigma_{8}$ measuring fluctuations within a smaller physical radius and thus inferring higher fluctuations. 
@@ -126,7 +125,7 @@ where $P(\vec d | \mathrm{M}_1)$ is the probability of the data $\vec d$ under m
 We assume the model priors $P(\mathrm{M}_1)$ and $P(\mathrm{M}_2)$ to be equal, that is, we make no a-priori assumption on the likelihood of $\mathrm{M}_1$ or $\mathrm{M}_2$. 
 We find $R=X$, indicating XX according to the Jeffrey scale. 
 
-\citet{Handley2019} discuss the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but hardened against prior-dependences. \TT{expand by defining $S$ in more detail?}
+\citet{Handley2019} discuss the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but hardened against prior-dependences. \TT{expand by defining $S$ in more detail?} \ch{if we can compute d, then yes absolutely we need to explain this more.   If we can't then I propose we leave this as is, a niche area in the paper!}
 We find $S=X$. 
 For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d$ is the difference in the model dimensionality between $\mathrm{M}_1$ and $\mathrm{M}_2$, thus allowing to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
 \TT{Assuming we can compute $d$ accurately:} We calculate $d=XX$ and therefore conclude that our \tttp results and the Planck TTTEEE+lowl+lowE results are in discordance at the $XX\sigma$ level.
@@ -137,18 +136,17 @@ For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$
 \label{sec:WL_comp}
 Our results are consistent with weak lensing constraints in the literature.   We limit our discussion in this section to published \tttp analyses, referring the reader to \citet{asgari/etal:inprep} who discuss how the KiDS-1000 cosmic shear results compare with other weak lensing surveys.   We note that direct comparisons of cosmological parameters should be approached with some caution, as the priors adopted by different surveys and analyses are often informative \citep[see section 6.1 in][]{joachimi/etal:inprep}.   Homogenising priors for cosmic shear analyses, for example, has been shown to lead to different conclusions when assessing inter-survey consistency \citep{chang/etal:2019, joudaki/etal:2020, asgari/etal:2020_KD}.   
 
-\citet{abbott/etal:2018} present the first year \tttp DES analysis (DES-Y1 \TT{the DES paper uses Y1}), finding $S_8=0.773^{+0.026}_{-0.020}$, where they report the marginal posterior maximum and the M-HPD credible interval. \TT{I don't think that true. They don't specify what their quoted values are in the paper. Reading between the lines it seems to be means and probably tail CI}  
-This is in excellent agreement with our equivalent result, differing by $0.2\sigma$, with the KiDS-1000-BOSS error being 30\% tighter than the DES-Y1 results.  The inclusion of BOSS to our \tttp analysis results in tight constraints on $\Omega_{\rm m}$.  
-This leads to joint KiDS-1000-BOSS constraints on $\sigma_8=0.760^{+0.021}_{-0.023}$ that are more than twice as constraining compared to DES-Y1 which finds $\sigma_8=0.817^{+0.045}_{-0.056}$. 
-This comparison serves to highlight the additional power that can be extracted through the combination of overlapping same-sky spectroscopic and photometric surveys,  and the promising future for the $\approx\!6000\,\mathrm{deg}^{2}$  of planned overlap between the Dark Energy Spectroscopic Instrument survey \citep{DESI/etal:2016} and the Vera C. Rubin Legacy Survey of Space and Time \citep{lsst/etal:2009}, in addition to the nearer-term $\approx\!1400\,\mathrm{deg}^{2}$ of overlap between BOSS and the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{aihara/etal:2019}. \TT{these were already introduced (kinda) in the introduction}
+\citet{abbott/etal:2018} present the first year \tttp DES analysis (DES Y1), finding $S_8=0.773^{+0.026}_{-0.020}$, \ch{where they report the marginal posterior maximum and the tail credible interval, which is similar to our M-HPD}.  
+This is in excellent agreement with our equivalent result, differing by $0.2\sigma$, with the KiDS-1000-BOSS error being 30\% tighter than the DES Y1 results.  The inclusion of BOSS to our \tttp analysis results in tight constraints on $\Omega_{\rm m}$.  
+This leads to joint KiDS-1000-BOSS constraints on $\sigma_8=0.760^{+0.021}_{-0.023}$ that are more than twice as constraining compared to DES Y1 which finds $\sigma_8=0.817^{+0.045}_{-0.056}$. 
+This comparison serves to highlight the additional power that can be extracted through the combination of overlapping same-sky spectroscopic and photometric surveys,  and the promising future for the planned overlap between the Dark Energy Spectroscopic Instrument survey \citep{DESI/etal:2016} with Euclid and the Vera C. Rubin Legacy Survey of Space and Time \citep{laureijs/etal:2011,lsst/etal:2009}, in addition to the nearer-term $\approx\!1400\,\mathrm{deg}^{2}$ of overlap between BOSS and the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{aihara/etal:2019}. 
 
 \citet{vanuitert/etal:2018} and \citet{joudaki/etal:2018} present \tttp analyses for the second KiDS release (KiDS-450), finding, respectively, $S_8 = 0.800_{-0.027}^{+0.029}$ (KiDS with GAMA) and $S_8 = 0.742 \pm 0.035$ (KiDS with BOSS and 2dFLenS limited to the overlap region). 
 Both results are consistent with our KiDS-1000 results, noting that the increase in our $S_8$ constraining power, by a factor of $\approx\! 2$ in this analysis, is driven by increases in both the KiDS survey area, and the BOSS survey area.  
 
 The impact of doubling the KiDS area can be seen by comparing to \citet{troester/etal:2020}, who present a $2\times2$pt analyses for the third KiDS release (KiDS-VIKING-450) with the full BOSS area, finding $S_8 = 0.728 \pm 0.026$.   The $\approx\!40\%$ improvement in constraining power is consistent with expectations from the increased survey area, but a straightforward area-scaling comparison is inappropriate given that KiDS-1000 features improvements in the accuracy of the shear and photometric redshift calibrations, albeit at the expense of a decrease in the effective number density \citep[see][for details]{giblin/etal:inprep}.  
 \citet{troester/etal:2020} adopt a wide and uninformative prior on $n_{\rm s}$ which allows BOSS to favour arguably unphysical values for $n_{\rm s}$, and lower values of $\sigma_8$ (see Appendix~\ref{app:priors}).   
-The difference in the choice in priors is, at least partially, responsible for the offset of $1.2\sigma$ between the prior-dependent KiDS-1000-BOSS and KV-450-BOSS $S_8$ constraints. \TT{this seems too pessimistic. Fig B1 shows a small impact on $S_{8}$ for the clustering, while the change from cosmic shear going from KV450 to KiDS-1000 is larger than that (and likely within statistical expectation I'd argue)}
-This comparison helps to illustrate that had we chosen an uninformative prior on $n_{\rm s}$ for our KiDS-1000-BOSS analysis, a decision taken more than a year before unblinding our analysis, this would have likely served to exacerbate any tension with the Planck CMB constraints. 
+The difference in the choice in priors is, at least partially, responsible for the offset of $1.2\sigma$ between the prior-dependent KiDS-1000-BOSS and KV-450-BOSS $S_8$ constraints. This comparison helps to illustrate that had we chosen an uninformative prior on $n_{\rm s}$ for our KiDS-1000-BOSS analysis, a decision taken more than a year before unblinding our analysis, this would have likely served to exacerbate any tension with the Planck CMB constraints. 
 
 
 
