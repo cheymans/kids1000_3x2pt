@@ -2,7 +2,12 @@
 \section{Galaxy properties for the KiDS-1000 sources and the BOSS and 2dFLenS lenses.}
 \label{app:properties}
 
-This Appendix tabulates the properties of the KiDS-1000 tomographic source samples, along with the properties of the BOSS and 2dFLenS lens samples, in Table~\ref{tab:datatab}.   We list the spectroscopic redshift, $z_{\rm min} < z_{\rm s} \leq z_{\rm max}$, selection for the lenses, and the photometric redshift, $z_{\rm min} < z_{\rm B} \leq z_{\rm max}$, selection for the sources, along with the mean redshift of each sample.  For the source sample, the true redshift distributions are estimated using the SOM methodology from \citet{wright/etal:2020}.     The shear calibration correction $m$, which can also be refereed to in the literature as the responsivity, $R = 1+m$, is listed for each source bin \citep{kannawadi/etal:2019}.  The effective number density of lenses and sources, per square arcmin,  defines the number of galaxies per square arcmin in the case of unit weights and, for the sources, unit responsivity \citep[see equations C.11 and C.13 in][]{joachimi/etal:inprep}.  We also list the  effective ellipticity dispersion $\sigma_{\epsilon,i}$, per ellipticity component, $i$, for each the weighted and calibrated source galaxy samples \citep[equation C.8 in][]{joachimi/etal:inprep}.
+This Appendix tabulates the properties of the KiDS-1000 tomographic source samples, along with the properties of the BOSS and 2dFLenS lens samples, in Table~\ref{tab:datatab}.   
+We list the spectroscopic redshift selection for the lenses ($z_{\rm min} < z_{\rm s} \leq z_{\rm max}$), and the photometric redshift selection for the sources ($z_{\rm min} < z_{\rm B} \leq z_{\rm max}$), along with the mean redshift of each sample.  
+For the source sample, the true redshift distributions are estimated using the SOM methodology from \citet{wright/etal:2020}.     
+The shear calibration correction $m$, which can also be refereed to in the literature as the responsivity, $R = 1+m$, is listed for each source bin \citep{kannawadi/etal:2019}.  
+The effective number density of lenses and sources defines the number of galaxies per square arcminute in the case of unit weights and, for the sources, unit responsivity \citep[see equations C.11 and C.13 in][]{joachimi/etal:inprep}.  
+We also list the  effective ellipticity dispersion $\sigma_{\epsilon,i}$, per ellipticity component, $i$, for each the weighted and calibrated source galaxy samples \citep[equation C.8 in][]{joachimi/etal:inprep}.
 
 
 \begin{table}
@@ -10,55 +15,61 @@ This Appendix tabulates the properties of the KiDS-1000 tomographic source sampl
 \label{tab:datatab}      % is used to refer this table in the text
 \centering                                      % used for centering table
 \begin{tabular}{lcccccr}          % centered columns
-\hline\hline                        % inserts double horizontal lines
+\toprule
 ID & $z_{\rm min}$ &  $z_{\rm max}$& mean $z$ & $n_{\rm eff}$ & $\sigma_{\epsilon,i}$ & \multicolumn{1}{c}{$m$}\\    % table heading
-\hline
+\midrule
 \multicolumn{6}{l}{\bf KiDS-1000:}\\  
 S1 & 0.1 & 0.3 & 0.26 & 0.62 &  0.27 & $-0.009\pm0.019$\\
 S2 & 0.3 & 0.5 & 0.40 & 1.18 &  0.26 & $-0.011\pm0.020$\\
 S3 & 0.5 & 0.7 & 0.56 & 1.85 &  0.27 & $-0.015\pm0.017$\\
 S4 & 0.7 & 0.9 & 0.79 & 1.26 &  0.25 & $0.002\pm0.012$\\
 S5 & 0.9 & 1.2 & 0.98 & 1.31 &  0.27 & $0.007\pm0.010$\\
-\hline      
+\midrule      
 \multicolumn{6}{l}{\bf BOSS:}\\                             % inserts single horizontal line
 L1 & 0.2 & 0.5 & 0.38 & $0.014$ & -  & \multicolumn{1}{c}{-}\\
 L2 & 0.5 & 0.75 & 0.61 & $0.016$ & -  & \multicolumn{1}{c}{-}\\
-\hline      
+\midrule      
 \multicolumn{6}{l}{\bf 2dFLenS:}\\                                % inserts single horizontal line
 L1 & 0.2 & 0.5 & 0.36 & $0.006$ & - & \multicolumn{1}{c}{-}\\
 L2 & 0.5 & 0.75 & 0.60 & $0.006$ & - & \multicolumn{1}{c}{-}\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
 
 \section{Parameter priors}
 \label{app:priors}
-This Appendix tabulates the adopted KiDS-1000 priors and sampling parameters in Table~\ref{tab:priors}.   The uniform prior on the Hubble constant, $h$, reflects distance-ladder $\pm 5 \sigma$ constraints from \citet{riess/etal:2016}, which encompasses the value of $h$ favoured by \citet{planck/etal:2018}.  The uniform prior on the CDM density, $\omega_{\rm c}$, reflects Supernova Type Ia $\pm 5 \sigma$ constraints on $\Omega_{\rm m}$ from \citet{scolnic/etal:2018} combined with the extreme values of $h$ as allowed by our $h$-prior.   The uniform prior on the baryon density, $\omega_{\rm b}$, reflects big bang nucleosynthesis $\pm 5 \sigma$ constraints from \citet{olive/etal:2014}.   As discussed in Section~\ref{sec:KCAP} we choose to sample with an uninformative uniform prior on $S_8$ to avoid implicit informative priors from a uniform prior on the primordial power spectrum amplitude $A_{\rm s}$.    We choose to impose a hard prior on the properties of neutrinos, assuming the normal hierarchy at the minimum sum of masses, $\Sigma m_\nu = 0.06$ eV, following \citet{planck/etal:2018}.  We consider extended models, including variations on neutrino mass in \citet{troester/etal:inprep}.
+This Appendix tabulates the adopted KiDS-1000 priors and sampling parameters in Table~\ref{tab:priors}.   
+The uniform prior on the Hubble constant, $h$, reflects distance-ladder $\pm 5 \sigma$ constraints from \citet{riess/etal:2016}, which encompasses the value of $h$ favoured by \citet{planck/etal:2018}.  
+The uniform prior on the CDM density, $\omega_{\rm c}$, reflects Supernova Type Ia $\pm 5 \sigma$ constraints on $\Omega_{\rm m}$ from \citet{scolnic/etal:2018} combined with the extreme values of $h$ as allowed by our $h$ prior.   
+The uniform prior on the baryon density, $\omega_{\rm b}$, reflects big bang nucleosynthesis $\pm 5 \sigma$ constraints from \citet{olive/etal:2014}.   
+As discussed in Section~\ref{sec:KCAP} we choose to sample with an uninformative uniform prior on $S_8$ to avoid implicit informative priors from a uniform prior on the primordial power spectrum amplitude $A_{\rm s}$.    
+We choose to impose a hard prior on the properties of neutrinos, assuming the normal hierarchy at the minimum sum of masses, $\Sigma m_\nu = 0.06\,\mathrm{eV}$, following \citet{planck/etal:2018}.  
+We consider extended models, including variations on neutrino mass in \citet{troester/etal:inprep}.
 
 \begin{table}
 \caption{KiDS-1000 sampling parameters and priors.}              % title of Table
 \label{tab:priors}      % is used to refer this table in the text
 \centering                                      % used for centering table
 \begin{tabular}{lll}          % centered columns (4 columns)
-\hline\hline                        % inserts double horizontal lines
+\toprule
 Parameter & Symbol & Prior \\    % table heading
-\hline                                   % inserts single horizontal line
+\midrule                                   % inserts single horizontal line
 Hubble constant & $h$ & $\bb{0.64,\,0.82}$ \\
 CDM density & $\omega_{\rm c}$ & $\bb{0.051,\,0.255}$ \\
 Baryon density & $\omega_{\rm b}$ & $\bb{0.019,\,0.026}$ \\
 Density fluctuation amp. & $S_8$ & $\bb{0.1,\,1.3}$ \\
 Scalar spectral index & $n_{\rm s}$ & $\bb{0.84,\,1.1}$ \\
-\hline
+\midrule
 Linear galaxy bias & $b_1 \;[2]$ & $\bb{0.5,\,9}$ \\
-Quadratic galaxy bias & $b_2 \;[2]$ & $\bb{-0.6,\,4}$ \\
-Non-local galaxy bias & ${\gamma_3^-} \;[2]$ & $\bb{-3,\,3}$ \\
+Quadratic galaxy bias & $b_2 \;[2]$ & $\bb{-4,\,8}$ \\
+Non-local galaxy bias & ${\gamma_3^-} \;[2]$ & $\bb{-8,\,8}$ \\
 Virial velocity parameter & $a_{\rm vir} \;[2]$ & $\bb{0,\,12}$ \\
 Intrinsic alignment amp. & $A_{\rm IA}$ & $\bb{-6,\,6}$ \\
 Baryon feedback amp. & $A_{\rm baryon}$ & $\bb{2,\,3.13}$ \\
-\hline
+\midrule
 Redshift offsets & ${\bf \delta_z}$ & ${\cal N}(\vek{\mu};\vek{C}_{\delta z})$ \\
-\hline
+\bottomrule
 \end{tabular}
 \tablefoot{Primary cosmological parameters for the flat $\Lambda$CDM model are listed in the first section. The second section lists astrophysical nuisance parameters to model galaxy bias (with independent parameters for each of the two BOSS redshift bins as indicated with the bracket $[2]$), intrinsic galaxy alignments, and baryon feedback.  Observational redshift nuisance parameters are listed in the final section. Prior values in square brackets are the limits of the adopted uniform top-hat priors.  ${\cal N}(\mu;C)$ corresponds to a five dimensional multivariate Gaussian prior with mean $\vek{\mu}$ and covariance $\vek{C}_{\delta z}$.}
 \end{table}
@@ -73,9 +84,13 @@ The uniform prior on the scalar spectral index, $n_{\rm s}$, reflects a restrict
 	\end{center}
 \end{figure}
 
-Turning to astrophysical priors, the galaxy bias parameter top-hat priors, $b_1$, $b_2$,  $\gamma_3^-$, and $a_{\rm vir}$ match those adopted in \citet{sanchez/etal:2017}, with independent sets of parameters for each of the two BOSS redshift slices.   Wide uniform priors for the intrinsic alignment parameter $A_{\rm IA}$ are chosen to be uninformative.    Uniform priors on the baryon feedback parameter $A_{\rm baryon}$ are chosen such that the resulting \citet{mead/etal:2015} model of the non-linear matter power spectrum encompasses both the most aggressive feedback model from the \citet{vandaalen/etal:2011} suite of hydrodynamical simulations, along with the dark matter-only case.
+Turning to astrophysical priors, the galaxy bias parameter top-hat priors, $b_1$, $b_2$,  $\gamma_3^-$, and $a_{\rm vir}$ match those adopted in \citet{troester/etal:2020}, which cover a wider range than those used in \citet{sanchez/etal:2017}.  
+The two BOSS redshift slices have independent sets of parameters.   
+Wide uniform priors for the intrinsic alignment parameter $A_{\rm IA}$ are chosen to be uninformative.    
+Uniform priors on the baryon feedback parameter $A_{\rm baryon}$ are chosen such that the resulting \citet{mead/etal:2015} model of the non-linear matter power spectrum encompasses both the most aggressive feedback model from the \citet{vandaalen/etal:2011} suite of hydrodynamical simulations, along with the dark matter-only case.
 
-There are five additional correlated nuisance parameters, $\delta^i_z$, that model uncertainty in the mean of the source redshift distributions.  We adopt a multivariate Gaussian prior for the vector $\vek{\delta}_z$ with a mean $\vek{\mu} = (0.0001,0.0021,0.0129,0.0110,-0.0060)$, and a co-variance, $C_{\delta z}$, as calibrated using mock galaxy catalogues in \citet{wright/etal:2020}.   The diagonal terms of $\vek{C}_{\delta z}$ are typically at the level of $\sim(0.01)^2$, with correlations between the different redshift bins, i.e the ratio of the off-diagonal to diagonal terms,  ranging from zero to $\sim 0.3$ \citep[see section 3.3 of][for details]{joachimi/etal:inprep}.
+There are five additional correlated nuisance parameters, $\delta^i_z$, that model uncertainty in the mean of the source redshift distributions.  We adopt a multivariate Gaussian prior for the vector $\vek{\delta}_z$ with a mean $\vek{\mu} = (0.0001,0.0021,0.0129,0.0110,-0.0060)$, and a co-variance, $C_{\delta z}$, as calibrated using mock galaxy catalogues in \citet{wright/etal:2020}.   
+The diagonal terms of $\vek{C}_{\delta z}$ are typically at the level of $\sim(0.01)^2$, with correlations between the different redshift bins, i.e the ratio of the off-diagonal to diagonal terms,  ranging from zero to $\sim 0.3$ \citep[see section 3.3 of][for details]{joachimi/etal:inprep}.
 
 
 \section{Parameter constraints}
@@ -85,27 +100,37 @@ This Appendix tabulates the best-fit (MAP) and marginalised constraints on the f
 
 \section{Sensitivity tests}
 \label{app:sensitivity}
-In this Appendix we present, with Fig.~\ref{fig:sensitivity_tests}, the marginalised posterior distributions for a selection of the $3\times2$pt sensitivity tests explored in Sect.~\ref{sec:results}.  These tests were all shown to recover consistent constraints on $S_8$, in Fig.~\ref{fig:S8comp}, with the exception of the linear-only galaxy bias model analysis, as expected.    Here we explore these tests in more detail.    
+In this Appendix we present, with Fig.~\ref{fig:sensitivity_tests}, the marginalised posterior distributions for a selection of the \tttp sensitivity tests explored in Sect.~\ref{sec:results}.  
+These tests were all shown to recover consistent constraints on $S_8$, in Fig.~\ref{fig:S8comp}, with the exception of the linear-only galaxy bias model analysis, as expected.    
+Here we explore these tests in more detail.    
 
 \begin{figure*}
 	\begin{center}
 		\includegraphics[width=\textwidth]{Parameter_Plots/systematics/blind_C_EE_nE_w_systematics_chains}
-		\caption{Marginalised posterior distributions for the extended set of cosmological parameters shown in Fig.~\ref{fig:cosmology-params-all}, comparing the fiducial $3\times2$pt analysis (red) to a selection of our sensitivity test analyses where we ignore the impact of baryon feedback (the `No baryon' case, cyan), limit the analysis to a linear galaxy bias model (the `No higher order bias' case, green), and remove individual tomographic bins from our weak lensing observables (orange, purple and pink).  \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
+		\caption{Marginalised posterior distributions for the extended set of cosmological parameters shown in Fig.~\ref{fig:cosmology-params-all}, comparing the fiducial \tttp analysis (red) to a selection of our sensitivity test analyses where we ignore the impact of baryon feedback (the `No baryon' case, cyan), limit the analysis to a linear galaxy bias model (the `No higher order bias' case, green), and remove individual tomographic bins from our weak lensing observables (orange, purple and pink).  \TT{Note that the 3x2pt chain has the clustering bug fixed, hence the overall offset.}}
 		\label{fig:sensitivity_tests}
 	\end{center}
 \end{figure*}
 
-We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (cyan), where $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   Here we find very little difference, as our $3\times2$pt analysis already favours high values of $A_{\rm baryon}$.   Our choice of scales and adoption of the band-power cosmic shear statistic for this analysis also makes us less sensitive to uncertainties in the baryon feedback parameter, compared to a standard two-point correlation function analysis \citep{asgari/etal:2020_KD}.
+We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (cyan), where $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   
+Here we find very little difference, as our \tttp analysis already favours high values of $A_{\rm baryon}$.   
+Our choice of scales and adoption of the band-power cosmic shear statistic for this analysis also makes us less sensitive to uncertainties in the baryon feedback parameter, compared to a standard two-point correlation function analysis \citep{asgari/etal:2020_KD}.
 
-The removal of the two highest photometric redshift bins (blue and purple) primarily only impacts $S_8$.   These two bins carry the majority of the signal-to-noise in our analysis, and so it is not surprising that the removal of nearly half the constraining data, in each case, can result in $\sim 1 \sigma$ changes in the recovered $S_8$.   We refer the reader to \citet{asgari/etal:inprep} where we present a detailed internal consistency analysis of the cosmic shear signal, following \citet{kohlinger/etal:2019}, \citep[see also][]{efstathiou/lemos:2018},  concluding that the two highest photometric redshift bins are consistent with the full data set.   A potential $\sim 2\sigma$-level flag is, however, raised over the internal consistency of the second tomographic bin.  In our analysis where we remove the two lowest photometric redshift bins (orange), we find that these bins contribute very little to the $S_8$ constraint, and only serve to tighten the constraints on the intrinsic alignment parameter $A_{\rm IA}$.
+The removal of the two highest photometric redshift bins (blue and purple) primarily impacts $S_8$.   
+These two bins carry the majority of the signal-to-noise in our analysis, and so it is not surprising that the removal of nearly half the constraining data, in each case, can result in $\sim 1 \sigma$ changes in the recovered $S_8$.   
+We refer the reader to \citet{asgari/etal:inprep} where we present a detailed internal consistency analysis of the cosmic shear signal, following \citet{kohlinger/etal:2019}, \citep[see also][]{efstathiou/lemos:2018},  concluding that the two highest photometric redshift bins are consistent with the full data set.   
+A potential $\sim 2\sigma$-level flag is, however, raised over the internal consistency of the second tomographic bin.  
+In our analysis where we remove the two lowest photometric redshift bins (orange), we find that these bins contribute very little to the $S_8$ constraint, and only serve to tighten the constraints on the intrinsic alignment parameter $A_{\rm IA}$.
 
-Finally we turn to the galaxy bias test (green), where we limit the analysis to a linear galaxy bias model, $b_1$, setting all higher-order bias terms, in Eq. (\ref{eq:pgg}), to zero.   We can see that this induces a significant bias in the recovered constraints, as the amplitude of the linear galaxy bias increases in an attempt to model the enhanced power on small scales that the non-linear bias induces.   The erroneous increase in $b_1$ leads to a significant decrease in the recovered $S_8$.  This result should serve as a point of caution for $3\times2$pt analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations.
+Finally we turn to the galaxy bias test (green), where we limit the analysis to a linear galaxy bias model, $b_1$, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as imposing a Gaussian galaxy velocity distribution by setting $a_{\rm vir}$ to zero.   
+We can see that this induces a significant bias in the recovered constraints, as the amplitude of the linear galaxy bias increases in an attempt to model the enhanced power on small scales that the non-linear bias induces.   
+The erroneous increase in $b_1$ leads to a significant decrease in the recovered $S_8$.  This result should serve as a point of caution for \tttp analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations.
 
 
 \section{Redundancy, pipeline validation and software review}
 \label{app:codereview}
 
-In this Appendix we briefly review the redundancy in the KiDS-1000 analysis, from pixels through to parameters.   Multi-band pixel processing and photometry in the optical has been carried out on the full KiDS-1000 data set using two independent pipelines, {\sc AstroWISE} and {\sc THELI} \citep{begeman/etal:2013, erben/etal:2013}.  This approach allowed us to resolve a range of different issues, primarily in the astrometric solution, for the handful of problem fields that resisted automated processing.  We adopt the {\sc AstroWISE} reduction for multi-band photometry and the {\sc THELI} $r$-band reduction for object detection and weak lensing shape measurement \citep{kuijken/etal:2019}.  We consider only one shape measurement technique, {\it lens}fit \citep{miller/etal:2013}, but this is calibrated using a series of different image simulations that vary the input galaxy properties to assess the sensitivity of the shear estimator to: the presence of blending with unresolved and undetected objects, blending due to enhanced galaxy clustering, photometric redshift selection bias, size-ellipticity correlations in the galaxy properties,  varying stellar density and the choice of galaxy profiles (smooth or realistic) \citep[see][for details]{kannawadi/etal:2019, giblin/etal:inprep}.  Our fiducial photometric redshift calibration has been compared to two additional independent calibration approaches, and has been validated on mock photometry catalogues \citep[see][for details]{wright/etal:2020, vandenbusch/etal:2020, hildebrandt/etal:inprep}.   Using a series of null-tests we have validated the resulting shear-redshift catalogues in \citet{giblin/etal:inprep}.    Our catalogue-to-observables pipeline, based on the two-point correlation function code {\sc TreeCorr} \citep{treecorr}, has been validated through an independent analysis using the alternative {\sc athena} package \citep{athena}, and through mock catalogue analysis \citep{joachimi/etal:inprep}.   Our cosmological inference code {\sc KCAP} with {\sc CAMB} \citep{lewis/etal:2000}, has been validated against the Core Cosmology Library \citep[CCL,][]{chisari/etal:2019} and through the recovery of input parameters in mock data analysis \citep{joachimi/etal:inprep}.  In \citet{asgari/etal:inprep} we also verify that we produce the same results in our cosmic-shear only analysis using a completely independent inference code based on {\sc MontePython} with {\sc CLASS} \citep{class, montepython, kohlinger/etal:2019,hildebrandt/etal:2020}.   Our analysis of BOSS follows \citet{sanchez/etal:2017}, which is in good agreement with the numerous independent parallel analyses of the same DR12 data set presented in \citet{alam/etal:2017}.
+In this Appendix we briefly review the redundancy in the KiDS-1000 analysis, from pixels through to parameters.   Multi-band pixel processing and photometry in the optical has been carried out on the full KiDS-1000 data set using two independent pipelines, {\sc AstroWISE} and {\sc THELI} \citep{begeman/etal:2013, erben/etal:2013}.  This approach allowed us to resolve a range of different issues, primarily in the astrometric solution, for the handful of problem fields that resisted automated processing.  We adopt the {\sc AstroWISE} reduction for multi-band photometry and the {\sc THELI} $r$-band reduction for object detection and weak lensing shape measurement \citep{kuijken/etal:2019}.  We consider only one shape measurement technique, {\it lens}fit \citep{miller/etal:2013}, but this is calibrated using a series of different image simulations that vary the input galaxy properties to assess the sensitivity of the shear estimator to: the presence of blending with unresolved and undetected objects, blending due to enhanced galaxy clustering, photometric redshift selection bias, size-ellipticity correlations in the galaxy properties,  varying stellar density, and the choice of galaxy profiles (smooth or realistic) \citep[see][for details]{kannawadi/etal:2019, giblin/etal:inprep}.  Our fiducial photometric redshift calibration has been compared to two additional independent calibration approaches, and has been validated on mock photometry catalogues \citep[see][for details]{wright/etal:2020, vandenbusch/etal:2020, hildebrandt/etal:inprep}.   Using a series of null-tests we have validated the resulting shear-redshift catalogues in \citet{giblin/etal:inprep}.    Our catalogue-to-observables pipeline, based on the two-point correlation function code {\sc TreeCorr} \citep{treecorr}, has been validated through an independent analysis using the alternative {\sc athena} package \citep{athena}, and through mock catalogue analysis \citep{joachimi/etal:inprep}.   Our cosmological inference code {\sc KCAP} with {\sc CAMB} \citep{lewis/etal:2000}, has been validated against the Core Cosmology Library \citep[CCL,][]{chisari/etal:2019} and through the recovery of input parameters in mock data analysis \citep{joachimi/etal:inprep}.  In \citet{asgari/etal:inprep} we also verify that we produce the same results in our cosmic-shear only analysis using a completely independent inference code based on {\sc MontePython} with {\sc CLASS} \citep{class, montepython, kohlinger/etal:2019,hildebrandt/etal:2020}.   Our analysis of BOSS follows \citet{sanchez/etal:2017}, which is in good agreement with the numerous independent parallel analyses of the same DR12 data set presented in \citet{alam/etal:2017}.
 
 In regards to software review, we have adopted the `four-eye' approach, collaboratively building code through a git repository, with major updates reviewed through pull requests.   This approach has applied throughout the full pixels-to-parameters process, and to all types of software, both our significant tools, analysis code and, for the most part, simple paper support scripts.  On publication of this paper, our repositories will become open source for others to use and build upon, but with a caveat for users to recognise that we are not software engineers.   Adopting this style of software review for KiDS-1000 has been an extremely beneficial exercise for the team, with many lessons learnt for how to improve our software engineering skills and our approach to open source collaborative coding for future projects.     
 
@@ -113,9 +138,9 @@ In regards to software review, we have adopted the `four-eye' approach, collabor
 \label{app:unblinding}
 This analysis was carried out `blind',  such that our final key result, our constraint on $S_8$, was unknown until all analysis choices were fixed.   Our blinding strategy creates three versions of the catalogue, where one is the truth, and the other two are modified to introduce up to a $\sim \pm 2\sigma$ deviation in the recovered value of $S_8$ \citep{kuijken/etal:2015, giblin/etal:inprep}.   In contrast to previous KiDS analyses, we set ourselves a challenge to only run our blind data analysis inference chains once, after fully developing and road-testing the pipeline using mock catalogues and data vectors \citep{joachimi/etal:inprep}.     Unexpectedly, the only chains where we failed to meet this challenge were chains that included BOSS data.   Here a bug in a naming convention in an updated {\sc CosmoSIS-CAMB} interface resulted in $\sim 0.5\sigma$ errors in the recovery of $\sigma_8$ in our initial BOSS re-analysis.  This was corrected and updated for our fiducial chains before unblinding.
 
-Our fiducial results, presented in Fig.~\ref{fig:cosmology-params} and tabulated in Appendix~\ref{app:parameter-constraints}, were carried out for all three blinds using a covariance matrix derived assuming a fiducial cosmology given by the best-fit parameters from \citet{troester/etal:2020}.  We reserved our iterated-covariance analysis, however, for post-unblinding, re-analysing the true data vector with an updated covariance matrix derived adopting the best-fit parameters from our initial blinded run of the true catalogue.   This iterative step changed our value for the full `$3\times2$pt' analysis $S_8$ by \ch{$X\sigma$}.   Our tension-consistency analysis with the CMB constraints from Planck was also conducted after unblinding, as we were unblind to Planck throughout the process.
+Our fiducial results, presented in Fig.~\ref{fig:cosmology-params} and tabulated in Appendix~\ref{app:parameter-constraints}, were carried out for all three blinds using a covariance matrix derived assuming a fiducial cosmology given by the best-fit parameters from \citet{troester/etal:2020}.  We reserved our iterated-covariance analysis, however, for post-unblinding, re-analysing the true data vector with an updated covariance matrix derived adopting the best-fit parameters from our initial blinded run of the true catalogue.   This iterative step changed our value for the full \tttp analysis $S_8$ by \ch{$X\sigma$}.   Our tension-consistency analysis with the CMB constraints from Planck was also conducted after unblinding, as we were unblind to Planck throughout the process.
 
-As we are only interested in relative shifts in the sensitivity tests presented in Fig~\ref{fig:sensitivity_tests}, these were only conducted for a single blind, and re-calculated post-unblinding for the true catalogue.  Wishing to be fully transparent in this Appendix, we note that owing to limited resources the sensitivity test was not updated during the blinded phase of the project in order to correct for the {\sc CosmoSIS-CAMB} interface error which only impacted the BOSS constraints.   We argue that this was appropriate given the nature of test and given that this error has been corrected post-unblinding.    Our cosmic shear and galaxy clustering analysis, featured in our internal consistency test in Fig.~\ref{fig:S8comp}, was also not re-processed blind after the BOSS error was corrected, as both our forecast in \citet{joachimi/etal:inprep}, and our initial analysis, confirmed that the constraints from our cosmic shear and galaxy clustering analysis were almost identical to constraints from the full `$3\times2$pt' analysis, which was correctly analysed for all three blinds.
+As we are only interested in relative shifts in the sensitivity tests presented in Fig~\ref{fig:sensitivity_tests}, these were only conducted for a single blind, and re-calculated post-unblinding for the true catalogue.  Wishing to be fully transparent in this Appendix, we note that owing to limited resources the sensitivity test was not updated during the blinded phase of the project in order to correct for the {\sc CosmoSIS-CAMB} interface error which only impacted the BOSS constraints.   We argue that this was appropriate given the nature of test and given that this error has been corrected post-unblinding.    Our cosmic shear and galaxy clustering analysis, featured in our internal consistency test in Fig.~\ref{fig:S8comp}, was also not re-processed blind after the BOSS error was corrected, as both our forecast in \citet{joachimi/etal:inprep}, and our initial analysis, confirmed that the constraints from our cosmic shear and galaxy clustering analysis were almost identical to constraints from the full \tttp analysis, which was correctly analysed for all three blinds.
 
 As reported in \citet{giblin/etal:inprep}, co-author Kannawadi was unblinded early in the process to permit accurate calibration of the shear measurements in his re-analysis of KiDS-1000-like image simulations.   Co-authors Wright and Heymans also wish to record that they independently had a suspicion over which blind was the truth based on the changes that the SOM gold selection made to the blinded KiDS-1000 catalogue effective number density and ellipticity dispersion, compared to the impact the SOM selection made to the KiDS-VIKING-450 catalogue analysed in \citet{wright/etal:2020b}.  These suspicions were never shared with the rest of the team, nor discussed with each other, and on unblinding were found to be false.   This issue nevertheless highlighted to us the challenges of catalogue-level blinding for successive data releases where little has changed in the core data reduction process, if the people working at the coal-face of catalogue production are the same people working on the cosmological analysis.   Future KiDS blinding will therefore likely adopt the approach advocated by \citet{sellentin:2020}, where the covariance matrix is modified in the analysis.
 
