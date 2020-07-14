@@ -48,18 +48,10 @@ We find that the constraint on the linear galaxy bias,  $b_1$, in each redshift 
 This constraint does not arise, however, from the sensitivity of the galaxy-galaxy lensing observable to galaxy bias (shown to be relatively weak in the CS+GGL contours). 
 Instead, in this analysis, it is a result of the degeneracy breaking in the $\sigma_8-\Omega_{\rm m}$ plane, tightening constraints on $\sigma_8$ which, for galaxy clustering, is degenerate with galaxy bias. 
 The improved constraints on galaxy bias do not, however, fold through to improved constraints on $h$, which the weak lensing data adds very little information to. 
-We note that our constraints on $h$ are consistent with the Hubble parameter constraints from both \citet{planck/etal:2018} and \citet{riess/etal:2019}.
 
-For the majority of the cosmological parameters shown in Fig.~\ref{fig:cosmology-params-all}, the constraints are uninformed by our choice of prior.  
-The three key exceptions are the spectral index, $n_{\rm s}$, the Hubble parameter, $h$, and the baryon feedback amplitude, $A_{\rm baryon}$.  
-As noted by \citet{troester/etal:2020}, the BOSS galaxy clustering constraints favour a low value for $n_{\rm s}$, where they find $n_{\rm s} = 0.815 \pm 0.085$. 
-From their analysis which varies the maximum clustering scale, we note that this preference appears to be driven by the amplitude of the large scale clustering signal with $s > 100 \, h^{-1}\, {\rm Mpc}$. 
-As spurious excess power in this regime could plausibly arise from variations in the stellar density impacting the BOSS galaxy selection function \citep{ross/etal:2017}, we chose to impose an informative prior for $n_{\rm s}$, as listed in Table~\ref{tab:priors}.  
-This prior does not degrade the overall goodness of fit to the galaxy clustering measurements, and is no more informative than the $n_{\rm s}$ priors that are typically used in weak lensing and clustering analyses \citep[see for example][]{abbott/etal:2018}. 
-We do recognise, however, that this choice of prior serves to reduce the BOSS-only error on $\Omega_{\rm m}$ by roughly a third (see Appendix~\ref{app:priors}). 
-We note that the galaxy clustering preference for low $n_{\rm s}$ also leads to the joint \tttp constraint favouring the dark-matter only value for the baryon feedback amplitude $A_{\rm baryon}$ due to its correlation with $n_{\rm s}$.
-This preference is not significant however, with all values of $A_{\rm baryon}$ within the prior region compatible at the $<2 \sigma$ level.  
-BOSS also provides reasonable constraints on $h$, with our $1\sigma$ constraints on $h$ lying within the $h$-prior.   As the marginal probability at the lower prior edge exceeds 13\% of the peak probability, however, we consider this parameter formally unconstrained by our analysis. \TT{@CB - this needs to be checked for the final chain - it may change.}
+\ch{For our primary cosmological parameter, $S_8$, our constraints are uninformed by our choice of priors.    This statement cannot be made for the other $\Lambda$CDM parameters, however, as shown in Fig.~\ref{fig:cosmology-params-all}.   The most informative prior that we have introduced to our \tttp analysis is on the spectral index, $n_{\rm s}$.  As noted by \citet{troester/etal:2020}, the BOSS galaxy clustering constraints favour a low value for $n_{\rm s}$, where they find $n_{\rm s} = 0.815 \pm 0.085$. 
+From the \citet{troester/etal:2020} sensitivity analysis to the adopted maximum clustering scale, we observe that this preference appears to be driven by the amplitude of the large scale clustering signal with $s > 100 \, h^{-1}\, {\rm Mpc}$.  We note that spurious excess power in this regime could plausibly arise from variations in the stellar density impacting the BOSS galaxy selection function \citep{ross/etal:2017}.  Our choice to impose a theoretically motivated informative prior for $n_{\rm s}$, as listed in Table~\ref{tab:priors}, helps to negate this potential systematic effect without degrading the overall goodness of fit to the galaxy clustering measurements.  Our prior choice is certainly no more informative than the $n_{\rm s}$ priors that are typically used in weak lensing and clustering analyses \citep[see for example][]{abbott/etal:2018}. 
+We recognise, however, that this well-motivated prior choice acts to improve the BOSS-only error on $\Omega_{\rm m}$ by roughly a third, and decrease the BOSS-only best-fitting value for $\Omega_{\rm m}$ and $h$ by $\sim 0.5\sigma$.  With $<10\%$ differences on the constraints on $S_8$ and $h$, however, and only a $\sim 0.1\sigma$ difference in the BOSS-only best-fitting value for $S_8$, which is consistent with the typical variation between different MCMC analyses, we conclude that our prior choice does not impact on our primary $S_8$ constraints.   With the informative or uninformative $n_s$ prior, our constraints on $h$ remain consistent with the Hubble parameter constraints from both \citet{planck/etal:2018} and \citet{riess/etal:2019}.}
 
 \begin{figure*}
 	\begin{center}
@@ -75,7 +67,7 @@ We are unconcerned by these results, however, given the cosmic shear analysis of
 
 \begin{table}
 	\begin{center}
-		\caption{The goodness of fit of the MAP cosmological model for each of the single and joint probe combinations with cosmic shear (CS), galaxy clustering (GC) and galaxy-galaxy lensing (GGL).   We list the $\chi^2$ value for each MAP model, the effective number of degrees of freedom (DoF) and the corresponding $p$-value which describes the probability of producing measurements that are more extreme than the data, assuming the MAP model is correct.}
+		\caption{The goodness of fit of the MAP cosmological model for each of the single and joint probe combinations with cosmic shear (CS), galaxy clustering (GC) and galaxy-galaxy lensing (GGL).   We list the $\chi^2$ value for each MAP model, the effective number of degrees of freedom (DoF) and the corresponding $p$-value which describes the probability of producing measurements that are more extreme than the data, assuming the MAP model is correct.   The DoF is presented as the difference between the total number of data points and the effective number of free parameters, accounting for the impact of priors and correlations between the parameters.}
 		\label{tab:goodness-of-fit}
 \begin{tabular}{lrcl}
     \toprule
@@ -95,15 +87,14 @@ We are unconcerned by these results, however, given the cosmic shear analysis of
 \label{sec:planck_comp}
 \ch{@CB - this section is the one most influenced by the outcome of the final chains.   You therefore might want to leave the internal review of this section until we've completed the review of the other parts.}
 
-Among the parameters that are constrained by both our KiDS-1000-BOSS \tttp analysis and Planck, we find good agreement for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
+In our KiDS-1000-BOSS \tttp analysis, we find good agreement with Planck for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
 The amplitude of matter fluctuations, $\sigma_8$, that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
 
 To quantify this discrepancy in the amplitude of matter fluctuations we concentrate on the parameter $S_{8} = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ as it is tightly constrained and only exhibits negligible degeneracies, if at all, with the other cosmological parameters, $\Omega_{\rm m}$, $h$, and $n_{\rm s}$ \TT{the $n_{s}$ dependence still needs to be checked with separate \tttp chain}, as illustrated in Fig.~\ref{fig:cosmology-params-all}. 
 %
 The difference in the marginal posterior of $S_{8}$ between our \tttp analysis and the Planck \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, measured as the difference in the means divided by the standard deviations added in quadrature, is $3.1\sigma$. 
 
-Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, wright/etal:2020b,DESclusters/etal:2020}.  
-The level of discrepancy remains tantalising -- short of a formal detection at the $5\sigma$-level but above what one could comfortably disregard as a simple statistical fluke.
+\ch{Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. In these cases the reported low $S_8$, or $\sigma_8$, constraints are formally statistically consistent with Planck, and well below the detection of any anomalies at the $5\sigma$-level.   Considering, however, the $\sim 3\sigma$ difference that we have reported, and the overall trend amongst independent probes, we would argue that we have now reached an uncomfortable point when it comes to regarding the $S_8$ offset as a simple statistical fluke.}
 
 \citet{Sanchez2020} pointed out that comparing $S_{8}$ between different experiments can be misleading due to the implicit dependence of $\sigma_{8}$ on $h$ through the $8\,h^{-1}{\rm Mpc}$ radius of the sphere within which the matter fluctuations are measured. 
 A high value of $h$ would results in $\sigma_{8}$ measuring fluctuations within a smaller physical radius and thus inferring higher fluctuations. 
