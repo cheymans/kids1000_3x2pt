@@ -44,7 +44,7 @@
 
 \definecolor{purple}{RGB}{76, 0,153}
 \newcommand{\ch}[1]{{\color{purple}{#1}}}
-\newcommand{\bg}[1]{\textcolor{orange}{#1}}
+\newcommand{\preliminary}[1]{\textcolor{orange}{#1}}
 \newcommand{\TT}[1]{{\color{red}{TT: #1}}}
 
 \newcommand{\dd}{{\rm d}}
@@ -57,6 +57,10 @@
 
 \newcommand{\software}[1]{\texttt{#1}}
 \newcommand{\tttp}{$3\times2$pt\xspace}
+\newcommand{\kpoff}{\preliminary{$3.1\sigma$}\xspace}
+\newcommand{\kpoffperc}{\preliminary{$8.2 \pm 2.6$\%}\xspace}
+\newcommand{\kSeightval}{\preliminary{$0.769^{+0.018}_{-0.015}$}\xspace}
+
 \newcommand{\LCDM}{$\Lambda$CDM\xspace}
 
 \newcommand{\be}{\begin{equation}}  \newcommand{\ee}{\end{equation}}
@@ -95,7 +99,7 @@
 
 % 5 {} token are mandatory
  
-  \abstract{We present a joint cosmological analysis of weak gravitational lensing observations from the Kilo-Degree Survey (KiDS-1000), with redshift-space galaxy clustering observations from the Baryon Oscillation Spectroscopic Survey (BOSS), and galaxy-galaxy lensing observations from the overlap between KiDS-1000, BOSS and the spectroscopic 2-degree Field Lensing Survey (2dFLenS).  This combination of large-scale structure probes breaks the degeneracies between cosmological parameters for individual probes, resulting in a constraint on the structure growth parameter $S_8=\sigma_8 \sqrt{\Omega_{\rm m}/0.3} = 0.769^{+0.018}_{-0.015}$, that has the same precision as that reported by the full-sky cosmic microwave background observations from Planck.   The recovered $S_8$ amplitude is low, however, by $8.2 \pm 2.6 $\% relative to Planck.   This result builds from a series of KiDS-1000 analyses where we validate our methodology with variable depth mock galaxy surveys,  our lensing calibration with image simulations and null-tests, and our optical-to-near-infrared redshift calibration with multi-band mock catalogues and a spectroscopic-photometric clustering analysis.   The systematic uncertainties identified by these analyses are folded through as nuisance parameters in our cosmological analysis.  Inspecting the offset between the marginalised posterior distributions, we find that the $S_8$-difference with Planck is driven by a tension in the matter fluctuation amplitude parameter, $\sigma_8$.   
+  \abstract{We present a joint cosmological analysis of weak gravitational lensing observations from the Kilo-Degree Survey (KiDS-1000), with redshift-space galaxy clustering observations from the Baryon Oscillation Spectroscopic Survey (BOSS), and galaxy-galaxy lensing observations from the overlap between KiDS-1000, BOSS and the spectroscopic 2-degree Field Lensing Survey (2dFLenS).  This combination of large-scale structure probes breaks the degeneracies between cosmological parameters for individual probes, resulting in a constraint on the structure growth parameter $S_8=\sigma_8 \sqrt{\Omega_{\rm m}/0.3} =$ \kSeightval, that has the same precision as that reported by the full-sky cosmic microwave background observations from Planck.   The recovered $S_8$ amplitude is low, however, by \kpoffperc relative to Planck.   This result builds from a series of KiDS-1000 analyses where we validate our methodology with variable depth mock galaxy surveys,  our lensing calibration with image simulations and null-tests, and our optical-to-near-infrared redshift calibration with multi-band mock catalogues and a spectroscopic-photometric clustering analysis.   The systematic uncertainties identified by these analyses are folded through as nuisance parameters in our cosmological analysis.  Inspecting the offset between the marginalised posterior distributions, we find that the $S_8$-difference with Planck is driven by a tension in the matter fluctuation amplitude parameter, $\sigma_8$.   
 We determine the level of agreement between the CMB and large-scale structure constraints using the Bayes factor and the prior-insensitive suspiciousness statistic. \ch{This final sentence will need some work/thought once the Planck comparison chains are completed.}
   }
 
