@@ -204,8 +204,7 @@ Tension can also be assessed in terms of the overlap between the full posterior 
 Adopting the Bayesian paradigm for inference, we provide our constraints in the form of a series of samples that describe the full posterior distribution\footnote{Full MCMC chains will be publicly released on the acceptance of this paper.}.  
 In Sect.~\ref{sec:results} we explore this multi-dimensional posterior in the traditional way, visualising the 2D and 1D marginal posterior distributions for a selection of parameters.  
 In order to present headline $S_8$ constraints, however, we present the parameter value at the maximum of the joint posterior (MAP), along with a credible interval based on the joint, multi-dimensional highest posterior density region, projected onto the marginal posterior of the $S_8$ parameter \citep[see section 6.4 of][for further details on this MAP with PJ-HPD credible intervals]{joachimi/etal:inprep}.  
-We note that the MAP reported by {\sc Multinest} provides a noisy estimate of the true MAP, and we therefore conduct an optimisation step using the \ch{XX} samples with the highest posterior values as starting points. \TT{@CB we're still undecided on whether to use Nelder-Mead \citet{nelder/mead:1965} or Powell}  
-The reported MAP is then given by the parameter set at the maximum posterior found amongst all the XX maximum likelihood analyses \citep[see also][who adopt a similar approach]{muir/etal:2020}. 
+We note that the MAP reported by {\sc Multinest} provides a noisy estimate of the true MAP, and we therefore conduct an optimisation step using the \ch{XX} samples with the highest posterior values as starting points in a \citet{nelder/mead:1965} maximum likelihood analysis.  The reported MAP is then given by the parameter set at the maximum posterior found amongst all the \ch{XX} maximum likelihood analyses \citep[see also][who adopt a similar approach]{muir/etal:2020}. 
 
 
 
