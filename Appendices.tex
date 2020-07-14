@@ -1,5 +1,5 @@
 \begin{appendix} 
-\section{Galaxy properties for the KiDS-1000 sources and the BOSS and 2dFLenS lenses.}
+\section{Galaxy properties and the \tttp covariance.}
 \label{app:properties}
 
 This Appendix tabulates the properties of the KiDS-1000 tomographic source samples, along with the properties of the BOSS and 2dFLenS lens samples, in Table~\ref{tab:datatab}.   
@@ -7,8 +7,7 @@ We list the spectroscopic redshift selection for the lenses ($z_{\rm min} < z_{\
 For the source sample, the true redshift distributions are estimated using the SOM methodology from \citet{wright/etal:2020}.     
 The shear calibration correction $m$, which can also be refereed to in the literature as the responsivity, $R = 1+m$, is listed for each source bin \citep{kannawadi/etal:2019}.  
 The effective number density of lenses and sources defines the number of galaxies per square arcminute in the case of unit weights and, for the sources, unit responsivity \citep[see equations C.11 and C.13 in][]{joachimi/etal:inprep}.  
-We also list the  effective ellipticity dispersion $\sigma_{\epsilon,i}$, per ellipticity component, $i$, for each the weighted and calibrated source galaxy samples \citep[equation C.8 in][]{joachimi/etal:inprep}.
-
+We also list the effective ellipticity dispersion $\sigma_{\epsilon,i}$, per ellipticity component, $i$, for each the weighted and calibrated source galaxy samples \citep[equation C.8 in][]{joachimi/etal:inprep}.
 
 \begin{table}
 \caption{Galaxy properties for the BOSS and 2dFLenS lens (\lq L\rq) samples and the KiDS-1000 source (\lq S\rq) samples.}              % title of Table
@@ -36,6 +35,17 @@ L2 & 0.5 & 0.75 & 0.60 & $0.006$ & - & \multicolumn{1}{c}{-}\\
 \end{tabular}
 \tablefoot{Columns include the bin identifier, ID, the minimum and maximum redshift selection for the bin $z_{\rm min/max}$, which applies to photometric redshifts for the sources S, and spectroscopic redshifts for the lenses L, along with the mean redshift of the bin.  For the source bins we also include the effective number density of sources, per square arcminute, $n_{\rm eff}$, along with the measured ellipticity dispersion per component, $\sigma_{\epsilon,i}$, and the shear calibration correction and uncertainty, $m$.}
 \end{table}
+
+
+Fig.~\ref{fig:ttttpcov} displays the correlation coefficients of the \tttp covariance matrix for the three observables; cosmic shear E-mode power spectra, $C_E$, galaxy galaxy lensing E-mode power spectra, $C_{n\epsilon}$, and the anisotropic galaxy clustering in low and high redshift bins, $\xi_{gg}$ (see Sect.~\ref{sec:data} for details).   The cross-correlation between the two lensing and the clustering observables is set to zero, as mock data analyses showed these correlations to be negligible for the KiDS and BOSS footprints \citep{joachimi/etal:inprep}.  The Fourier-space lensing observables, are shown to be significantly less correlated between $\ell$-scales, in comparison to the physical-scale clustering observables.
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{Data_Plots/corr_paper_wedge+aPneE+aPeeE_obs_tot_theory}
+		\caption{Correlation coefficients of the \tttp covariance matrix for the cosmic shear, $C_{\rm E}$, galaxy galaxy lensing, $C_{n\epsilon}$ and galaxy clustering observables, $\xi_{gg}$ (see Sect.~\ref{sec:data} for details).}
+		\label{fig:ttttpcov}
+	\end{center}
+\end{figure}
+
 
 
 \section{Parameter priors}

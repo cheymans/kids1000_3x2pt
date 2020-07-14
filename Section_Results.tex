@@ -1,17 +1,17 @@
 \section{Results}
 \label{sec:results}
 We present our multi-probe constraints on the cosmological parameters of the flat $\Lambda$CDM model in Fig.~\ref{fig:cosmology-params}, showing the marginalised posterior distributions for $\sigma_8$, $\Omega_{\rm m}$ and $h$, where the BOSS galaxy clustering constraints (GC: shown blue), break the $\sigma_8-\Omega_{\rm m}$ degeneracy in the KiDS-1000 cosmic shear constraints (CS: shown pink), resulting in tight constraints on $\sigma_8$ in the combined \tttp analysis (shown red). 
-Reporting the MAP values with PJ-HPD credible intervals for the parameters that we are most sensitive to, we find \ch{(@CB: numbers to be updated with final chain with updated covariance)}
-\eqa{
+Reporting the MAP values with PJ-HPD credible intervals for the parameters that we are most sensitive to, we find 
+\preliminary{\eqa{
 \sigma_8 &= 0.76^{+0.021}_{-0.023} \\ \nonumber
 \Omega_{\rm m} &= 0.306^{+0.011}_{-0.014} \\ \nonumber
 S_8 &= 0.769^{+0.018}_{-0.015} \, .
-}
+}}
 Our constraints can be compared to the marginalised posterior distributions from Planck (shown green in Fig.~\ref{fig:cosmology-params}), finding consistency between the marginalised constraints on $\Omega_{\rm m}$ and $h$, but an offset in $\sigma_8$,  which we discuss in detail in Sect.~\ref{sec:planck_comp}.
 
 Tabulated constraints for the full set of cosmological parameters are presented in Appendix~\ref{app:parameter-constraints}, quoting our fiducial MAP with PJ-HPD credible intervals, along with the marginal posterior mode with M-HPD credible intervals. 
-We note that the quoted marginal mode constraint on $S_8$ is $0.2\sigma$ lower than the MAP for this parameter. 
-As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  \TT{@CB - this might just be the noisy PJ-HPD. Final chains will show and this section updated accordingly.}
+We note that the quoted marginal mode constraint on $S_8$ is \preliminary{$0.2\sigma$} lower than the MAP for this parameter. 
+As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  
 
 \begin{figure}
 	\begin{center}
@@ -27,21 +27,16 @@ This is a result of the significant area of BOSS in comparison to KiDS-1000, and
 prohibits the inclusion of large sections of our galaxy-galaxy lensing data vector, shown in Fig.~\ref{fig:Pgk}.  
 The addition of the galaxy-galaxy lensing does however serve to moderately tighten constraints on the amplitude of the intrinsic alignment model $A_{\rm IA}$,  as seen in Fig.~\ref{fig:cosmology-params-all}. 
 
+Fig.~\ref{fig:S8comp} also demonstrates the good agreement between our constraints and weak lensing results from the literature, comparing to cosmic-shear only results from the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{hikage/eta:2019,hamana/etal:2020}, DES \citep{troxel/etal:2018} and previous KiDS analysis \citep[KV450][]{hildebrandt/etal:2020}, in addition to the previous KV450-BOSS `$2\times2$pt' analysis of \citet{troester/etal:2020} and the DES Y1 \tttp analysis from \citet{abbott/etal:2018}.   We refer the reader to \citet{asgari/etal:inprep} for a detailed discussion and comparison of our cosmic-shear results, and Sect.~\ref{sec:WL_comp} for a more detailed comparison with \tttp results in the literature.
+
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/systematics/S8_comparison_blindC}
-		\caption{Constraints on structure growth parameter $S_{8} = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ for different probe combinations: $3\times2$pt, cosmic shear with galaxy-galaxy lensing (CS+GGL), and cosmic shear with galaxy clustering (CS+GC), along with the cosmic shear (CS), and galaxy clustering (GC), single probe analyses.   Our fiducial and preferred MAP with PJ-HPD credible interval (solid) can be compared to the standard, but biased, marginal posterior mode with M-HPD credible intervals (dashed).   The lower section of the figure illustrates how our constraints on $S_8$ change when we ignore the impact of baryon feedback (the `No baryon' case), limit the analysis to a linear galaxy bias model (the `No higher order bias' case), and remove individual tomographic bins from our weak lensing observables.    
-		\TT{Note that only the 3x2pt chain has the clustering bug fixed, hence the overall offset. TO DO:  Add CS+GC to this figure}}
-		\label{fig:S8comp}
+		\caption{Constraints on structure growth parameter $S_{8} = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ for different probe combinations: $3\times2$pt, cosmic shear with galaxy-galaxy lensing (CS+GGL), and cosmic shear with galaxy clustering (CS+GC), along with the cosmic shear (CS), and galaxy clustering (GC), single probe analyses.   Our fiducial and preferred MAP with PJ-HPD credible interval (solid) can be compared to the standard, but biased, marginal posterior mode with M-HPD credible intervals (dashed).    Our results can also be compared to weak lensing measurements from the literature, which typically quote the mean of the marginal posterior mode with tail credible intervals (dotted). 
+		\ch{TO DO:  Add CS+GC to this figure}
+		\label{fig:S8comp}}
 	\end{center}
 \end{figure}
-
-The lower section of Fig.~\ref{fig:S8comp} illustrates the results of a series of sensitivity tests, where we explore how our constraints on $S_8$ change when: 
-we ignore the impact of baryon feedback (the `No baryon' case), fixing $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology; 
-we limit the analysis to a linear galaxy bias model, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as restricting the redshift-space distortion model to a Gaussian velocity distribution; 
-and when we remove individual tomographic bins from our weak lensing observables. 
-The only outlier in this series of tests is the linear-bias model, which highlights the importance of accurate non-linear galaxy bias modelling in \tttp analyses. 
-This series of tests complements the more detailed KiDS-1000 internal consistency analysis of \citet{asgari/etal:inprep}, and is dissected in Appendix~\ref{app:sensitivity}.
 
 Fig.~\ref{fig:cosmology-params-all} displays the marginal posterior distributions for an extended set of cosmological parameters.  
 We find that the constraint on the linear galaxy bias,  $b_1$, in each redshift bin (lower two rows), is more than halved with the addition of the weak lensing data. 
@@ -60,6 +55,23 @@ We recognise, however, that this well-motivated prior choice acts to improve the
 		\label{fig:cosmology-params-all}
 	\end{center}
 \end{figure*}
+
+
+Fig.~\ref{fig:S8comp_sensitivity} illustrates the results of a series of sensitivity tests, where we explore how our \tttp constraints on $S_8$ change when: 
+we ignore the impact of baryon feedback (the `No baryon' case), fixing $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology; 
+we limit the analysis to a linear galaxy bias model, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as restricting the redshift-space distortion model to a Gaussian velocity distribution; 
+and when we remove individual tomographic bins from our weak lensing observables. 
+The only outlier in this series of tests is the linear-bias model, which highlights the importance of accurate non-linear galaxy bias modelling in \tttp analyses. 
+This series of tests complements the more detailed KiDS-1000 internal consistency analysis of \citet{asgari/etal:inprep}, and is dissected in Appendix~\ref{app:sensitivity}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{Parameter_Plots/systematics/S8_comparison_blindC}
+		\caption{\tttp constraints on $S_8$ for a series of sensitivity tests; when we ignore the impact of baryon feedback (the `No baryon' case), limit the analysis to a linear galaxy bias model (the `No higher order bias' case), and remove individual tomographic bins from our weak lensing observables.    
+		\TT{Note that only the 3x2pt chain has the BOSS CosmoSIS-interface bug fixed, hence the overall offset - this will be fixed with the new runs!}
+		\label{fig:S8comp_sensitivity}}
+	\end{center}
+\end{figure}
 
 Table~\ref{tab:goodness-of-fit} records the goodness of fit for each component in our \tttp analysis.  The effective number of degrees of freedom (DoF) are calculated using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.  
 The goodness of fit is excellent for the BOSS galaxy clustering.  For all other cases, the goodness of fit is acceptable\footnote{We define acceptable as $p \geq 0.001$, which corresponds to less than a $\sim 3\sigma$ event.   \citet{abbott/etal:2018} define acceptable as $\chi^2/{\rm DoF} < 1.4$.  We meet both these requirements.}, but only just.
@@ -85,7 +97,7 @@ We are unconcerned by these results, however, given the cosmic shear analysis of
 
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
-\ch{@CB - this section is the one most influenced by the outcome of the final chains.   You therefore might want to leave the internal review of this section until we've completed the review of the other parts.}
+\ch{@All - with apologies this section is the one most influenced by the outcome of the final chains.   The KiDS+BOSS+Planck chain has been running for 4 days on all our cores, and still not finished!  We therefore decided not to wait to start consortium review for the rest of the paper.   You may wish to leave your review of this section until we've completed the review of the other parts, and hopefully by then also completed this section.}
 
 In our KiDS-1000-BOSS \tttp analysis, we find good agreement with Planck for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
 The amplitude of matter fluctuations, $\sigma_8$, that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
