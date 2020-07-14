@@ -16,7 +16,7 @@ As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is kno
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/cosmology/omegam_sigma8_h_blind_C}
-		\caption{Multi-probe constraints on the flat $\Lambda$CDM cosmological model, for the matter fluctuation amplitude parameter, $\sigma_8$, the matter density parameter $\Omega_{\rm m}$, and the Hubble parameter, $h$.  The BOSS galaxy clustering constraints (GC: shown blue), can be compared to the KiDS-1000 cosmic shear constraints (CS: shown pink), the combined $3\times2{\rm pt}$ analysis (shown red), and CMB constraints from \citet{planck/etal:2018}.}
+		\caption{Marginal multi-probe constraints on the flat $\Lambda$CDM cosmological model, for the matter fluctuation amplitude parameter, $\sigma_8$, the matter density parameter $\Omega_{\rm m}$, and the Hubble parameter, $h$.  The BOSS galaxy clustering constraints (GC: shown blue), can be compared to the KiDS-1000 cosmic shear constraints (CS: shown pink), the combined $3\times2{\rm pt}$ analysis (shown red), and CMB constraints from \citet{planck/etal:2018}.}
 		\label{fig:cosmology-params}
 	\end{center}
 \end{figure}
@@ -27,7 +27,7 @@ This is a result of the significant area of BOSS in comparison to KiDS-1000, and
 prohibits the inclusion of large sections of our galaxy-galaxy lensing data vector, shown in Fig.~\ref{fig:Pgk}.  
 The addition of the galaxy-galaxy lensing does however serve to moderately tighten constraints on the amplitude of the intrinsic alignment model $A_{\rm IA}$,  as seen in Fig.~\ref{fig:cosmology-params-all}. 
 
-Fig.~\ref{fig:S8comp} also demonstrates the good agreement between our constraints and weak lensing results from the literature, comparing to cosmic-shear only results from the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{hikage/eta:2019,hamana/etal:2020}, DES \citep{troxel/etal:2018} and previous KiDS analysis \citep[KV450][]{hildebrandt/etal:2020}, in addition to the previous KV450-BOSS `$2\times2$pt' analysis of \citet{troester/etal:2020} and the DES Y1 \tttp analysis from \citet{abbott/etal:2018}.   We refer the reader to \citet{asgari/etal:inprep} for a detailed discussion and comparison of our cosmic-shear results, and Sect.~\ref{sec:WL_comp} for a more detailed comparison with \tttp results in the literature.
+Fig.~\ref{fig:S8comp} also demonstrates the good agreement between our constraints and weak lensing results from the literature, comparing to cosmic-shear only results from the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{hikage/etal:2019,hamana/etal:2020}, DES \citep{troxel/etal:2018} and previous KiDS analysis \citep[KV450][]{hildebrandt/etal:2020}, in addition to the previous KV450-BOSS `$2\times2$pt' analysis of \citet{troester/etal:2020} and the DES Y1 \tttp analysis from \citet{abbott/etal:2018}.   We refer the reader to \citet{asgari/etal:inprep} for a detailed discussion and comparison of our cosmic-shear results, and Sect.~\ref{sec:WL_comp} for a more detailed comparison with \tttp results in the literature.
 
 \begin{figure}
 	\begin{center}
@@ -97,7 +97,7 @@ We are unconcerned by these results, however, given the cosmic shear analysis of
 
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
-\ch{@All - with apologies this section is the one most influenced by the outcome of the final chains.   The KiDS+BOSS+Planck chain has been running for 4 days on all our cores, and still not finished!  We therefore decided not to wait to start consortium review for the rest of the paper.   You may wish to leave your review of this section until we've completed the review of the other parts, and hopefully by then also completed this section.}
+\ch{@All - with apologies this section is the one most influenced by the outcome of the final chains.   The KiDS+BOSS+Planck chain has only just finishing running after 5 days on all our cores.   The iterated covariance \tttp KiDS-BOSS run will now take another 2 days to complete before this section can be finalised.  We decided not to wait to start consortium review for the rest of the paper - but you may wish to leave your review of this section until you've completed the review of the other parts, and hopefully by then we will also have completed this section.}
 
 In our KiDS-1000-BOSS \tttp analysis, we find good agreement with Planck for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
 The amplitude of matter fluctuations, $\sigma_8$, that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
@@ -143,17 +143,26 @@ For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$
 \label{sec:WL_comp}
 Our results are consistent with weak lensing constraints in the literature.   We limit our discussion in this section to published \tttp analyses, referring the reader to \citet{asgari/etal:inprep} who discuss how the KiDS-1000 cosmic shear results compare with other weak lensing surveys.   We note that direct comparisons of cosmological parameters should be approached with some caution, as the priors adopted by different surveys and analyses are often informative \citep[see section 6.1 in][]{joachimi/etal:inprep}.   Homogenising priors for cosmic shear analyses, for example, has been shown to lead to different conclusions when assessing inter-survey consistency \citep{chang/etal:2019, joudaki/etal:2020, asgari/etal:2020_KD}.   
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{Parameter_Plots/cosmology/omegam_sigma8_h_blind_C}
+		\caption{Marginalised posterior distributions for in $\sigma_8-\Omega_{\rm m}$ plane, comparing \tttp analysis from KiDS-1000 with DES Y1 \citep{abbott/etal:2018} and \citep{planck/etal:2018}.   The KiDS-1000-BOSS result can also be compared to our previous KV450-BOSS analysis from \citet{troester/etal:2020}. 
+		\label{fig:DES_KiDS_comp}}
+	\end{center}
+\end{figure}
+
+
 \citet{abbott/etal:2018} present the first year \tttp DES analysis (DES Y1), finding $S_8=0.773^{+0.026}_{-0.020}$, where they report the marginal posterior maximum and the tail credible intervals.  
 This is in excellent agreement with our equivalent result, differing by $0.2\sigma$, with the KiDS-1000-BOSS error being 30\% tighter than the DES Y1 results.  The inclusion of BOSS to our \tttp analysis results in tight constraints on $\Omega_{\rm m}$.  
-This leads to joint KiDS-1000-BOSS constraints on $\sigma_8=0.760^{+0.021}_{-0.023}$ that are more than twice as constraining compared to DES Y1 which finds $\sigma_8=0.817^{+0.045}_{-0.056}$. 
+This leads to joint KiDS-1000-BOSS constraints on $\sigma_8=0.760^{+0.021}_{-0.023}$ that are more than twice as constraining compared to DES Y1 which finds $\sigma_8=0.817^{+0.045}_{-0.056}$, as shown in Fig.~\ref{fig:DES_KiDS_comp}. 
 This comparison serves to highlight the additional power that can be extracted through the combination of spectroscopic and photometric surveys,  and the promising future for the planned overlap between the Dark Energy Spectroscopic Instrument survey \citep{DESI/etal:2016} and the 4-metre Multi-Object Spectroscopic Telescope \citep[4MOST,][]{guiglion/etal:2019},
 with Euclid and the Vera C. Rubin Legacy Survey of Space and Time \citep{laureijs/etal:2011,lsst/etal:2009}, in addition to the nearer-term $\approx\!1400\,\mathrm{deg}^{2}$ of overlap between BOSS and the Hyper Suprime-Cam Strategic Program \citep[HSC,][]{aihara/etal:2019}. 
 
 \citet{vanuitert/etal:2018} and \citet{joudaki/etal:2018} present \tttp analyses for the second KiDS release (KiDS-450), finding, respectively, $S_8 = 0.800_{-0.027}^{+0.029}$ (KiDS with GAMA) and $S_8 = 0.742 \pm 0.035$ (KiDS with BOSS and 2dFLenS limited to the overlap region). 
 Both results are consistent with our KiDS-1000 results, noting that the increase in our $S_8$ constraining power, by a factor of $\approx\! 2$ in this analysis, is driven by increases in both the KiDS survey area, and the BOSS survey area.  
 
-The impact of doubling the KiDS area can be seen by comparing to \citet{troester/etal:2020}, who present a $2\times2$pt analyses for the third KiDS release (KiDS-VIKING-450) with the full BOSS area, finding $S_8 = 0.728 \pm 0.026$.   The $\approx\!40\%$ improvement in constraining power is consistent with expectations from the increased survey area, but a straightforward area-scaling comparison is inappropriate given that KiDS-1000 features improvements in the accuracy of the shear and photometric redshift calibrations, albeit at the expense of a decrease in the effective number density \citep[see][for details]{giblin/etal:inprep}.  
-The offset of $1.2\sigma$ between the KiDS-1000-BOSS and KV-450-BOSS $S_8$ constraints is within expected levels of statistical fluctuations given the increase in the KiDS area by a factor of two, even though the BOSS area remains fixed.   This is because the $S_8$ constraints are primarily driven by KiDS, whereas BOSS primarily constrains $\Omega_m{\rm}$.
+The impact of doubling the KiDS area can be seen by comparing to \citet{troester/etal:2020}, in Fig.~\ref{fig:DES_KiDS_comp}, who present a $2\times2$pt analyses for the KV450 KiDS release with the full BOSS area, finding $S_8 = 0.728 \pm 0.026$.   The $\approx\!40\%$ improvement in constraining power is consistent with expectations from the increased survey area, but a straightforward area-scaling comparison is inappropriate given that KiDS-1000 features improvements in the accuracy of the shear and photometric redshift calibrations, albeit at the expense of a decrease in the effective number density \citep[see][for details]{giblin/etal:inprep}.  
+The offset of $1.2\sigma$ in $S_8$ between the KiDS-1000-BOSS and KV450-BOSS $S_8$ constraints reflects a number of differences in the analyses.  First, as the \tttp $S_8$ constraints are primarily driven by KiDS (see Fig.~\ref{fig:cosmology-params-all}), we expect a reasonable statistical fluctuation in this parameter given the increase in the KiDS survey area by a factor of two, even though the BOSS area remains fixed.   In contrast, BOSS primarily constrains $\Omega_{\rm m}$ which is impacted by the choice of prior on $n_{\rm s}$.  The wider $n_{\rm s}$ prior adopted in \citet{troester/etal:2020}, favours a slightly higher but less well-constrained value for $\Omega_{\rm m}$, leading to a slightly lower but less well-constrained value value for $\sigma_8$, when combined with cosmic shear.   If we had also chosen an uninformative prior on $n_{\rm s}$ for our KiDS-1000-BOSS analysis, a decision that we now cannot revise post unblinding, this would have likely served to further exacerbate any tension with the Planck CMB constraints.   
 
 
 
