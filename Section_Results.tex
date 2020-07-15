@@ -106,12 +106,14 @@ To quantify this discrepancy in the amplitude of matter fluctuations we concentr
 %
 The difference in the marginal posterior of $S_{8}$ between our \tttp analysis and the Planck \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, measured as the difference in the means divided by the standard deviations added in quadrature, is \kpoff.
 
-Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. In these cases the reported low $S_8$, or $\sigma_8$, constraints are formally statistically consistent with Planck, and well below the detection of any anomalies at the $5\sigma$-level.   Considering, however, the $\sim 3\sigma$ difference that we have reported, and the overall trend amongst independent probes, we would argue that we have now reached an uncomfortable point when it comes to regarding the $S_8$ offset as a simple statistical fluke.
+Our results thus continue the trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. 
+In these cases the reported low $S_8$, or $\sigma_8$, constraints are formally statistically consistent with Planck, and well below the detection of any anomalies at the $5\sigma$-level. 
+Considering, however, the $\sim 3\sigma$ difference that we have reported, and the overall trend amongst independent probes, we would argue that we have now reached an uncomfortable point when it comes to regarding the $S_8$ offset as a simple statistical fluke.
 
 \citet{Sanchez2020} pointed out that comparing $S_{8}$ between different experiments can be misleading due to the implicit dependence of $\sigma_{8}$ on $h$ through the $8\,h^{-1}{\rm Mpc}$ radius of the sphere within which the matter fluctuations are measured. 
 A high value of $h$ would result in $\sigma_{8}$ measuring fluctuations within a smaller physical radius and thus inferring higher fluctuations. 
 We thus also consider $S_{12} = \sigma_{12}\left(\omega_{\rm m}/0.14\right)^{0.4}$ \citep{Sanchez2020}, where $\sigma_{12}^{2}$ is the variance of the linear matter field at redshift zero in spheres of radius $12\,\mathrm{Mpc}$.
-We find $S_{12} = 0.754^{+0.017}_{-0.015}$, with the value inferred by Planck being $S_{12} = 0.817_{-0.015}^{+0.011}
+We find $S_{12} = 0.754^{+0.015}_{-0.018}$, with the value inferred by Planck being $S_{12} = 0.817_{-0.015}^{+0.011}
 $, a discrepancy of $3.0\sigma$. 
 This is in agreement with the results for $S_{8}$. 
 Considering that our \tttp constraints on $h$ agree with those of Planck, and our $S_{8}$ constraints show no degeneracy with $h$, this is not surprising.
@@ -130,13 +132,13 @@ The Bayes factor is then
 \ee
 where $P(\vec d | \mathrm{M}_1)$ is the probability of the data $\vec d$ under model $\mathrm{M}_1$ -- the Bayesian evidence. 
 We assume the model priors $P(\mathrm{M}_1)$ and $P(\mathrm{M}_2)$ to be equal, that is, we make no a-priori assumption on the likelihood of $\mathrm{M}_1$ or $\mathrm{M}_2$. 
-We find $R=X$, indicating XX according to the Jeffrey scale. 
+We find $\log R=3.1\pm0.3$, which can be interpreted as odds of $23\pm6$ in favour of model $\mathrm{M}_1$, i.e., consistency between our \tttp measurement and Planck. 
 
-\citet{Handley2019} discuss the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but hardened against prior-dependences. \TT{expand by defining $S$ in more detail?} \ch{if we can compute d, then yes absolutely we need to explain this more.   If we can't then I propose we leave this as is, a niche area in the paper!}
-We find $S=X$. 
+\citet{Handley2019} discuss the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but hardened against prior-dependences. 
+We find $\log S=-2.0\pm0.1$. 
 For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d$ is the difference in the model dimensionality between $\mathrm{M}_1$ and $\mathrm{M}_2$, thus allowing to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
-\TT{Assuming we can compute $d$ accurately:} We calculate $d=XX$ and therefore conclude that our \tttp results and the Planck TTTEEE+lowl+lowE results are in discordance at the $XX\sigma$ level.
-\TT{(Discuss numerical issues with getting $d$, mention other tension metrics, discuss restricting prior range to speed up sampling.) }
+We calculate $d=3.3\pm0.7$ and therefore conclude that the probability of observing our measured suspiciousness statistic is $0.08\pm0.2$, or $1.8\pm0.1\,\sigma$. 
+
 
 
 \subsection{Comparison with weak lensing surveys}
