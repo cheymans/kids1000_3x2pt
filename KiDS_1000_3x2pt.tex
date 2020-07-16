@@ -48,6 +48,8 @@
 \newcommand{\TT}[1]{{\color{purple}{TT: #1}}}
 
 \newcommand{\dd}{{\rm d}}
+\newcommand{\diff}{{\rm d}}
+
 \newcommand{\br}[1]{\left( #1 \right)}
 \newcommand{\bc}[1]{\left\{ #1 \right\}}
 \newcommand{\eqa}[1]{\begin{align}   #1 \end{align}}
@@ -57,14 +59,25 @@
 
 \newcommand{\software}[1]{\texttt{#1}}
 \newcommand{\tttp}{$3\times2$pt\xspace}
-\newcommand{\kpoff}{\preliminary{$3.1\sigma$}\xspace}
+\newcommand{\kpoff}{\ensuremath{3.1\,\sigma}\xspace}
 \newcommand{\kpoffperc}{\preliminary{$8.2 \pm 2.6$\%}\xspace}
 \newcommand{\kSeightval}{\preliminary{$0.769^{+0.018}_{-0.015}$}\xspace}
+\newcommand{\klogR}{\ensuremath{3.1\pm0.3}\xspace}
+\newcommand{\kR}{\ensuremath{23\pm6}\xspace}
+\newcommand{\klogS}{\ensuremath{-2.0\pm0.1}\xspace}
+\newcommand{\klogSPTE}{\ensuremath{0.08\pm0.2}\xspace}
+\newcommand{\klogSPTEsigma}{\ensuremath{1.8\pm0.1\,\sigma}\xspace}
 
 \newcommand{\LCDM}{$\Lambda$CDM\xspace}
 
 \newcommand{\be}{\begin{equation}}  \newcommand{\ee}{\end{equation}}
 
+\usepackage{environ}
+\NewEnviron{splitequation}{%
+    \begin{equation}\begin{split}
+        \BODY
+    \end{split}\end{equation}}
+    
 \begin{document} 
 
    \title{KiDS-1000 Cosmology: Multi-probe weak gravitational lensing and spectroscopic galaxy clustering constraints}

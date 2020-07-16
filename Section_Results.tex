@@ -85,10 +85,11 @@ We note that the cosmic shear analysis of \citet{asgari/etal:inprep}, where a di
     \toprule
     Probe             & $\chi^2$       & DoF       & $p$-value   \\
     \midrule
-	Cosmic shear     & $< 152.7$ & $120-4.5$ & 0.012 \\
-	Galaxy clustering & $< 169.5$ & $168-13$ & 0.201 \\
-	Cosmic shear + GGL & $< 180.6$ & $142-8$ & 0.005 \\
-	$3\times2$pt     & $352.9$ & \preliminary{$310-13$} & \preliminary{0.014} \\
+	Cosmic shear     & $< 152.7$ & $120-\preliminary{3.0}$ & 0.015 \\
+	Galaxy clustering (GC) & $< 169.5$ & $168-\preliminary{10.6}$ & 0.241 \\
+	Cosmic shear + GGL & $< 180.6$ & $142-\preliminary{7.3}$ & 0.005 \\
+	Cosmic shear + GC & $< 323.0$ & $288-\preliminary{11.9}$ & 0.028 \\
+	KiDS-1000 $3\times2$pt & $< 352.9$ & $310-\preliminary{12.5}$ & 0.015 \\
 
     \bottomrule
 \end{tabular}
@@ -97,8 +98,6 @@ We note that the cosmic shear analysis of \citet{asgari/etal:inprep}, where a di
 
 \subsection{Comparison with Planck}
 \label{sec:planck_comp}
-\ch{@All - with apologies this section is the one most influenced by the outcome of the final chains.   The KiDS+BOSS+Planck chain has only just finishing running after 5 days on all our cores.   The iterated covariance \tttp KiDS-BOSS run will now take another 2 days to complete before this section can be finalised.  We decided not to wait to start consortium review for the rest of the paper - but you may wish to leave your review of this section until you've completed the review of the other parts, and hopefully by then we will also have completed this section.}
-
 In our KiDS-1000-BOSS \tttp analysis, we find good agreement with Planck for the matter density parameter, $\Omega_{\rm m}$, and the Hubble parameter, $h$, (see Fig.~\ref{fig:cosmology-params}).
 The amplitude of matter fluctuations, $\sigma_8$, that we infer from the clustering of galaxies within, and lensing by, the large-scale structure of the low-redshift Universe is lower than that inferred by Planck from the CMB, however. 
 
@@ -128,18 +127,97 @@ The two models under consideration are
 \end{description}
 The Bayes factor is then
 \be
+\label{equ:bayes-factor}
 	R = \frac{P(\vec d | \mathrm{M}_1)P(\mathrm{M}_1)}{P(\vec d | \mathrm{M}_2)P(\mathrm{M}_2)} \ ,
 \ee
 where $P(\vec d | \mathrm{M}_1)$ is the probability of the data $\vec d$ under model $\mathrm{M}_1$ -- the Bayesian evidence. 
 We assume the model priors $P(\mathrm{M}_1)$ and $P(\mathrm{M}_2)$ to be equal, that is, we make no a-priori assumption on the likelihood of $\mathrm{M}_1$ or $\mathrm{M}_2$. 
-We find $\log R=3.1\pm0.3$, which can be interpreted as odds of $23\pm6$ in favour of model $\mathrm{M}_1$, i.e., consistency between our \tttp measurement and Planck. 
+We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandley/anesthetic}}\citep{anesthetic} to compute $R$ and find $\log R=3.1\pm0.3$, which can be interpreted as odds of $23\pm6$ in favour of model $\mathrm{M}_1$, i.e., consistency between our \tttp measurement and Planck. 
 
 \citet{Handley2019} discuss the dependence of $R$ on the parameter priors and propose a statistic $S$ -- called `suspiciousness' -- based on the Bayes factor but hardened against prior-dependences. 
+They define 
+\be
+\label{equ:suspiciousness}
+ \log S = \log R - \log I \,.
+\ee
+Here $\log R$ is the logarithm of the Bayes factor in Eq.~\eqref{equ:bayes-factor}:
+\be
+	\log R = \log Z_{\rm 3\times2pt+Planck} - \log Z_{\rm 3\times2pt} - \log Z_{\rm Planck} \,,
+\ee 
+with the evidence $Z_{i}$ given by
+\be
+	Z = \int \mathcal{L}\pi\diff\vec\theta \,,
+\ee
+the integral of the likelihood $\mathcal{L}$ and prior $\pi$ over the parameters $\vec\theta$. 
+The information ration $I$ in \eqref{equ:suspiciousness} is defined as
+\be
+ \log I = \mathcal{D}_{\rm 3\times2pt} + \mathcal{D}_{\rm Planck}  - \mathcal{D}_{\rm 3\times2pt+Planck} \,,
+\ee
+with $\mathcal{D}_{i}$ being the Kullback-Leibler divergence between the posterior $P$ and prior for probe $i$:
+\begin{splitequation}
+	\mathcal{D} &= \int P \log \frac{P}{\pi}\diff\vec\theta = \int P \log\mathcal{L}\diff\vec\theta - \log Z \\
+	&= \langle\log\mathcal{L}\rangle_{P} - \log Z \,.
+\end{splitequation}
+The second equality follows from Bayes theorem: $P = \frac{\mathcal{L}\pi}{Z}$. 
+Using this definition of $\mathcal{D}$ allows us to rephrase the suspiciousness solely in terms of the expectation values of the log-likelihoods:
+\begin{splitequation}
+	\log S &= \langle\log\mathcal{L}_{\rm 3\times2pt+Planck}\rangle_{P_{\rm 3\times2pt+Planck}} - \langle\log\mathcal{L}_{\rm 3\times2pt}\rangle_{P_{\rm 3\times2pt}} \\
+	&\quad- \langle\log\mathcal{L}_{\rm Planck}\rangle_{P_{\rm Planck}} \,.
+\end{splitequation}
 We find $\log S=-2.0\pm0.1$. 
-For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d$ is the difference in the model dimensionality between $\mathrm{M}_1$ and $\mathrm{M}_2$, thus allowing to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
+For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d=d_{\rm 3\times2pt} + d_{\rm Planck} - d_{\rm 3\times2pt+Planck}$ is the difference in the Bayesian model dimensionalities.
+This allows us to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
+We calculate $d$ following \citet{Handley2019} from the variances of the log-likelihoods. 
+Other estimates of the Bayesian model dimensionality, such as those introduced in \citet{Raveri2019} yield very similar results. 
 We calculate $d=3.3\pm0.7$ and therefore conclude that the probability of observing our measured suspiciousness statistic is $0.08\pm0.2$, or $1.8\pm0.1\,\sigma$. 
 
+\citet{Raveri2019} introduce a number of metrics to quantify the consistency of data sets of which we consider two: $Q_{\rm DMAP}$ and $Q_{\rm UDM}$. 
+The first,
+\be
+	Q_{\rm DMAP} =  2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\rm 3\times2pt}) + 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\rm Planck}) - 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\rm 3\times2pt+Planck}) \,,
+\ee
+is given by the differences of the log-likelihoods $\log\mathcal{L}(\vec\theta^{\rm MAP}_{i})$ at the MAP of the respective posteriors. 
+It quantifies how the goodness-of-fit changes when the two data sets are combined. 
+For Gaussian posteriors, the sampling distribution of $Q_{\rm DMAP}$ is $\chi^{2}$ with $d_{\rm 3\times2pt} + d_{\rm Planck} - d_{\rm 3\times2pt+Planck}$ degrees of freedom. 
+Here we follow \citet{Raveri2019} and calculate the model dimensionalities by $d_{i} = N - \mathrm{tr}[\mathcal{C}_{\pi}^{-1}\mathcal{C}_{P}]$, where $N$ is the total number of varied parameters, $\mathcal{C}_{\pi}$ is the prior parameter covariance, and $\mathcal{C}_{P}$ is the posterior parameter covariance. 
+Using the variance of the log-likelihoods, as was done for the suspiciousness, yields consistent results.
+We find \preliminary{$Q_{\rm DMAP} = 11.3$}, with $d=3.6$, corresponding to a probability of \preliminary{0.016, or $2.4\, \sigma$}. 
+As an interesting aside, the quantity $Q_{\rm DMAP} + 4\log S$ corresponds to the twice the deviance information criterion ratio introduced in \citet{Joudaki2017}.
 
+The second metric in \citet{Raveri2019} that we consider is $Q_{\rm UDM}$, which generalises the notion of parameter differences between posteriors to multiple dimensions. 
+The metric is defined between the posterior of one data set and the posterior of the combined data sets:
+\be
+\label{equ:qudm}
+	Q_{\rm UDM} = \Delta\bar{\vec\theta}^{T}(\mathcal{C}_{\rm Planck} - \mathcal{C}_{\rm 3\times2pt+Planck})^{-1}\Delta\bar{\vec\theta} \,,
+\ee
+where $\Delta\bar{\vec\theta} = \bar{\vec\theta}_{\rm Planck} - \bar{\vec\theta}_{\rm 3\times2pt+Planck}$ is the shift in the mean of the shared parameters, and $\mathcal{C}_{\rm Planck}$ and $\mathcal{C}_{\rm 3\times2pt+Planck}$ are the posterior parameter covariances for Planck and \tttp+Planck, respectively. 
+The estimator \eqref{equ:qudm} is asymmetric in the first data set if the posteriors are non-Gaussian. 
+In this case, the data set with the more Gaussian posterior should be used, which in our case is Planck. 
+We use \software{tensiometer}\footnote{\url{https://github.com/mraveri/tensiometer}} to compute $Q_{\rm UDM}$ and its associated number of degrees of freedom. 
+We find $Q_{\rm UDM} = 7.7$ with $d = 3$. The sampling distribution is approximated by $\chi^{2}_{d}$, such that the probability of the observed value of $Q_{\rm UDM} $ is $0.054$, or $1.9\,\sigma$. 
+
+The different metrics to assess the consistency of our \tttp analysis with Planck are summarised in Table~\ref{tab:tension}.
+
+\begin{table}
+	\begin{center}
+		\caption{Estimators of the consistency between our fiducial \tttp analysis and the Planck 2018 TTTEEE+lowE \citep{planck/etal:2018} results. 
+		The considered estimators are 1) the differences between the means in $S_{8}$, divided by the standard deviations added in quadrature 2) the Bayes ratio $R$ between a model that assumes a single cosmology for both our \tttp and the Planck data, and a model that uses separate cosmologies for the two data sets 3) the logarithm $\log R$ of the Bayes ratio 4) the suspiciousness $\log S$ \citep{Handley2019} 5),6) the concordance/discordance estimators $Q_{\rm DMAP}$ and $Q_{\rm UDM}$ \citep{Raveri2019}. 
+		The fist column lists the estimator, the second column the measured value, while third and fourth columns quantify the probability of the measured value under the assumption that the two data sets are consistent.}
+		\label{tab:tension}
+\begin{tabular}{lccc}
+    \toprule
+    Estimator             & Value &PTE   & PTE [$\sigma$]\\
+    \midrule
+	$\frac{|\bar{S_{8}}^{\rm 3\times2pt}-\bar{S_{8}}^{\rm Planck}|}{\sqrt{\mathrm{Var}[S_{8}^{\rm 3\times2pt}] + \mathrm{Var}[S_{8}^{\rm Planck}]}}$     & -- & 0.001 & \kpoff  \\
+	$R$     & \kR & -- & -- \\
+	$\log R$    &  \klogR& -- & --\\
+	$\log S$    & \klogS & \klogSPTE &\klogSPTEsigma \\
+	$Q_{\rm DMAP}$    & \preliminary{$11.3$} & \preliminary{0.016} & \preliminary{$2.4\, \sigma$} \\
+	$Q_{\rm UDM}$    & 7.7 & $0.054$  &$1.9\,\sigma$ \\
+    \bottomrule
+\end{tabular}
+	\end{center}
+\end{table}
 
 \subsection{Comparison with weak lensing surveys}
 \label{sec:WL_comp}
@@ -148,7 +226,7 @@ Our results are consistent with weak lensing constraints in the literature.   We
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/cosmology/omegam_sigma8_survey_comparison}
-		\caption{Marginalised posterior distribution in the $\sigma_8-\Omega_{\rm m}$ plane, comparing the \tttp analyses from KiDS-1000 and DES Y1 \citep{abbott/etal:2018} with the CMB constraints from \citet{planck/etal:2018}.   The KiDS-1000-BOSS result can also be compared to our previous KV450-BOSS analysis from \citet{troester/etal:2020}. 
+		\caption{Marginalised posterior distribution in the $\sigma_8$-$\Omega_{\rm m}$ plane, comparing the \tttp analyses from KiDS-1000 and DES Y1 \citep{abbott/etal:2018} with the CMB constraints from \citet{planck/etal:2018}.   The KiDS-1000-BOSS result can also be compared to our previous KV450-BOSS analysis from \citet{troester/etal:2020}. 
 		\label{fig:DES_KiDS_comp}}
 	\end{center}
 \end{figure}
