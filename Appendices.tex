@@ -159,8 +159,58 @@ As we are only interested in relative shifts in the sensitivity tests presented 
 
 As reported in \citet{giblin/etal:inprep}, co-author Kannawadi was unblinded early in the process to permit accurate calibration of the shear measurements in his re-analysis of KiDS-1000-like image simulations.   Co-authors Wright and Heymans also wish to record that they independently had a suspicion over which blind was the truth based on the changes that the SOM gold selection made to the blinded KiDS-1000 catalogue effective number density and ellipticity dispersion, compared to the impact the SOM selection made to the KiDS-VIKING-450 catalogue analysed in \citet{wright/etal:2020b}.  These suspicions were never shared with the rest of the team, nor discussed with each other, and on unblinding were found to both be false, and different!   This issue nevertheless highlighted to us the challenges of catalogue-level blinding for successive data releases where little has changed in the core data reduction process, if the people working at the coal-face of catalogue production are the same people working on the cosmological analysis.   Future KiDS blinding will therefore likely adopt the approach advocated by \citet{sellentin:2020}, where the covariance matrix is modified in the analysis.
 
-\section{Expected offsets between surveys}
+\section{Expected $S_8$ differences between partially overlapping weak lensing surveys}
 \label{app:expectedoffsets}
+In this Appendix we construct a simple model to estimate the expected statistical fluctuation in $S_8$ constraints from partially overlapping weak lensing surveys, specifically our previous \citep[KV450,][]{wright/etal:2020b}, and our current KiDS analyses.
+
+The $S_8$ measurement from KiDS-1000, $Z$, can be simplistically modelled as the area-weighted average of the measurement from the KV450 footprint, $X$, with the measurement from the additional area added for KIDS-1000, $Y$, as
+\begin{equation}
+  Z = \frac{A_X X + A_Y Y}{A_Z} \, ,
+\end{equation}
+where $A_X$ is the effective area of the KV450 footprint, $A_Z$ is the effective area of the KiDS-1000 footprint, and $A_Y = A_Z - A_X$, is the additional area added between the two data releases.  Approximating $X$ and $Y$ as uncorrelated disjoint areas, a significant approximation that ignores the large-scale correlations between them but is sufficient for this toy model, the uncertainty on $Z$, $\sigma_Z$, can be written as
+\be
+\sigma_Z^2 = \left(\frac{A_X}{A_Z}\right)^2 \sigma_X^2 + \left(\frac{A_Y}{A_Z}\right)^2 \sigma_Y^2
+\label{eqn:sigmaZ}
+\ee
+where $\sigma_X$ and $\sigma_Y$ are the uncertainty on measurements $X$ and $Y$ respectively.   
+
+Defining $\Delta = Z - X$, as the offset between the KiDS-1000 and KV450 measurements, we find \ch{being verbose here to work out why our results differ, won't include the next 2 equations in the paper}
+\be
+\Delta = X\, \left(\frac{A_X}{A_Z} -1 \right) + Y\, \frac{A_Y}{A_Z} \, ,
+\ee
+with an associated uncertainty
+\be
+\sigma_\Delta^2=\sigma_X^2\left(\frac{A_X}{A_Z} -1 \right)^2 + \sigma_Y^2\frac{A_Y^2}{A_Z^2} \, .
+\ee
+Substituting in $\sigma_Y$ from Eq.~(\ref{eqn:sigmaZ}) we find the uncertainty in terms of $\sigma_Z$ and $\sigma_X$ to be
+\be
+\sigma_\Delta^2 = \sigma_Z^2 + \sigma_X^2 - \frac{2A_X}{A_Z}\sigma_X^2 \, .
+\ee
+
+The absolute difference ($|\Delta|$) is distributed as a folded Gaussian, with mean $\mathrm{E}[|\Delta|] = \sqrt{\2/\pi}\sigma_\Delta$, and cumulative distribution function, CDF of
+\begin{equation}
+   \mathrm{CDF}(x) = \mathrm{erf}\left(\frac{x}{\sigma_\Delta\sqrt{2}}\right) \,.
+\end{equation}
+
+Comparing the marginal $S_8$ constraints (M-HPD) from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, with the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees, we find $|\Delta|=2.2\sigma_\Delta$, and offset that is expected to be found 2.5\% of the time.
+
+Comparing the MAP with PJ-HPD constraints from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.767^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.022}_{-0.015}$]{asgari/etal:inprep}, we find $|\Delta|=0.04\sigma_\Delta$, and offset that is expected to be found 97.5\% of the time.
+
+Comparing the marginal $S_8$ constraints (M-HPD) from the $2\times2$pt BOSS witwo-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, with the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees, we find $|\Delta|=2.2\sigma_\Delta$, and offset that is expected to be found 2.5\% of the time.
+
+
+The joint measurements of
+
+
+Let $\sigma_X$ be the uncertainty on $S_8$ from KV450, and $\sigma_Z$ be the uncertainty from KiDS-1000.   $A_X$ is the effective area of the KV450 footprint, and $A_Z$ the effective area of the KiDS-1000 footprint.    
+
+
+
+
+
+
+
+
 
 Let $X\sim N(0,\sigma^2)$, $Y\sim N(0,\sigma^2)$, and $Z=\frac{1}{2}(X+Y)$ with $Z\sim N(0, \frac{1}{2}\sigma^2)$. Think $X$=`KV450' and $Z$=`KiDS-1000'.
 
