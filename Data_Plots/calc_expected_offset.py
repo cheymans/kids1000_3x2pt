@@ -23,11 +23,11 @@ eS8_KT=(0.022+0.015)/2.0
 #mode with marginal 68% CI errors from Troester et al 2020, vs CH/TT et al 2pt
 #3x2pt marginal
 
-#S8_KV=0.728
-#eS8_KV=0.026
+S8_KV=0.728
+eS8_KV=0.026
 
-#S8_KT=0.766
-#eS8_KT=(0.017+0.016)/2.0
+S8_KT=0.766
+eS8_KT=(0.017+0.016)/2.0
 
 diff = S8_KT - S8_KV
 #vardiff = eS8_KT**2 + eS8_KV**2 - (2*np.sqrt(A_KV/A_KT)*eS8_KT*eS8_KV)

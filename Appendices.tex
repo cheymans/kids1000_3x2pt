@@ -187,30 +187,20 @@ Substituting in $\sigma_Y$ from Eq.~(\ref{eqn:sigmaZ}) we find the uncertainty i
 \sigma_\Delta^2 = \sigma_Z^2 + \sigma_X^2 - \frac{2A_X}{A_Z}\sigma_X^2 \, .
 \ee
 
-The absolute difference ($|\Delta|$) is distributed as a folded Gaussian, with mean $\mathrm{E}[|\Delta|] = \sqrt{\2/\pi}\sigma_\Delta$, and cumulative distribution function, CDF of
+The absolute difference ($|\Delta|$) is distributed as a folded Gaussian, with mean $\mathrm{E}[|\Delta|] = \sqrt{2/\pi}\sigma_\Delta$, and cumulative distribution function, CDF of
 \begin{equation}
    \mathrm{CDF}(x) = \mathrm{erf}\left(\frac{x}{\sigma_\Delta\sqrt{2}}\right) \,.
 \end{equation}
 
-Comparing the marginal $S_8$ constraints (M-HPD) from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, with the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees, we find $|\Delta|=2.2\sigma_\Delta$, and offset that is expected to be found 2.5\% of the time.
+Comparing the marginal $S_8$ constraints (M-HPD) from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, with the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees, we find $|\Delta|=2.2\sigma_\Delta$, an offset that is expected to be found 2.5\% of the time.   Comparing the marginal $S_8$ constraints (M-HPD) from the $2\times2$pt analysis of \citet[][KV450+BOSS X: $S_8 = 0.728 \pm 0.026$]{troester/etal:2020} with the \tttp constraints from this analysis (KiDS-1000+BOSS Z: $S_8=0.766^{+0.018}_{-0.015}$), we find $|\Delta|=2.0\sigma_\Delta$, an offset that is expected to be found 4.5\% of the time.   
 
-Comparing the MAP with PJ-HPD constraints from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.767^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.022}_{-0.015}$]{asgari/etal:inprep}, we find $|\Delta|=0.04\sigma_\Delta$, and offset that is expected to be found 97.5\% of the time.
+The probability of finding these offsets is low, but acceptable, particularly given that our conclusions significantly change when we compare the MAP with PJ-HPD constraints.  In this case from the two-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.767^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.022}_{-0.015}$]{asgari/etal:inprep}, we find $|\Delta|=0.04\sigma_\Delta$, an offset that is expected to be found 97.5\% of the time.   This demonstrates that for an accurate assesment of the `tension' between results we need to consider the full shape of the posterior (see the discussion in Sect.~\ref{sec:planck_comp}).
 
-Comparing the marginal $S_8$ constraints (M-HPD) from the $2\times2$pt BOSS witwo-point shear correlation function analysis of \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, with the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees, we find $|\Delta|=2.2\sigma_\Delta$, and offset that is expected to be found 2.5\% of the time.
-
-
-The joint measurements of
-
-
-Let $\sigma_X$ be the uncertainty on $S_8$ from KV450, and $\sigma_Z$ be the uncertainty from KiDS-1000.   $A_X$ is the effective area of the KV450 footprint, and $A_Z$ the effective area of the KiDS-1000 footprint.    
+This simple model analysis is sufficient to conclude that the increase in $S_8$ that we find between KV450 and KiDS-1000 is plausible, given statistical fluctuations.    A full assessment could be conducted by analysing a reasonable fraction of the 20,000 KiDS mock catalogues from \citet{joachimi/etal:inprep}, with the KiDS-1000 and KV450 footprints imposed.  Unfortunately this is, however, out-of-scope for this analysis, given the significant compute power that would be incurred.
 
 
 
-
-
-
-
-
+\subsection{TT's original}
 
 Let $X\sim N(0,\sigma^2)$, $Y\sim N(0,\sigma^2)$, and $Z=\frac{1}{2}(X+Y)$ with $Z\sim N(0, \frac{1}{2}\sigma^2)$. Think $X$=`KV450' and $Z$=`KiDS-1000'.
 
@@ -239,7 +229,11 @@ The joint measurements can be modelled as $(X, Y_1, Y_2)\sim N(0,\Sigma)$, where
               0                    & 0                    & \sigma_{Y_2}^2
             \end{pmatrix}\, ,
 \end{equation}
-where $\sigma_{Y_1}=\sqrt{\frac{A_Z}{A_X}}\sigma_Z$ and $\sigma_{Y_2}=\sqrt{\frac{A_Z}{(A_Z-A_X)}}\sigma_Z$ are the uncertainties of the KiDS-1000 measurement on the KV450 and new footprint, respectively. 
+where $\sigma_{Y_1}=\sqrt{\frac{A_Z}{A_X}}\sigma_Z$ and $\sigma_{Y_2}=\sqrt{\frac{A_Z}{(A_Z-A_X)}}\sigma_Z$ are the uncertainties of the KiDS-1000 measurement on the KV450 and new footprint, respectively.  
+
+\ch{I don't think this can be right though as here $\sigma_{Y_1} = \sigma_X$ and $\sigma_{Y_2} = \sigma_Y$ in my notation.  Putting these uncertainties into equation~\ref{eqn:sigmaZ}, you end up with $\sigma_Z^2 = \sigma_Z^2 + \sigma_Z^2$?}.
+
+
 On the KV450 footprint the measurements $X$ and $Y_1$ are 100\% correlated. 
 Now, let $\Delta = Z - X$, the offset between the KiDS-1000 and KV450 measurements. We have $\sigma_\Delta^2 = \mathrm{Var}[\Delta] = \sigma_X^2 + \sigma_Z^2 - 2\sqrt{\frac{A_X}{A_Z}}\sigma_X\sigma_Z$. The expectation and CDF for $|\Delta|$ follows as above.
 
