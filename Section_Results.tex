@@ -66,8 +66,7 @@ This series of tests complements the more detailed KiDS-1000 internal consistenc
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{Parameter_Plots/systematics/S8_comparison_blindC}
-		\caption{\tttp constraints on $S_8$ for a series of sensitivity tests; when we ignore the impact of baryon feedback (the `No baryon' case), limit the analysis to a linear galaxy bias model (the `No higher order bias' case), and remove individual tomographic bins from our weak lensing observables.    
-		\TT{Note that only the 3x2pt chain has the BOSS CosmoSIS-interface bug fixed, hence the overall offset - this will be fixed with the new runs!}
+		\caption{\tttp constraints on $S_8$ for a series of sensitivity tests; when we ignore the impact of baryon feedback (the `No baryon' case), limit the analysis to a linear galaxy bias model (the `No higher order bias' case), and remove individual tomographic bins from our weak lensing observables.  
 		\label{fig:S8comp_sensitivity}}
 	\end{center}
 \end{figure}
@@ -77,25 +76,27 @@ The effective number of degrees of freedom (DoF) are calculated using the estima
 The goodness-of-fit is excellent for the BOSS galaxy clustering.  For all other cases, the goodness-of-fit is certainly acceptable\footnote{We define acceptable as $p \geq 0.001$, which corresponds to less than a $\sim 3\sigma$ event.   \citet{abbott/etal:2018} define acceptable as $\chi^2/{\rm DoF} < 1.4$.  We meet both these requirements.}.
 We note that the cosmic shear analysis of \citet{asgari/etal:inprep}, where a different choice in the cosmic shear two-point statistic results in an excellent goodness-of-fit, shows no significant changes in the inferred cosmological parameters.    As such, we could be subject to an unlucky noise fluctuation that particularly impacts the band power estimator in Eq. (\ref{eq:cl_cosmicshear}).  Cautiously inspecting Fig.~\ref{fig:Pkk}, as `$\chi$-by-eye' is particularly dangerous with correlated data points, we nevertheless note a handful of outlying points, for example the low $\ell$-scales in the fifth tomographic bin.   We also note that \citet{giblin/etal:inprep} document a significant but low-level PSF residual systematic in the KiDS-1000 fourth and fifth tomographic bins that was shown to reduce the overall goodness-of-fit in a cosmic shear analysis, but not bias the recovered cosmological parameters \citep[see also the discussion in][]{amara/refregier:2008}.  Future work to remove these low-level residual distortions is therefore expected to further improve the goodness-of-fit.
 
-\begin{table}
+\begin{table*}
 	\begin{center}
 		\caption{The goodness-of-fit of the flat $\Lambda$CDM cosmological model to each of the single and joint probe combinations with cosmic shear, galaxy clustering (GC) and galaxy-galaxy lensing (GGL).}
 		\label{tab:goodness-of-fit}
-\begin{tabular}{lrcl}
+\begin{tabular}{lcccccc}
     \toprule
-    Probe             & $\chi^2$       & DoF       & $p$-value   \\
+    Probe             & $\chi^2_{\rm MAP}$  & Data DoF  & Model DoF                   & PTE  & Model DoF          & PTE    \\
+                      &                     &           &\citep{joachimi/etal:inprep} &      & \citep{Raveri2019} & \\
     \midrule
-	Cosmic shear     & $< 152.7$ & $120-\preliminary{3.0}$ & 0.015 \\
-	Galaxy clustering (GC) & $< 169.5$ & $168-\preliminary{10.6}$ & 0.241 \\
-	Cosmic shear + GGL & $< 180.6$ & $142-\preliminary{7.3}$ & 0.005 \\
-	Cosmic shear + GC & $< 323.0$ & $288-\preliminary{11.9}$ & 0.028 \\
-	KiDS-1000 $3\times2$pt & $< 352.9$ & $310-\preliminary{12.5}$ & 0.015 \\
+	Cosmic shear     & $152.1$ & $120$  &4.5 & 0.013 &3.0 & 0.016 \\
+	Galaxy clustering & $168.2$ & $168$  &-- & -- &10.6 & 0.263 \\
+	Cosmic shear + GGL & $178.7$ & $142$  &9.1 & 0.005 &7.3 & 0.007 \\
+	Cosmic shear + galaxy clustering & $321.2$ & $288$  &-- & -- &11.9 & 0.032 \\
+	KiDS-1000 $3\times2$pt & $356.2$ & $310$  &-- & -- &12.5 & 0.011 \\
 
     \bottomrule
 \end{tabular}
 	\end{center}
-	\tablefoot{We list the minimum $\chi^2$ value, the effective number of degrees of freedom (DoF) and the corresponding $p$-value which describes the probability of producing measurements that are more extreme than the data, assuming the cosmological model is correct.   The DoF is presented as the difference between the total number of data points and the effective number of free parameters, accounting for the impact of priors and non-linear dependencies between the parameters.}
-\end{table}
+	\tablefoot{We list the $\chi^2$ value at the mode of the posterior, the number of degrees of freedom (DoF) of the data, the effective DoF of the model, and the probability to exceed (PTE) the measured $\chi^{2}$ value, assuming the total DoF are given by $\text{data DoF}-\text{model DoF}$. 
+The effective DoF of the model are estimated following \citet{joachimi/etal:inprep} and \citet{Raveri2019}, accounting for the impact of priors and non-linear dependencies between the parameters. }
+\end{table*}
 
 \subsection{Comparison with weak lensing surveys}
 \label{sec:WL_comp}
@@ -238,7 +239,7 @@ The different metrics to assess the consistency of our \tttp analysis with {\it 
 	$R$     & \kR & -- & -- \\
 	$\log R$    &  \klogR& -- & --\\
 	$\log S$    & \klogS & \klogSPTE &\klogSPTEsigma \\
-	$Q_{\rm DMAP}$    & \preliminary{$11.3$} & \preliminary{0.016} & \preliminary{$2.4\, \sigma$} \\
+	$Q_{\rm DMAP}$    & 9.5 & 0.037 & $2.1\, \sigma$\\
 	$Q_{\rm UDM}$    & 7.7 & $0.054$  &$1.9\,\sigma$ \\
     \bottomrule
 \end{tabular}
