@@ -32,7 +32,7 @@ eS8_KT=(0.017+0.016)/2.0
 diff = S8_KT - S8_KV
 #vardiff = eS8_KT**2 + eS8_KV**2 - (2*np.sqrt(A_KV/A_KT)*eS8_KT*eS8_KV)
 
-vardiff= eS8_KT**2 + eS8_KV**2 - 2*(A_KV/A_KT)*eS8_KV**2
+vardiff= eS8_KT**2 + eS8_KV**2 - 2*(A_KT/A_KV)*eS8_KV**2
 
 print (diff, diff/np.sqrt(vardiff))
 
