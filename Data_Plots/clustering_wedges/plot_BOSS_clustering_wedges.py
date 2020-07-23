@@ -56,9 +56,9 @@ for lensbin in ("low","high"):
 
     # read in the data
     if lensbin=="low":
-        labelchar='0.2<z<0.5'
+        labelchar='$0.2 < z \leq 0.5$'
     else:
-        labelchar='0.5<z<0.75'
+        labelchar='$0.5 < z \leq 0.75$'
 
     wedgesfile='%s%s%s'%(filetop,lensbin,filetail)
     indata = np.loadtxt(wedgesfile)
