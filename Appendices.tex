@@ -161,19 +161,17 @@ As reported in \citet{giblin/etal:inprep}, co-author Kannawadi was unblinded ear
 
 \section{Expected $S_8$ differences between partially overlapping weak lensing surveys}
 \label{app:expectedoffsets}
-In this Appendix we construct a simple model to estimate the expected statistical fluctuation in $S_8$ constraints from partially overlapping weak lensing surveys, specifically our previous \citep[KV450,][]{wright/etal:2020b}, and current KiDS analyses.
-
-Assuming that we only wish to constrain the overall amplitude of the measurement, the inference can be approximated by a linear least-squares problem, where $S_{8}$, the parameter of interest\footnote{The amplitude of the weak lensing signal scales roughly with $S_8$ \citep{jain/seljak:1997}, with an uncertainty variance that scales with the inverse survey area \citep{schneider/etal:2002}.}, is Gaussian distributed. 
+In this Appendix we construct a simple model to estimate the expected statistical fluctuation in $S_8$ constraints from partially overlapping weak lensing surveys, specifically our previous \citep[KV450,][]{wright/etal:2020b}, and current KiDS analyses.   Assuming that we only wish to constrain the overall amplitude of the measurement, the inference can be approximated by a linear least-squares problem, where $S_{8}$, the parameter of interest, is Gaussian distributed. 
 
 In the following, measurements derived from the KV450 footprint are denoted by an $X$ in the subscript, while measurements on the new area added for KiDS-1000 are denoted with a $Y$. 
 Measurement derived from the full KiDS-1000 footprint are denoted with a $Z$. 
 Now, let $S^{\rm KV450}_{X}$ denote the value of $S_{8}$ estimated from the KV450 footprint, using the KV450 methodology; $S^\text{KiDS-1000}_{Y}$ the value estimated from the newly added area using the KiDS-1000 methodology; and $S^\text{KiDS-1000}_{Z}$ the KiDS-1000 value estimated from the full footprint. 
-Approximating the estimates from disjoint footprints as independent, the $S_8$ measurement from the full KiDS-1000 area is then given by the area-weighted average
+Approximating the estimates from disjoint footprints as independent, the $S_8$ measurement from the full KiDS-1000 area is then given by the area-weighted average\footnote{The amplitude of the weak lensing signal scales roughly with $S_8$ \citep{jain/seljak:1997}, with an uncertainty variance that scales with the inverse survey area \citep{schneider/etal:2002}.}
 \begin{equation}
   S^\text{KiDS-1000}_Z = \frac{A_X S^\text{KiDS-1000}_X + A_Y S^\text{KiDS-1000}_Y}{A_Z} \, .
 \end{equation}
 Here $A_X$ is the effective area of the KV450 footprint, $A_Z$ is the effective area of the KiDS-1000 footprint, and $A_Y = A_Z - A_X$, is the additional area added between the two data releases.  
-The uncertainty $\sigma_{X}^\text{KiDS-1000}$ on the measurement $S^\text{KiDS-1000}_X$ is then related to the the uncertainty $\sigma_Z^\text{KiDS-1000}$ on measurements $S^\text{KiDS-1000}_Z$, as 
+The uncertainty $\sigma_{X}^\text{KiDS-1000}$ on the measurement $S^\text{KiDS-1000}_X$ is then related to the uncertainty $\sigma_Z^\text{KiDS-1000}$ on measurements $S^\text{KiDS-1000}_Z$, as 
 \be
 \sigma_{X}^\text{KiDS-1000} = \sqrt{\frac{A_Z}{A_X}}\, \sigma_Z^\text{KiDS-1000} \, ,
 \ee
