@@ -80,7 +80,7 @@ Quadratic galaxy bias & $b_2 \;[2]$ & $\bb{-4,\,8}$ \\
 Non-local galaxy bias & ${\gamma_3^-} \;[2]$ & $\bb{-8,\,8}$ \\
 Virial velocity parameter & $a_{\rm vir} \;[2]$ & $\bb{0,\,12}$ \\
 Intrinsic alignment amp. & $A_{\rm IA}$ & $\bb{-6,\,6}$ \\
-Baryon feedback amp. & $A_{\rm baryon}$ & $\bb{2,\,3.13}$ \\
+Baryon feedback amp. & $A_{\rm bary}$ & $\bb{2,\,3.13}$ \\
 \midrule
 Redshift offsets & ${\bf \delta_z}$ & ${\cal N}(\vek{\mu};\vek{C}_{\delta z})$ \\
 \bottomrule
@@ -102,7 +102,7 @@ Turning to astrophysical priors, the galaxy bias parameter top-hat priors on $b_
 match those adopted in \citet{troester/etal:2020}, which cover a wider range than those used in \citet{sanchez/etal:2017}.  
 The two BOSS redshift slices have independent sets of parameters.   
 Wide uniform priors for the intrinsic alignment parameter $A_{\rm IA}$ are chosen to be uninformative.    
-Uniform priors on the baryon feedback parameter $A_{\rm baryon}$ are chosen such that the resulting \citet{mead/etal:2015} model of the non-linear matter power spectrum encompasses both the most aggressive feedback model from the \citet{vandaalen/etal:2011} suite of hydrodynamical simulations, along with the dark matter-only case where $A_{\rm baryon}=3.13$.
+Uniform priors on the baryon feedback parameter $A_{\rm bary}$ are chosen such that the resulting \citet{mead/etal:2015} model of the non-linear matter power spectrum encompasses both the most aggressive feedback model from the \citet{vandaalen/etal:2011} suite of hydrodynamical simulations, along with the dark matter-only case where $A_{\rm bary}=3.13$.
 
 There are five additional correlated nuisance parameters, $\delta^i_z$, that model uncertainty in the mean of the source redshift distributions.  We adopt a multivariate Gaussian prior for the vector $\vek{\delta}_z$ with a mean $\vek{\mu} = (0.0001,0.0021,0.0129,0.0110,-0.0060)$, and a covariance, $C_{\delta z}$, as calibrated using mock galaxy catalogues in \citet{wright/etal:2020}.   
 The diagonal terms of $\vek{C}_{\delta z}$ are typically at the level of $\sim(0.01)^2$, with off-diagonal correlation coefficients ranging between $~\sim 0.1$ and $\sim 0.3$ \citep[see section 3 and figure 2 of][for details]{hildebrandt/etal:inprep}.
@@ -127,8 +127,8 @@ Here we explore these tests in more detail.
 	\end{center}
 \end{figure*}
 
-We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (cyan), where $A_{\rm baryon}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   
-Here we find very little difference, as our \tttp analysis already favours high values of $A_{\rm baryon}$.   
+We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (cyan), where $A_{\rm bary}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   
+Here we find very little difference, as our \tttp analysis already favours high values of $A_{\rm bary}$.   
 Our choice of scales and adoption of the band-power cosmic shear statistic for this analysis also makes us less sensitive to uncertainties in the baryon feedback parameter, compared to a standard two-point correlation function analysis \citep{asgari/etal:2020_KD}.
 
 The removal of the two highest photometric redshift bins (blue and purple) primarily impacts $S_8$.   
@@ -163,33 +163,42 @@ As reported in \citet{giblin/etal:inprep}, co-author Kannawadi was unblinded ear
 
 \section{Expected $S_8$ differences between partially overlapping weak lensing surveys}
 \label{app:expectedoffsets}
-In this Appendix we construct a simple model to estimate the expected statistical fluctuation in $S_8$ constraints from partially overlapping weak lensing surveys, specifically our previous \citep[KV450,][]{wright/etal:2020b}, and current KiDS analyses.
+In this Appendix we construct a simple model to estimate the expected statistical fluctuation in $S_8$ constraints from partially overlapping weak lensing surveys, specifically our previous \citep[KV450,][]{wright/etal:2020b}, and current KiDS analyses.   Assuming that we only wish to constrain the overall amplitude of the measurement, the inference can be approximated by a linear least-squares problem, where $S_{8}$, the parameter of interest, is Gaussian distributed. 
 
-The $S_8$ measurement from the full KiDS-1000 area, denoted $S^{1000}_Z$, can be modelled as the inverse-variance-weighted average of the measurement from within the original KV450 footprint, $S^{1000}_X$, with the measurement from the additional area added for KiDS-1000, $S^{1000}_Y$ as\footnote{The amplitude of the weak lensing signal scales roughly with $S_8$ \citep{jain/seljak:1997}, with an uncertainty variance that scales with the inverse survey area \citep{schneider/etal:2002}.},
+In the following, measurements derived from the KV450 footprint are denoted by an $X$ in the subscript, while measurements on the new area added for KiDS-1000 are denoted with a $Y$. 
+Measurement derived from the full KiDS-1000 footprint are denoted with a $Z$. 
+Now, let $S^{\rm KV450}_{X}$ denote the value of $S_{8}$ estimated from the KV450 footprint, using the KV450 methodology; $S^\text{KiDS-1000}_{Y}$ the value estimated from the newly added area using the KiDS-1000 methodology; and $S^\text{KiDS-1000}_{Z}$ the KiDS-1000 value estimated from the full footprint. 
+Approximating the estimates from disjoint footprints as independent, the $S_8$ measurement from the full KiDS-1000 area is then given by the area-weighted average\footnote{The amplitude of the weak lensing signal scales roughly with $S_8$ \citep{jain/seljak:1997}, with an uncertainty variance that scales with the inverse survey area \citep{schneider/etal:2002}.}
 \begin{equation}
-  S^{1000}_Z = \frac{A_X S^{1000}_X + A_Y S^{1000}_Y}{A_Z} \, .
+  S^\text{KiDS-1000}_Z = \frac{A_X S^\text{KiDS-1000}_X + A_Y S^\text{KiDS-1000}_Y}{A_Z} \, .
 \end{equation}
-Here $A_X$ is the effective area of the KV450 footprint, $A_Z$ is the effective area of the KiDS-1000 footprint, and $A_Y = A_Z - A_X$, is the additional area added between the two data releases.  The uncertainty on the measurements $S^{1000}_X$ and $S^{1000}_Y$, are approximately related to the the uncertainty on measurements $S^{1000}_Z$, as 
+Here $A_X$ is the effective area of the KV450 footprint, $A_Z$ is the effective area of the KiDS-1000 footprint, and $A_Y = A_Z - A_X$, is the additional area added between the two data releases.  
+The uncertainty $\sigma_{X}^\text{KiDS-1000}$ on the measurement $S^\text{KiDS-1000}_X$ is then related to the uncertainty $\sigma_Z^\text{KiDS-1000}$ on measurements $S^\text{KiDS-1000}_Z$, as 
 \be
-\sigma_{X}^{1000} \approx \sqrt{\frac{A_Z}{A_X}}\, \sigma_Z^{1000}
+\sigma_{X}^\text{KiDS-1000} = \sqrt{\frac{A_Z}{A_X}}\, \sigma_Z^\text{KiDS-1000} \, ,
 \ee
-with the same format for $\sigma_{Y}^{1000}$.
+and analogously for $\sigma_{Y}^\text{KiDS-1000}$. 
+Note that the uncertainty $\sigma^{\rm KV450}_{X}$ differs from $\sigma_{X}^\text{KiDS-1000}$ due to differences in the KiDS-1000 and KV450 methodologies, such as the adopted $m$-calibration uncertainty. 
 
-We define $\Delta = S^{1000}_Z - S^{450}_X$, as the offset between the KiDS-1000 and KV450 measurements\footnote{Note that given the differences in the adopted $m$-calibration uncertainty for KiDS-1000 and KV450,  the noisy quantities $S^{450}_X \neq S^{1000}_X$, as the uncertainty of KiDS-1000 on the KV450 footprint is reduced, compared to the KV450 analysis of the same area.}.  The uncertainty on $\Delta$ is then given by
+We define $\Delta = S^\text{KiDS-1000}_Z - S^{\rm KV450}_X$, the offset between the KiDS-1000 and KV450 $S_{8}$ measurements.  
+The uncertainty on $\Delta$ is then given by
 \be
-\sigma_\Delta^2 = \left(\sigma_X^{450}\right)^2 + \left(\sigma_Z^{1000}\right)^2 - 2\sqrt{\frac{A_X}{A_Z}}\sigma_X^{450}\sigma_Z^{1000} \, ,
+\sigma_\Delta^2 = \left(\sigma_X^{\rm KV450}\right)^2 + \left(\sigma_Z^\text{KiDS-1000}\right)^2 - 2\sqrt{\frac{A_X}{A_Z}}\sigma_X^{\rm KV450}\sigma_Z^\text{KiDS-1000} \, ,
 \ee
-where we have incorporated the 100\% correlation between the KiDS-1000 and KV450 measurements within the KV450 footprint area $X$, but approximate the areas $X$ and $Y$ as fully uncorrelated.  This approximation neglects the large-scale correlations between $X$ and $Y$, but is sufficient for this toy model.  The absolute difference, $|\Delta|$, is distributed as a folded Gaussian, with mean $\mathrm{E}[|\Delta|] = \sqrt{2/\pi} \,\sigma_\Delta$, and a cumulative distribution function, CDF of
+where we have assumed a 100\% correlation between the KiDS-1000 and KV450 measurements within the KV450 footprint area $X$, but approximate the areas $X$ and $Y$ as fully uncorrelated.  
+This approximation neglects the large-scale correlations between $X$ and $Y$, but is sufficient for this toy model.  
+The absolute difference, $|\Delta|$ has the cumulative distribution function, CDF, 
 \begin{equation}
-   \mathrm{CDF}(x) = \mathrm{erf}\left(\frac{x}{\sigma_\Delta\sqrt{2}}\right) \,.
+   \mathrm{CDF}(x) = \mathrm{erf}\left(\frac{x}{\sigma_\Delta\sqrt{2}}\right) \, ,
 \end{equation}
+and an expectation value $\mathrm{E}[|\Delta|] = \sqrt{2/\pi} \,\sigma_\Delta$. 
 
-We compare KV450 and KiDS-1000 $S_8$ constraints, given the effective areas $A_{\rm KV450} = A_X = 341.3$ square degrees, and $A_{\rm KiDS-1000} = A_Z = 777.4$ square degrees.
-Starting with the marginal $S_8$ constraints (M-HPD) from the two-point shear correlation function analysis, comparing \citet[][KV450 X: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} with \citet[][KiDS-1000 Z: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, we expect to find $\mathrm{E}[|\Delta|] = 0.025$.   We find $|\Delta|= 0.052 = 1.6\sigma_\Delta$, an offset that, given the CDF, we expect to find 10\% of the time.   Comparing the marginal $S_8$ constraints (M-HPD) from the $2\times2$pt analysis of \citet[][KV450+BOSS X: $S_8 = 0.728 \pm 0.026$]{troester/etal:2020} with the \tttp constraints from this analysis (KiDS-1000+BOSS Z: $S_8=0.766^{+0.018}_{-0.015}$), we find $|\Delta|=1.9\sigma_\Delta$, an offset that is expected to be found 5\% of the time.   
+We now compare the actual KV450 and KiDS-1000 $S_8$ constraints, given the effective areas $A_{\rm KV450} = A_X = 341.3\,\mathrm{deg}^{2}$ and $A_{\rm KiDS-1000} = A_Z = 777.4\,\mathrm{deg}^{2}$. 
+Using the marginal $S_8$ constraints from the two-point shear correlation function analysis, comparing \citet[][KV450: $S_8 = 0.716^{+0.043}_{-0.038}$]{wright/etal:2020b} with \citet[][KiDS-1000: $S_8=0.768^{+0.016}_{-0.020}$]{asgari/etal:inprep}, 
+we find $|\Delta|= 0.052 = 1.6\sigma_\Delta$, which can be compared against the expected offset of $\mathrm{E}[|\Delta|]=0.026$. 
+We expect to find an offset of this or larger magnitude 10\% of the time.  
 
-The probability of finding these offsets is somewhat low, but acceptable, particularly given our conclusions when we compare the MAP with PJ-HPD constraints.  In this case from the two-point shear correlation function analysis of \citet[][KV450 X: \preliminary{$S_8 = 0.767^{+0.043}_{-0.038}$}]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.022}_{-0.015}$]{asgari/etal:inprep}, we find $|\Delta|=0.03\sigma_\Delta$, an offset that is expected to be found 97\% of the time.   This demonstrates that for an accurate assessment of the `tension' between results we need to consider the full shape of the posterior (see the discussion in Sect.~\ref{sec:planck_comp}).
-
-This simple model analysis is sufficient to conclude that the increase in $S_8$ that we find between KV450 and KiDS-1000 is consistent with the expectation from simple statistical fluctuations.    A complete assessment could be conducted by analysing a reasonable fraction of the 20,000 KiDS mock catalogues from \citet{joachimi/etal:inprep}, with the KiDS-1000 and KV450 footprints imposed.  Unfortunately this is, however, out-of-scope for this analysis, given the significant compute power that would be incurred.
+This simple model analysis is sufficient to conclude that the increase in $S_8$ that we find between KV450 and KiDS-1000 is consistent with the expectation from simple statistical fluctuations.    A complete assessment could be conducted by analysing a reasonable fraction of the $20\,000$ KiDS mock catalogues from \citet{joachimi/etal:inprep}, with the KiDS-1000 and KV450 footprints imposed.  Unfortunately this is, however, out-of-scope for this analysis, given the significant compute power that would be incurred.
 
 
 \section{Hellinger tension measure}
