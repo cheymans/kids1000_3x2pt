@@ -1,3 +1,5 @@
+%%!TEX root = KiDS_1000_3x2pt.tex
+
 \begin{appendix} 
 \section{Galaxy properties and the \tttp covariance}
 \label{app:properties}
@@ -188,5 +190,34 @@ Starting with the marginal $S_8$ constraints (M-HPD) from the two-point shear co
 The probability of finding these offsets is somewhat low, but acceptable, particularly given our conclusions when we compare the MAP with PJ-HPD constraints.  In this case from the two-point shear correlation function analysis of \citet[][KV450 X: \preliminary{$S_8 = 0.767^{+0.043}_{-0.038}$}]{wright/etal:2020b} and \citet[][KiDS-1000 Z: $S_8=0.768^{+0.022}_{-0.015}$]{asgari/etal:inprep}, we find $|\Delta|=0.03\sigma_\Delta$, an offset that is expected to be found 97\% of the time.   This demonstrates that for an accurate assessment of the `tension' between results we need to consider the full shape of the posterior (see the discussion in Sect.~\ref{sec:planck_comp}).
 
 This simple model analysis is sufficient to conclude that the increase in $S_8$ that we find between KV450 and KiDS-1000 is consistent with the expectation from simple statistical fluctuations.    A complete assessment could be conducted by analysing a reasonable fraction of the 20,000 KiDS mock catalogues from \citet{joachimi/etal:inprep}, with the KiDS-1000 and KV450 footprints imposed.  Unfortunately this is, however, out-of-scope for this analysis, given the significant compute power that would be incurred.
+
+
+\section{Hellinger tension measure}
+\label{app:hellinger}
+
+To assess the tension between the marginal $S_8$ distributions two experiments A and B, we have employed the widely used measure
+\begin{equation}
+\label{eq: std_tension}
+T_{\rm AB} = \frac{|\mu_{\rm A} - \mu_{\rm B}|}{\sqrt{\sigma_{\rm A}^2 + \sigma_{\rm B}^2}}\;,
+\end{equation}
+where $\mu_{\rm A,B}$ and $\sigma_{\rm A,B}$ denote the mean and standard deviations of the two distributions, respectively. If both distributions are Gaussian, $T$ can be used to measure how likely it is that the mean of the difference between the distributions is consistent with zero.
+
+As an alternative that does not depend on the Gaussian assumption, we construct a sample-based, one-dimensional tension estimator based on the Hellinger distance $d_{\rm H}$. The Hellinger distance is widely used in statistics as a stable metric in optimisation problems that require the comparison of distributions \citep[e.g.][]{beran77}. It is given by
+\begin{equation}
+\label{eq:hellinger_def}
+d_{\rm H}^2 \bb{ p; q} = \frac{1}{2} \int {\rm d}x \bb{ \sqrt{p(x)} - \sqrt{q(x)} }^2\;,
+\end{equation}
+where the integral runs over the support of the PDFs of the distributions $p$ and $q$. We choose this distance definition as it is symmetric, avoids PDFs in the denominator and the associated instability for sample estimates, and has a closed-form expression for the case of two Gaussians:
+\begin{equation}
+\label{eq:hellinger_gauss}
+d_{\rm H}^2 \bb{ {\cal N}(\mu_1,\sigma_1^2); {\cal N}(\mu_2,\sigma_2^2) } = 1 - \sqrt{ \frac{2 \sigma_1 \sigma_2}{\sigma_1^2 + \sigma_2^2} }\,  \exp \bc{ - \frac{(\mu_1 - \mu_2)^2}{4 (\sigma_1^2 + \sigma_2^2)} } , 
+\end{equation}
+where the normal distributions have means $\mu_{1,2}$ and variances $\sigma_{1,2}^2$. 
+
+We estimate the Hellinger distance between our samples via a discretised version of Eq.~(\ref{eq:hellinger_def}). The PDFs are built from the samples in two ways: through binning into a histogram (with the number of bins chosen to scale with the square root of the number of samples), and through kernel density estimation (using a Gaussian kernel with the width chosen by Scott's rule). The former approach will in general over-estimate tension as tails are underpopulated due to the discrete sampling, whereas the latter approach under-estimates tension due to the smoothing of the PDFs by the kernel density estimator. Empirically, we find that a simple average of the two approaches yields good accuracy over the range of few-$\sigma$ tension that we are interested in.
+
+We then invert Eq.~(\ref{eq:hellinger_gauss}) to determine the expected difference in the means, $|\mu_1 - \mu_2|$ if the two distributions were Gaussian, for a given value of $d_{\rm H}$. To do so, we use the standard deviations estimated from the samples. The resulting difference in the means is inserted into Eq.~(\ref{eq: std_tension}) to obtain a measure of tension in the familiar $x\sigma$ units.
+
+Our Hellinger tension measure is validated by comparing to Eq.~(\ref{eq: std_tension}) on Gaussian random variates with the same number of realisations as the sizes of our posterior samples (ca. $14\,000$ for KiDS and ca. $23\,000$ for \textit{Planck}). We find that systematic deviations in the Hellinger tension are at $0.1 \sigma$ or less for tension up to $4\sigma$, with a standard deviation of $\pm 0.05 \sigma$.
 
 \end{appendix}
