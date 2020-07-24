@@ -180,17 +180,13 @@ We expect to find an offset of this or larger magnitude 10\% of the time.
 This simple model analysis is sufficient to conclude that the increase in $S_8$ that we find between KV450 and KiDS-1000 is consistent with the expectation from simple statistical fluctuations.    A complete assessment could be conducted by analysing a reasonable fraction of the $20\,000$ KiDS mock catalogues from \citet{joachimi/etal:inprep}, with the KiDS-1000 and KV450 footprints imposed.  Unfortunately this is, however, out-of-scope for this analysis, given the significant compute power that would be incurred.
 
 
-\section{Hellinger tension measure}
+\section{Tension estimators}
+\label{app:tensionest}
+In this Appendix we review the range of tension estimators employed in Sect.~\ref{sec:planck_comp} to quantify the tension between the KiDS-1000 and {\it Planck} cosmological parameter constraints.   These are in addition to the standard Gaussian offset measure, $T$, in Eq.~(\ref{eq: std_tension}), and the Bayes factor, $R$, in Eq.~(\ref{equ:bayes-factor}).
+
+\subsection{Hellinger tension measure: $d_{\rm H}$}
 \label{app:hellinger}
-
-To assess the tension between the marginal $S_8$ distributions two experiments A and B, we have employed the widely used measure
-\begin{equation}
-\label{eq: std_tension}
-T_{\rm AB} = \frac{|\mu_{\rm A} - \mu_{\rm B}|}{\sqrt{\sigma_{\rm A}^2 + \sigma_{\rm B}^2}}\;,
-\end{equation}
-where $\mu_{\rm A,B}$ and $\sigma_{\rm A,B}$ denote the mean and standard deviations of the two distributions, respectively. If both distributions are Gaussian, $T$ can be used to measure how likely it is that the mean of the difference between the distributions is consistent with zero.
-
-As an alternative that does not depend on the Gaussian assumption, we construct a sample-based, one-dimensional tension estimator based on the Hellinger distance $d_{\rm H}$. The Hellinger distance is widely used in statistics as a stable metric in optimisation problems that require the comparison of distributions \citep[e.g.][]{beran77}. It is given by
+To assess the tension between the marginal $S_8$ distributions of two experiments, we have employed the widely used Gaussian-approximation measure, $T$, given in Eq.~(\ref{eq: std_tension}).  As an alternative that does not depend on the Gaussian assumption, we construct a sample-based, one-dimensional tension estimator based on the Hellinger distance $d_{\rm H}$. The Hellinger distance is widely used in statistics as a stable metric in optimisation problems that require the comparison of distributions \citep[e.g.][]{beran77}. It is given by
 \begin{equation}
 \label{eq:hellinger_def}
 d_{\rm H}^2 \bb{ p; q} = \frac{1}{2} \int {\rm d}x \bb{ \sqrt{p(x)} - \sqrt{q(x)} }^2\;,
@@ -202,11 +198,77 @@ d_{\rm H}^2 \bb{ {\cal N}(\mu_1,\sigma_1^2); {\cal N}(\mu_2,\sigma_2^2) } = 1 - 
 \end{equation}
 where the normal distributions have means $\mu_{1,2}$ and variances $\sigma_{1,2}^2$. 
 
-We estimate the Hellinger distance between our samples via a discretised version of Eq.~(\ref{eq:hellinger_def}). The PDFs are built from the samples in two ways: through binning into a histogram (with the number of bins chosen to scale with the square root of the number of samples), and through kernel density estimation (using a Gaussian kernel with the width chosen by Scott's rule). The former approach will in general over-estimate tension as tails are underpopulated due to the discrete sampling, whereas the latter approach under-estimates tension due to the smoothing of the PDFs by the kernel density estimator. Empirically, we find that a simple average of the two approaches yields good accuracy over the range of few-$\sigma$ tension that we are interested in.
+We estimate the Hellinger distance between our samples via a discretised version of Eq.~(\ref{eq:hellinger_def}). The PDFs are built from the samples in two ways: through binning into a histogram (with the number of bins chosen to scale with the square root of the number of samples), and through kernel density estimation (using a Gaussian kernel with the width chosen by Scott's rule). The former approach will in general over-estimate tension as tails are underpopulated due to the discrete sampling, whereas the latter approach under-estimates tension due to the smoothing of the PDFs by the kernel density estimator. Empirically, we find that a simple average of the two approaches yields good accuracy over the few-$\sigma$ tension range that we are interested in.
 
-We then invert Eq.~(\ref{eq:hellinger_gauss}) to determine the expected difference in the means, $|\mu_1 - \mu_2|$ if the two distributions were Gaussian, for a given value of $d_{\rm H}$. To do so, we use the standard deviations estimated from the samples. The resulting difference in the means is inserted into Eq.~(\ref{eq: std_tension}) to obtain a measure of tension in the familiar $x\sigma$ units.
+We invert Eq.~(\ref{eq:hellinger_gauss}) to determine the expected difference in the means, $|\mu_1 - \mu_2|$ if the two distributions were Gaussian, for a given value of $d_{\rm H}$. To do so, we use the standard deviations estimated from the samples. The resulting difference in the means is inserted into Eq.~(\ref{eq: std_tension}) to obtain a measure of tension in the familiar $\sigma$ units\footnote{Our Hellinger tension measure is validated by comparing to Eq.~(\ref{eq: std_tension}) for Gaussian random variates with the same number of realisations as the sizes of our posterior samples (ca. $16\,000$ for KiDS and ca. $23\,000$ for \textit{Planck}). We find that systematic deviations in the Hellinger tension are at $0.1 \sigma$ or less for tension up to $4\sigma$, with a standard deviation of $\pm 0.05 \sigma$.}.   Comparing the \tttp and {\it Planck} $S_8$ distributions, we find a Hellinger distance tension of \preliminary{$3.X\sigma$}.
 
-Our Hellinger tension measure is validated by comparing to Eq.~(\ref{eq: std_tension}) on Gaussian random variates with the same number of realisations as the sizes of our posterior samples (ca. $16\,000$ for KiDS and ca. $23\,000$ for \textit{Planck}). We find that systematic deviations in the Hellinger tension are at $0.1 \sigma$ or less for tension up to $4\sigma$, with a standard deviation of $\pm 0.05 \sigma$.
+\subsection{Suspiciousness: $S$}
+\label{app:sus} 
+\citet{handley/lemos:2019} propose the `suspiciousness' statistic $S$ based on the Bayes factor, $R$, but hardened against prior-dependences.
+They define 
+\be
+\label{equ:suspiciousness}
+ \log S = \log R - \log I \,,
+\ee
+where $\log R$ is the logarithm of the Bayes factor in Eq.~\eqref{equ:bayes-factor}:
+\be
+\label{eqn:logR}
+	\log R = \log Z_{{\rm 3\times2pt+}{\it Planck}}- \log Z_{\rm 3\times2pt} - \log Z_{\it Planck} \,,
+\ee 
+with the evidence $Z_{i}$ given by
+\be
+	Z = \int \mathcal{L}\pi\, \diff\vec\theta \,,
+\ee
+the integral of the likelihood $\mathcal{L}$ and prior $\pi$ over the parameters $\vec\theta$. 
+The information ratio $I$ in Eq.~\eqref{equ:suspiciousness} is defined as
+\be
+ \log I = \mathcal{D}_{\rm 3\times2pt} + \mathcal{D}_{\it Planck}  - \mathcal{D}_{{\rm 3\times2pt+}{\it Planck}} \,,
+\ee
+with $\mathcal{D}_{i}$ being the Kullback-Leibler divergence between the posterior $P$ and prior for probe $i$:
+\begin{splitequation}
+	\mathcal{D} &= \int P \log \frac{P}{\pi}\diff\vec\theta = \int P \log\mathcal{L}\, \diff\vec\theta - \log Z \\
+	&= \langle\log\mathcal{L}\rangle_{P} - \log Z \,.
+\end{splitequation}
+The second equality follows from Bayes theorem: $P = \mathcal{L}\pi \,/\, Z$. 
+Using this definition of $\mathcal{D}$ allows us to rephrase the suspiciousness solely in terms of the expectation values of the log-likelihoods:
+\begin{splitequation}
+	\log S &= \langle\log\mathcal{L}_{{\rm 3\times2pt+}{\it Planck}}\rangle_{P_{{\rm 3\times2pt+}{\it Planck}}} - \langle\log\mathcal{L}_{\rm 3\times2pt}\rangle_{P_{\rm 3\times2pt}} \\
+	&\quad- \langle\log\mathcal{L}_{\it Planck}\rangle_{P_{\it Planck}} \,.
+\end{splitequation}
+We find $\log S=-2.0\pm0.1$. 
+For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d=d_{\rm 3\times2pt} + d_{\it Planck} - d_{{\rm 3\times2pt+}{\it Planck}}$ is the difference in the Bayesian model dimensionalities.
+This allows us to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
+We calculate $d$, following \citet{handley/lemos:2019}, from the variances of the log-likelihoods. 
+Other estimates of the Bayesian model dimensionality, such as those introduced in \citet{Raveri2019} yield very similar results. 
+We calculate $d=3.3\pm0.7$ and therefore conclude that the probability of observing our measured suspiciousness statistic is $0.08\pm0.2$, or $1.8\pm0.1\,\sigma$. 
+
+\subsection{Goodness-of-fit change: $Q_{\rm DMAP}$}
+\label{app:QDMAP} 
+\citet{Raveri2019} introduce the $Q_{\rm DMAP}$ statistic that quantifies how the goodness-of-fit changes when two data sets are combined, based on the difference of the log-likelihoods, $\log\mathcal{L}(\vec\theta^{\rm MAP}_{i})$, at the MAP of the respective posteriors\footnote{As an interesting aside, we note that the combined quantity $Q_{\rm DMAP} + 4\log S$ corresponds to the twice the deviance information criterion ratio introduced in \citet{joudaki/etal:2017}.},
+\be
+\label{eqn:QDMAP}
+	Q_{\rm DMAP} =  2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\rm 3\times2pt}) + 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\it Planck}) - 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{{\rm 3\times2pt+}{\it Planck}}) \,.
+\ee
+For Gaussian posteriors, the sampling distribution of $Q_{\rm DMAP}$ is $\chi^{2}$-distributed with $d_{\rm 3\times2pt} + d_{\it Planck} - d_{{\rm 3\times2pt+}{\it Planck}}$ degrees of freedom. 
+Here we follow \citet{Raveri2019} and calculate the model dimensionalities by $d_{i} = N - \mathrm{tr}[\mathcal{C}_{\pi}^{-1}\mathcal{C}_{P}]$, where $N$ is the total number of varied parameters, $\mathcal{C}_{\pi}$ is the prior parameter covariance, and $\mathcal{C}_{P}$ is the posterior parameter covariance. 
+We find consistent results when using the variance of the log-likelihoods, the approach taken for the suspiciousness calculation.
+We find \preliminary{$Q_{\rm DMAP} = 11.3$}, with $d=3.6$, corresponding to a probability of \preliminary{0.016, or $2.4\, \sigma$}. 
+
+
+\subsection{Parameter difference in multiple dimensions: $Q_{\rm UDM}$} 
+\label{app:QUDM} 
+\citet{Raveri2019} introduce the $Q_{\rm UDM}$ statistic that quantifies the difference between cosmological parameters across multiple dimensions.   Here
+\be
+\label{equ:qudm}
+	Q_{\rm UDM} = \Delta\overline{\vec\theta}^{T}(\mathcal{C}_{\it Planck} - \mathcal{C}_{{\rm 3\times2pt+}{\it Planck}})^{-1}\Delta\overline{\vec\theta} \,,
+\ee
+where $\Delta\overline{\vec\theta} = \bar{\vec\theta}_{\it Planck} - \overline{\vec\theta}_{{\rm 3\times2pt+}{\it Planck}}$ is the shift in the mean of the shared parameters, and $\mathcal{C}_{\it Planck}$ and $\mathcal{C}_{{\rm 3\times2pt+}{\it Planck}}$ are the posterior parameter covariances for {\it Planck} and \tttp+{\it Planck}, respectively. 
+The estimator Eq.~\eqref{equ:qudm} is asymmetric in the first data set if the posteriors are non-Gaussian. 
+In this case, the data set with the more Gaussian posterior should be used, which in our case is {\it Planck}. 
+We use \software{tensiometer}\footnote{\url{https://github.com/mraveri/tensiometer}} to compute $Q_{\rm UDM}$ and its associated number of degrees of freedom. 
+We find $Q_{\rm UDM} = 7.7$ with $d = 3$. The sampling distribution is approximated by $\chi^{2}_{d}$, such that the probability of the observed value of $Q_{\rm UDM} $ is $0.054$, or $1.9\,\sigma$. 
+
+
 
 \section{Redundancy, pipeline validation and software review}
 \label{app:codereview}
