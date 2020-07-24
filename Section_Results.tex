@@ -2,17 +2,16 @@
 \label{sec:results}
 We present our multi-probe constraints on the cosmological parameters of the flat $\Lambda$CDM model in Fig.~\ref{fig:cosmology-params}, showing the marginalised posterior distributions for matter fluctuation amplitude parameter, $\sigma_8$, the matter density parameter, $\Omega_{\rm m}$, and the dimensionless Hubble parameter, $h$, where the BOSS galaxy clustering constraints (GC: shown blue), break the $\sigma_8$-$\Omega_{\rm m}$ degeneracy in the KiDS-1000 cosmic shear constraints (CS: shown pink), resulting in tight constraints on $\sigma_8$ in the combined \tttp analysis (shown red). 
 Reporting the MAP values with PJ-HPD credible intervals for the parameters that we are most sensitive to, we find 
-\preliminary{\eqa{
-\sigma_8 &= 0.76^{+0.021}_{-0.023} \\ \nonumber
-\Omega_{\rm m} &= 0.306^{+0.011}_{-0.014} \\ \nonumber
-h &=0.678^{+0.047}_{-0.002} \\ \nonumber
-S_8 &= 0.769^{+0.018}_{-0.015} \, .
-}}
+\eqa{
+\sigma_8 &= \ksigmaeightval \\ \nonumber
+\Omega_{\rm m} &= \kOmegamval \\ \nonumber
+S_8 &= \kSeightval \, .
+}
 Our constraints can be compared to the marginalised posterior distributions from {\it Planck} (shown grey in Fig.~\ref{fig:cosmology-params}), finding consistency between the marginalised constraints on $\Omega_{\rm m}$ and $h$, but an offset in $\sigma_8$,  which we discuss in detail in Sect.~\ref{sec:planck_comp}.
 
 Tabulated constraints for the full set of cosmological parameters are presented in Appendix~\ref{app:parameter-constraints}, quoting our fiducial MAP with PJ-HPD credible intervals, along with the marginal posterior mode with M-HPD credible intervals. 
-We note that the quoted marginal mode constraint on $S_8$ is \preliminary{$0.2\sigma$} lower than the MAP for this parameter. 
-As discussed in \citet{joachimi/etal:inprep}, this marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  
+%We note that the quoted marginal mode constraint on $S_8$ is \preliminary{$0.2\sigma$} lower than the MAP for this parameter. 
+As discussed in \citet{joachimi/etal:inprep}, the marginal mode estimate is known to yield systematically low values of $S_8$ in mock data analyses, as can be seen in Fig.~\ref{fig:S8comp}, which compares the joint posterior constraints (solid) with the marginal posterior constraints (dashed).  
 
 \begin{figure}
 	\begin{center}
@@ -72,7 +71,9 @@ This series of tests is dissected further in Appendix~\ref{app:sensitivity}, and
 	\end{center}
 \end{figure}
 
-Table~\ref{tab:goodness-of-fit} records the goodness-of-fit for each component in our \tttp analysis, where we approximate the best-fit minimum $\chi^2_{\rm min}$, as the $\chi^2$ value at the maximum posterior, $\chi^2_{\rm MAP}$ (see Sect.~\ref{sec:KCAP} for a discussion of our optimised MAP-finder).  The effective number of degrees of freedom (DoF) does not equate to the standard difference between the total number of data points (Data DoF) and the total number of model parameters (20 in the case of our \tttp analysis), as a result of the adopted priors and the non-linear dependencies that exist between the model parameters.   For some probe combinations we calculate the effective number of degrees of freedom in the model (Model DoF), using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.    As this approach is computationally expensive, however, we also estimate the Model DoF following \citet{Raveri2019}, recognising that, for the cases explored in \citet{joachimi/etal:inprep}, this approach results in an overall underestimate.
+Table~\ref{tab:goodness-of-fit} records the goodness-of-fit for each component in our \tttp analysis, where we report the $\chi^2$ value at the maximum posterior, $\chi^2_{\rm MAP}$ (see Sect.~\ref{sec:KCAP} for a discussion of our optimised MAP-finder).  
+The effective number of degrees of freedom (DoF) does not equate to the standard difference between the total number of data points (Data DoF) and the total number of model parameters (20 in the case of our \tttp analysis), as a result of the adopted priors and the non-linear dependencies that exist between the model parameters.   For some probe combinations we calculate the effective number of degrees of freedom in the model (Model DoF), using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.    
+As this approach is computationally expensive, however, we also estimate the Model DoF following \citet{Raveri2019}, recognising that, for the cases explored in \citet{joachimi/etal:inprep}, this approach results in slightly lower model DoF.
 
 
 We find that the goodness-of-fit is excellent for the BOSS galaxy clustering.  For all other cases, the goodness-of-fit is certainly acceptable\footnote{We define acceptable as $p \geq 0.001$, which corresponds to less than a $\sim 3\sigma$ event.   \citet{abbott/etal:2018} define acceptable as $\chi^2/{\rm DoF} < 1.4$.  We meet both these requirements.}.
@@ -87,10 +88,10 @@ We note that the cosmic shear analysis of \citet{asgari/etal:inprep} shows no si
     Probe             & $\chi^2_{\rm MAP}$  & Data DoF  & Model DoF                   & PTE  & Model DoF          & PTE    \\
                       &                     &           &\citep{joachimi/etal:inprep} &      & \citep{Raveri2019} & \\
     \midrule
-	Cosmic shear     & $152.3$ & $120$  &4.5 & 0.012 &3.0 & 0.016 \\
-	Galaxy clustering & $168.2$ & $168$  &-- & -- &10.6 & 0.263 \\
+	Cosmic shear     & $152.1$ & $120$  &4.5 & 0.013 &3.0 & 0.016 \\
+	Galaxy clustering & $167.7$ & $168$  &-- & -- &10.6 & 0.272 \\
 	Cosmic shear + GGL & $178.7$ & $142$  &8.7 & 0.005 &7.3 & 0.007 \\
-	Cosmic shear + galaxy clustering & $321.2$ & $288$  &-- & -- &11.9 & 0.032 \\
+	Cosmic shear + galaxy clustering & $319.9$ & $288$  &-- & -- &11.9 & 0.036 \\
 	KiDS-1000 $3\times2$pt & $356.2$ & $310$  &-- & -- &12.5 & 0.011 \\
 
     \bottomrule
@@ -140,16 +141,21 @@ T = \frac{|\overline{S_{8}}^{\,\rm 3\times2pt}-\overline{S_{8}}^{\,\it Planck}|}
 \end{equation}
 where $\overline{S_{8}}$ and $\mathrm{Var}[S_{8}] $ denote the mean and standard deviations of the {\it Planck} and \tttp $S_8$ posterior distributions.  If both distributions are Gaussian, $T$ can be used to measure how likely it is that the mean of the difference between the distributions is consistent with zero.
 
-Comparing the $S_{8}$ posterior distributions between our \tttp analysis and the {\it Planck} \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, we find \preliminary{$T=3.1$}, i.e. that there is a $3.1\sigma$ difference between the KiDS-1000 and {\it Planck} constraints.   Adopting the `Hellinger' distance estimate, which does not assume Gaussianity in the marginal posteriors, the difference in $S_8$ increases to \preliminary{$3.X\sigma$} (see Appendix~\ref{app:hellinger} for details).  Our result thus continues the general trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, bocquet/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. 
+Comparing the $S_{8}$ posterior distributions between our \tttp analysis and the {\it Planck} \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, we find $T=3.1$, i.e. that there is a $3.1\sigma$ difference between the KiDS-1000 and {\it Planck} constraints. 
+%  
+Adopting two tension measures that do not assume Gaussianity of the marginal posterior distributions, both the `Hellinger' distance and the distribution of the the $S_{8}$ parameter shifts indicate $3.1\,\sigma$ discordance between our \tttp analysis and {\it Planck} (see Appendices~\ref{app:hellinger} and \ref{app:paramshift} for details).  
+%
+Our result thus continues the general trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, bocquet/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. 
 In these cases the reported low $S_8$, or $\sigma_8$, constraints are formally statistically consistent with {\it Planck}, and well below the detection of any anomalies at the $5\sigma$-level. 
 Considering, however, the $\sim 3\sigma$ difference that we have reported, and the overall trend in the literature, we would argue that we are reaching an uncomfortable point when it comes to regarding the $S_8$ offset as a simple statistical fluke.
 
-\citet{Sanchez2020} pointed out that comparing $S_{8}$ between different experiments can be misleading due to the implicit dependence of $\sigma_{8}$ on $h$, both through the $8\,h^{-1}{\rm Mpc}$ radius of the sphere within which the matter fluctuations are measured, as well as the intrinsic dependence of the amplitude of the matter power spectrum on $h$. 
-For example, a high value of $h$ would result in $\sigma_{8}$ measuring fluctuations within a smaller physical radius and thus infer higher fluctuations. 
+\citet{Sanchez2020} pointed out that comparing $S_{8}$ between different experiments can be misleading due to the implicit dependence of $\sigma_{8}$ on $h$. 
+Besides the intrinsic dependence of the amplitude of the matter power spectrum on $h$, measurements of $\sigma_{8}$ also depend on $h$ through the value of $8\,h^{-1}{\rm Mpc}$, the radius of the sphere within which the matter fluctuations are measured. 
+In this way, constraints on $\sigma_8$ derived from data sets with different posterior distributions on $h$ represent the average of $\sigma(R)$ over different ranges of scales. 
+%
 We therefore also consider $S_{12} = \sigma_{12}\left(\Omega_{\rm m}\,h^2/0.14\right)^{0.4}$ \citep{Sanchez2020}, where $\sigma_{12}^{2}$ is the variance of the linear matter field at redshift zero in spheres of radius $12\,\mathrm{Mpc}$.
 We find $S_{12} = 0.754^{+0.015}_{-0.018}$, with the value inferred by {\it Planck} being $S_{12} = 0.817_{-0.015}^{+0.011}
 $, a difference of $T=3.0$, in agreement with the $S_8$ results. 
-Considering that our \tttp constraints on $h$ agree with those of {\it Planck}, and our $S_{8}$ constraints show no degeneracy with $h$, this is not surprising.
 
 In light of the large parameter spaces that are being considered, we recognise that focussing on a single parameter can paint a simplistic picture of the agreement, or disagreement, between these probes.
 On a fundamental level, the question we wish to answer is whether a single model of the Universe can describe both the CMB as well as the low-redshift large-scale structure of the Universe.
@@ -167,7 +173,8 @@ The Bayes factor is then
 where $P(\vec d | \mathrm{M}_1)$ is the probability of the data $\vec d$ under model $\mathrm{M}_1$ -- the Bayesian evidence. 
 
 We assume the model priors $P(\mathrm{M}_1)$ and $P(\mathrm{M}_2)$ to be equal, that is, we make no a-priori assumption on the likelihood of $\mathrm{M}_1$ or $\mathrm{M}_2$. 
-We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandley/anesthetic}}\citep{anesthetic} to compute $R$ and find $\log R=3.1\pm0.3$, which can be interpreted as odds of $23\pm6$ in favour of model $\mathrm{M}_1$, and consistency between our \tttp measurement and {\it Planck}.  Given the strong dependence of $R$ on the parameter priors \citet{handley/lemos:2019}, we consider this result with some caution.  We therefore review a series of alternative metrics that seek to quantify the tension between the full KiDS-1000 and {\it Planck} multi-dimensional cosmological parameter constraints, summarised in Table~\ref{tab:tension}, with further details provided in Appendix~\ref{app:tensionest}.
+We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandley/anesthetic}}\citep{anesthetic} to compute $R$ and find $\log R=3.1\pm0.3$, which can be interpreted as odds of $23\pm6$ in favour of model $\mathrm{M}_1$, and consistency between our \tttp measurement and {\it Planck}.  Given the dependence of $R$ on the parameter priors \citet{handley/lemos:2019}, we consider this result with some caution.  
+We therefore review a series of alternative metrics that seek to quantify the tension between the full KiDS-1000 and {\it Planck} multi-dimensional cosmological parameter constraints, summarised in Table~\ref{tab:tension}, with further details provided in Appendix~\ref{app:tensionest}.
 
 \begin{table}
 	\begin{center}
@@ -178,7 +185,8 @@ We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandle
    Metric   & Reference          & Value &PTE   & PTE [$\sigma$]\\
     \midrule
 	$T$ & Eq.~(\ref{eq: std_tension})    & 3.1 & 0.001 & \kpoff  \\
-	$d_{\rm H}$ & Eq.~(\ref{eq:hellinger_def})& & &\\
+	$d_{\rm H}$ & Eq.~(\ref{eq:hellinger_def})& 0.95&-- & $3.1\,\sigma$\\
+	$p_{\rm S}$ & Eq.~(\ref{equ:ps})& 0.9981& 0.0019&  $3.1\,\sigma$\\
     \midrule
 	$R$   &  Eq.~(\ref{equ:bayes-factor}) & \kR & -- & -- \\
 	$\log R$  & Eq.~(\ref{eqn:logR}) &  \klogR& -- & --\\
@@ -188,15 +196,19 @@ We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandle
     \bottomrule
 \end{tabular}
 	\end{center}
-	\tablefoot{The considered tension metrics are: 1) the differences between the means in $S_{8}$, divided by the standard deviations added in quadrature, $T$; 2) the Hellinger distance, $d_H$, between $S_8$ posterior distributions (Appendix~\ref{app:hellinger}); 3) the Bayes ratio $R$ between a model that assumes a single cosmology for both our \tttp and the {\it Planck} data, and a model that uses separate cosmologies for the two data sets; 4) the logarithm $\log R$ of the Bayes ratio; 5) the suspiciousness $\log S$ \citep{handley/lemos:2019}; 6 \& 7) the concordance/discordance estimators $Q_{\rm DMAP}$ and $Q_{\rm UDM}$ \citep{Raveri2019}. 
+	\tablefoot{The considered tension metrics are: 1) the differences between the means in $S_{8}$, divided by the standard deviations added in quadrature, $T$; 2) the Hellinger distance, $d_H$, between $S_8$ posterior distributions (Appendix~\ref{app:hellinger}); 3) the fraction of the $S_{8}$ parameter shift distribution that has a higher probability than no shifts (Appendix~\ref{app:paramshift}); 4) the Bayes ratio $R$ between a model that assumes a single cosmology for both our \tttp and the {\it Planck} data, and a model that uses separate cosmologies for the two data sets; 5) the logarithm $\log R$ of the Bayes ratio; 6) the suspiciousness $\log S$ \citep{handley/lemos:2019}; 7 \& 8) the concordance/discordance estimators $Q_{\rm DMAP}$ and $Q_{\rm UDM}$ \citep{Raveri2019}. 
 		The columns list the estimator metric considered, the relevant equation reference, the measured value, and the `probability-to-exceed' the measured value (PTE), under the assumption that the two data sets are consistent.}
 \end{table}
 
-\citet{handley/lemos:2019} propose the `suspiciousness' statistic $S$ that is based on the Bayes factor, $R$, but hardened against prior-dependences.   We find that the probability of observing our measured suspiciousness statistic is $0.08\pm0.2$, which corresponds to a KiDS-{\it Planck} tension at the level of $1.8\pm0.1\,\sigma$ (see Appendix~\ref{app:sus} for details).
+\citet{handley/lemos:2019} propose the `suspiciousness' statistic $S$ that is based on the Bayes factor, $R$, but hardened against prior dependences.   
+We find that the probability of observing our measured suspiciousness statistic is $0.08\pm0.02$, which corresponds to a KiDS-{\it Planck} tension at the level of $1.8\pm0.1\,\sigma$ (see Appendix~\ref{app:sus} for details).
 
-\citet{Raveri2019} introduce a number of metrics to quantify the consistency of data sets of which we consider two.   The first, $Q_{\rm DMAP}$, explores the change in the goodness-of-fit when two data sets are combined.   A reduction in the goodness-of-fit can then be translated into a tension metric, finding a KiDS-{\it Planck} tension at the level of \preliminary{$2.4\sigma$} (see Appendix~\ref{app:QDMAP} for details).    The second, $Q_{\rm UDM}$. generalises the notion of parameter differences between posteriors to multiple dimensions finding KiDS-{\it Planck} tension at the level of $1.9\,\sigma$ (see Appendix~\ref{app:QUDM} for details).   
+\citet{Raveri2019} introduce a number of metrics to quantify the consistency of data sets of which we consider two.   
+The first, $Q_{\rm DMAP}$, explores the change in the goodness-of-fit when two data sets are combined.   A reduction in the goodness-of-fit can then be translated into a tension metric, finding a KiDS-{\it Planck} tension at the level of $2.1\sigma$ (see Appendix~\ref{app:QDMAP} for details).    
+The second, $Q_{\rm UDM}$. generalises the notion of parameter differences between posteriors to multiple dimensions finding KiDS-{\it Planck} tension at the level of $1.9\,\sigma$ (see Appendix~\ref{app:QUDM} for details).   
 
-Comparing tension metrics, we find a fairly consistent picture.  Reviewing tension in terms of the single parameter that our \tttp analysis is most sensitive to, $S_8$, leads to a $\sim 3\sigma$ tension with {\it Planck}.   Including additional parameters into the tension analysis, parameters which KiDS is mainly insensitive to, serves to effectively dilute the tension, reducing the measure to the $\sim 2\sigma$ level.    
+Comparing tension metrics, we find a fairly consistent picture.  Reviewing tension in terms of the single parameter that our \tttp analysis is most sensitive to, $S_8$, leads to a $\sim 3\sigma$ tension with {\it Planck}.   
+Including additional parameters into the tension analysis, parameters which KiDS is mainly insensitive to, serves to effectively dilute the tension, reducing the measure to the $\sim 2\sigma$ level.    
 
 
 
