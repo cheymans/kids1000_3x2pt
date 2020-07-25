@@ -71,7 +71,7 @@ for lensbin in ("low","high"):
     sigxi3=indata[:,6]  
     
     # and read in the expected clustering measurements
-    theory=np.loadtxt('%s/Predictions/initial_cov_MAP_BlindA_EE_nE_w/xi_wedges/bin_%d.txt'%(MD,lens_count+1))
+    theory=np.loadtxt('%s/Predictions/iterated_cov_MAP_BlindC/xi_wedges/bin_%d.txt'%(MD,lens_count+1))
     stheory = s[4:32] #guess - need to check with Marika that this is the s-scale
 
     #PLOT THE wedges!

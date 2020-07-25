@@ -1,10 +1,23 @@
 import numpy as np
+import matplotlib as matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import sys
 from astropy.io import ascii
 import matplotlib.ticker as ticker
 
+#TT's pre-amble
+text_width = 523.5307/72
+column_width = 256.0748/72
+
+#Not sure why but this line causes a crash?
+#matplotlib.rc("text", usetex=True)
+matplotlib.rc("text.latex", preamble=r"""
+\usepackage{txfonts}
+\newcommand{\mathdefault}[1][]{}""")
+#Also Times is missing for some reason
+#Did some stackoverflow seraching but decided time was of the essence :(
+#matplotlib.rc("font", family="Times")
 
 # Some font setting
 rcParams['ps.useafm'] = True
@@ -29,7 +42,7 @@ fig,axes= plt.subplots(6,7,figsize=(10, 7.5),gridspec_kw={'hspace': 0, 'wspace':
 #    BLIND=sys.argv[2] # blind
 
 LFVER="2Dbins_v2_goldclasses_Flag_SOM_Fid" 
-BLIND="A"
+BLIND="C"
 
 # number of tomographic bins, and band power modes to plot
 ntomobin=5
@@ -99,9 +112,9 @@ for iz in range(1,ntomobin+1):
         Bcov_izjz=Bcov[ipos:ipos+nmodes,ipos:ipos+nmodes]
         Bdiagerr=np.sqrt(np.diagonal(Bcov_izjz))
         
-        BPtheory=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
-        ellmin=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/l_min_vec.txt'%(MD))
-        ellmax=np.loadtxt('%s/Predictions/initial_cov_MAP_wmean_BlindA_EE_nE_w/bandpower_shear_e/l_max_vec.txt'%(MD))
+        BPtheory=np.loadtxt('%s/Predictions/iterated_cov_MAP_BlindC/bandpower_shear_e/bin_%d_%d.txt'%(MD,jz,iz))
+        ellmin=np.loadtxt('%s/Predictions/iterated_cov_MAP_BlindC/bandpower_shear_e/l_min_vec.txt'%(MD))
+        ellmax=np.loadtxt('%s/Predictions/iterated_cov_MAP_BlindC/bandpower_shear_e/l_max_vec.txt'%(MD))
         elltheory = ell #(ellmax+ellmin)*0.5
 
         #PLOT THE EMODES!
@@ -174,7 +187,7 @@ for i in range(6):
 
 plt.tight_layout()
 
-outfile='Pkk_K1000_wmean_%s_%s.pdf'%(LFVER,BLIND)
+outfile='Pkk_K1000_%s_%s.pdf'%(LFVER,BLIND)
 plt.savefig(outfile,dpi=300)
 plt.show()
 

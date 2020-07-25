@@ -125,7 +125,7 @@ Here we explore these tests in more detail.
 	\end{center}
 \end{figure*}
 
-We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (cyan), where $A_{\rm bary}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   
+We compare our analysis which fully marginalises over our uncertainty in the baryon feedback parameter (red), with our `No baryon' case (sea-green), where $A_{\rm bary}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology.   
 Here we find very little difference, as our \tttp analysis already favours high values of $A_{\rm bary}$.   
 Our choice of scales and adoption of the band-power cosmic shear statistic for this analysis also makes us less sensitive to uncertainties in the baryon feedback parameter, compared to a standard two-point correlation function analysis \citep{asgari/etal:2020_KD}.
 
@@ -136,9 +136,9 @@ A potential $\sim 3\sigma$-level flag is, however, raised in \citet{asgari/etal:
 over the internal consistency of the second tomographic bin.  
 In our analysis where we remove the two lowest photometric redshift bins (orange), we find that these bins contribute very little to the $S_8$ constraint, and only serve to tighten the constraints on the intrinsic alignment parameter $A_{\rm IA}$.
 
-Finally we turn to the galaxy bias test (green), where we limit the analysis to a linear galaxy bias model, $b_1$, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero\footnote{Removing all higher-order galaxy bias terms also requires the uncoupling of $b_1$ from $\gamma_2$.}, as well as imposing a Gaussian galaxy velocity distribution by setting $a_{\rm vir}$ to zero.   
-\preliminary{We can see that this induces a significant bias in the recovered constraints, as the amplitude of the linear galaxy bias increases in an attempt to model the enhanced power on small scales that the non-linear bias induces.   
-The erroneous increase in $b_1$ leads to a significant decrease in the recovered $S_8$, and also an overall poor goodness-of-fit of the model with $\chi^2_{\rm MAP} = 379.8$ for $\sim 300$ degrees of freedom.  This result should serve as a point of caution for \tttp analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations that probe physical scales as low as $s_{\rm min}= 20 h^{-1}\, {\rm Mpc}$.}
+Finally we turn to the galaxy bias test (lime green), where we limit the analysis to a linear galaxy bias model, $b_1$, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero\footnote{Removing all higher-order galaxy bias terms also requires the uncoupling of $b_1$ from $\gamma_2$.}, as well as imposing a Gaussian galaxy velocity distribution by setting $a_{\rm vir}$ to zero.   
+We can see that this biases the recovered cosmological constraints, as the amplitude of the linear galaxy bias increases in an attempt to model the enhanced power on small scales that the non-linear bias induces.   
+The erroneous increase in $b_1$ leads to a significant decrease in the recovered $S_8$, and also an overall reduction in the goodness-of-fit of the model with $\chi^2_{\rm MAP} = 379.8$ for $\sim 300$ degrees of freedom.  This result should serve as a point of caution for \tttp analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations that probe physical scales as low as $s_{\rm min}= 20 h^{-1}\, {\rm Mpc}$.
 
 \section{Expected $S_8$ differences between partially overlapping weak lensing surveys}
 \label{app:expectedoffsets}
@@ -201,6 +201,20 @@ where the normal distributions have means $\mu_{1,2}$ and variances $\sigma_{1,2
 We estimate the Hellinger distance between our samples via a discretised version of Eq.~(\ref{eq:hellinger_def}). The PDFs are built from the samples in two ways: through binning into a histogram (with the number of bins chosen to scale with the square root of the number of samples), and through kernel density estimation (using a Gaussian kernel with the width chosen by Scott's rule). The former approach will in general over-estimate tension as tails are underpopulated due to the discrete sampling, whereas the latter approach under-estimates tension due to the smoothing of the PDFs by the kernel density estimator. Empirically, we find that a simple average of the two approaches yields good accuracy over the few-$\sigma$ tension range that we are interested in.
 
 We invert Eq.~(\ref{eq:hellinger_gauss}) to determine the expected difference in the means, $|\mu_1 - \mu_2|$ if the two distributions were Gaussian, for a given value of $d_{\rm H}$. To do so, we use the standard deviations estimated from the samples. The resulting difference in the means is inserted into Eq.~(\ref{eq: std_tension}) to obtain a measure of tension in the familiar $\sigma$ units\footnote{Our Hellinger tension measure is validated by comparing to Eq.~(\ref{eq: std_tension}) for Gaussian random variates with the same number of realisations as the sizes of our posterior samples (ca. $16\,000$ for KiDS and ca. $23\,000$ for \textit{Planck}). We find that systematic deviations in the Hellinger tension are at $0.1 \sigma$ or less for tension up to $4\sigma$, with a standard deviation of $\pm 0.05 \sigma$.}.   Comparing the \tttp and {\it Planck} $S_8$ distributions, we find a Hellinger distance tension of $3.1\,\sigma$.
+
+\subsection{Distribution of parameter shifts: $p_{\rm S}$}
+\label{app:paramshift} 
+Following \citet{Raveri2020}, we consider the distribution $P(\Delta\vec\theta)$ of the parameter shifts $\Delta\vec\theta = \vec\theta_{\it Planck} - \vec\theta_{{\rm 3\times2pt+}{\it Planck}}$. 
+The significance of any shift can then be assessed by calculating how much of $P(\Delta\vec\theta)$ is enclosed within the iso-probability surface at $P(0)$:
+\be
+\label{equ:ps}
+	p_{\rm S} = \int_{P(\Delta\vec\theta)>P(0)} P(\Delta\vec\theta)\diff\Delta\vec\theta \, .
+\ee
+In other words, how much of the distribution of parameter shifts $P(\Delta\vec\theta)$ is more likely than the probability of no shifts. 
+Accurately evaluating the integral in Eq.~\eqref{equ:ps} when $P(\Delta\vec\theta)$ is not centred on zero requires very large numbers of samples to sufficiently cover the tails of the distribution. 
+For a single parameter, $S_{8}$, we find $p_{\rm S} = 0.9981$, with a PTE of $0.0019$, or $3.1\,\sigma$. 
+This is in agreement with the other single-parameter tension estimators \eqref{eq: std_tension} and \eqref{eq:hellinger_def}. 
+For the five shared parameters between our \tttp analysis and {\it Planck} we find lower significances, around $2\, \sigma$, albeit with very large uncertainties owning to the insufficient sampling of the tails of the parameter shift distribution. 
 
 \subsection{Suspiciousness: $S$}
 \label{app:sus} 
@@ -267,20 +281,6 @@ The estimator Eq.~\eqref{equ:qudm} is asymmetric in the first data set if the po
 In this case, the data set with the more Gaussian posterior should be used, which in our case is {\it Planck}. 
 We use \software{tensiometer}\footnote{\url{https://github.com/mraveri/tensiometer}} to compute $Q_{\rm UDM}$ and its associated number of degrees of freedom. 
 We find $Q_{\rm UDM} = 7.7$ with $d = 3$. The sampling distribution is approximated by $\chi^{2}_{d}$, such that the probability of the observed value of $Q_{\rm UDM} $ is $0.054$, or $1.9\,\sigma$. 
-
-\subsection{Distribution of parameter shifts}
-\label{app:paramshift} 
-Following \citet{Raveri2020}, we consider the distribution $P(\Delta\vec\theta)$ of the parameter shifts $\Delta\vec\theta = \vec\theta_{\it Planck} - \vec\theta_{{\rm 3\times2pt+}{\it Planck}}$. 
-The significance of any shift can then be assessed by calculating how much of $P(\Delta\vec\theta)$ is enclosed within the iso-probability surface at $P(0)$:
-\be
-\label{equ:ps}
-	p_{\rm S} = \int_{P(\Delta\vec\theta)>P(0)} P(\Delta\vec\theta)\diff\Delta\vec\theta \, .
-\ee
-In other words, how much of the distribution of parameter shifts $P(\Delta\vec\theta)$ is more likely than the probability of no shifts. 
-Accurately evaluating the integral in Eq.~\eqref{equ:ps} when $P(\Delta\vec\theta)$ is not centred on zero requires very large numbers of samples to sufficiently cover the tails of the distribution. 
-For a single parameter, $S_{8}$, we find $p_{\rm S} = 0.9981$, with a PTE of $0.0019$, or $3.1\,\sigma$. 
-This is in agreement with the other single-parameter tension estimators \eqref{eq: std_tension} and \eqref{eq:hellinger_def}. 
-For the five shared parameters between our \tttp analysis and {\it Planck} we find lower significances, around $2\, \sigma$, albeit with very large uncertainties owning to the insufficient sampling of the tails of the parameter shift distribution. 
 
 
 
