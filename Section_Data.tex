@@ -23,7 +23,7 @@ Observatory, with data products freely accessible through the ESO
 archive\footnote{KiDS data access: \href{http://kids.strw.leidenuniv.nl/DR4}{kids.strw.leidenuniv.nl/DR4}}.   
 
 \citet{giblin/etal:inprep} present a series of null-tests to validate the KiDS-1000 shear catalogue in five tomographic bins spanning a 
-photometric redshift range of $0.1 < z_{\rm B} < 1.2$ (see Appendix~\ref{app:properties} for details of the properties of each bin).  
+photometric redshift range of $0.1 < z_{\rm B} \leq 1.2$ (see Appendix~\ref{app:properties} for details of the properties of each bin).  
 Meeting their requirement that any systematic detected induces less than a $0.1\sigma$ change in the inferred 
 cosmic shear constraints on the clustering cosmological parameter $S_8 = \sigma_8\sqrt{\Omega_{\rm m}/0.3}$, they conclude that the shear catalogue is `science-ready', with no significant non-lensing B-mode distortions detected.  \citet{kuijken/etal:2015} present the catalogue-level blinding methodology that we adopted to introduce $\pm 2\sigma$ differences in the recovered value of $S_8$ in order
 to retain team ignorance over the final cosmological results until all 
@@ -37,7 +37,7 @@ galaxies (LRG) in the redshift range $0.2<z<0.9$.   A range of
 different statistical analyses of the clustering of BOSS galaxies have been used in combination with CMB
 measurements, to set tight constraints on extensions to the standard
 flat $\Lambda$CDM model \citep[see][and references
-therein]{alam/etal:2017}.   We adopt the anisotropic clustering
+therein]{alam/etal:2017,eBOSS/etal:2020}.   We adopt the anisotropic clustering
 measurements of \citet{sanchez/etal:2017} in this multi-probe analysis.
 BOSS only overlaps with the equatorial stripe
 of the KiDS survey, with $409\,\mathrm{deg}^{2}$ of the BOSS survey lying within
@@ -62,6 +62,21 @@ our galaxy-galaxy lensing analysis, with an effective lens number density of $0.
 
 \subsection{Cosmic shear}
 \label{sec:cosmic_shear}
+
+\begin{figure*}
+\begin{centering}
+        \includegraphics[width=\textwidth]{Data_Plots/Pkk/Pkk_K1000_2Dbins_v2_goldclasses_Flag_SOM_Fid_C.pdf}
+        \caption{KiDS-1000 cosmic shear power spectra:  Tomographic
+          band powers comparing the E-modes (upper left block) with the best-fit
+          cosmological model from our combined multi-probe analysis.  The tomographic
+        bin combination is indicated in the upper right corner of each
+      sub-panel.  The null-test B-modes (lower right block - note the reduced ordinate scale), are
+      consistent with zero for both the full data vector, and each
+     bin combination individually.   The errors are estimated analytically \citep{joachimi/etal:inprep}.  See Sect.~\ref{sec:results} for a discussion on the goodness-of-fit.}
+        \label{fig:Pkk}
+\end{centering}
+\end{figure*}
+
 The observed cosmic shear angular power spectrum, $C_{\epsilon \epsilon}(\ell)$, measures a combination of the distortions arising from weak gravitational lensing by large-scale structures (labelled with a subscript `G') with a low-level contaminating astrophysical signal arising from the intrinsic alignment of galaxies with the large-scale structures within which they are embedded (labelled with a subscript `I').   These contributions can be separated as
 \be
 \label{eq:cl_cosmicshear}
@@ -79,18 +94,19 @@ where ${\rm a,b} \in \bc{\rm I,G}$, $f_{\rm K}(\chi)$ is the comoving angular di
 
 We estimate the cosmic shear angular power spectrum through a linear transformation of the real-space two-point shear correlation function \citep{schneider/etal:2002}.  This approach circumvents the challenge of accurately determining the survey mask for a direct power spectrum estimate.  \citet{joachimi/etal:inprep} detail the apodisation advances that we have adopted for the transformation, in addition to the modelling that we use to account for the minor differences between the theoretical expectation of the true angular power spectrum in Eq.~(\ref{eq:cl_cosmicshear}) and the measured `band powers'.    
  
-Fig.~\ref{fig:Pkk} presents the \citet{asgari/etal:inprep} KiDS-1000 cosmic shear power spectra for the auto- and cross-correlated tomographic bins.   Here we have constructed both E-mode (upper left) and B-mode (lower right) band powers in order to isolate any non-lensing B-mode distortions \citep[see equations 17 to 21 of][]{joachimi/etal:inprep}.     As expected from the analysis of \citet{giblin/etal:inprep}, the measured B-modes are found to be consistent with zero\footnote{\citet{giblin/etal:inprep} present a `COSEBIs' B-mode analysis following \citet{asgari/etal:2019}.  The alternative band power B-mode measurement, presented in Fig.~\ref{fig:Pkk}, is consistent with random noise, finding a $p$-value of $p=0.68$ for the full data vector.  Here $p$ corresponds to the probability of randomly producing a noisy B-mode that is more significant than the measurements.  Inspecting each individual tomographic bin combination, we find that these are also consistent with random noise, with a minimum $p=0.02$ found for the 1{\_}3 bin combination.   A $\sim 2\sigma$ deviation is expected, given the 15 different bin combinations analysed, and we note that the bin combination outlier in this test differs from the $\sim 2\sigma$ deviation bin combination outliers in the two different COSEBIs analyses, supporting the hypothesis that the measured B-modes are simple noise fluctuations.}.   The measured E-modes can be compared to the theoretical expectation from Eq.(\ref{eq:cl_cosmicshear}), given the best-fit set of cosmological parameters from our multi-probe analysis in Sect.~\ref{sec:results}.
+Fig.~\ref{fig:Pkk} presents the \citet{asgari/etal:inprep} KiDS-1000 cosmic shear power spectra for the auto- and cross-correlated tomographic bins.   Here we have constructed both E-mode (upper left) and B-mode (lower right) band powers in order to isolate any non-lensing B-mode distortions \citep[see equations 17 to 21 of][]{joachimi/etal:inprep}.     As expected from the analysis of \citet{giblin/etal:inprep}, the measured B-modes are found to be consistent with zero\footnote{\citet{giblin/etal:inprep} present a `COSEBIs' B-mode analysis following \citet{asgari/etal:2019}.  The alternative band power B-mode measurement, presented in Fig.~\ref{fig:Pkk}, is consistent with random noise, finding a $p$-value of $p=0.68$ for the full data vector.  Here $p$ corresponds to the probability of randomly producing a noisy B-mode that is more significant than the measurements.  Inspecting each individual tomographic bin combination, we find that these are also consistent with random noise, with a minimum $p=0.02$ found for the 1{\_}3 bin combination.   A $\sim 2\sigma$ deviation is expected, given the 15 different bin combinations analysed, and we note that the bin combination outlier in this test differs from the $\sim 2\sigma$ deviation bin combination outliers in the two different COSEBIs analyses, supporting the hypothesis that the measured B-modes are simple noise fluctuations.}.   The measured E-modes can be compared to the theoretical expectation from Eq.~(\ref{eq:cl_cosmicshear}), given the best-fit set of cosmological parameters from our multi-probe analysis in Sect.~\ref{sec:results}.
+
 
 \begin{figure*}
-        \includegraphics[width=\textwidth]{Data_Plots/Pkk/Pkk_K1000_2Dbins_v2_goldclasses_Flag_SOM_Fid_C.pdf}
-        \caption{KiDS-1000 cosmic shear power spectra:  Tomographic
-          band powers comparing the E-modes (upper left block) with the best-fit
-          cosmological model from our combined multi-probe analysis.  The tomographic
-        bin combination is indicated in the upper right corner of each
-      sub-panel.  The null-test B-modes (lower right block - note the reduced ordinate scale), are
-      consistent with zero for both the full data vector, and each
-     bin combination individually.   The errors are estimated analytically \citep{joachimi/etal:inprep}.  See Sect.~\ref{sec:results} for a discussion on the goodness-of-fit.}
-        \label{fig:Pkk}
+\begin{centering}
+        \includegraphics[width=\textwidth]{Data_Plots/clustering_wedges/BOSS_Sanchez_wedges.pdf}
+        \caption{BOSS-DR12 anisotropic clustering from \citet{sanchez/etal:2017}:
+          The transverse (pink), intermediate (blue) and parallel
+          (black) clustering wedges in two redshift bins, compared 
+          with the best-fit
+          cosmological model from our combined multi-probe analysis.  The errors, estimated from mock BOSS catalogues \citep{kitaura/etal:2016}, are highly correlated, particularly at large scales (see Fig.~\ref{fig:ttttpcov}).}
+        \label{fig:wedges}
+        \end{centering}
 \end{figure*}
 
 
@@ -114,20 +130,29 @@ Here $\alpha,\beta \in \bb{b_1, b_2, \gamma_2}$, introduce the linear and quadra
 }
 where ${\rm L}_i$ denotes the Legendre polynomial of degree $i$, ${\rm j}_i$ is the spherical Bessel function of order $i$, and $P_{{\rm gg}, s}(k,\mu,z)$ is the 3D redshift-space power spectrum that includes the non-linear real-space power spectrum, Eq.~(\ref{eq:pgg}), and the galaxy-velocity and velocity-velocity power spectrum \citep[see][for details, including how the Alcock-Paczynski distortions are accounted for in the modelling]{sanchez/etal:2017}.     The same model and `wedge' approach was adopted in the Fourier-space anisotropic galaxy clustering analysis of \citet{grieb/etal:2017}, finding consistent results.
 
-\begin{figure*}
-        \includegraphics[width=\textwidth]{Data_Plots/clustering_wedges/BOSS_Sanchez_wedges.pdf}
-        \caption{BOSS-DR12 anisotropic clustering from \citet{sanchez/etal:2017}:
-          The transverse (pink), intermediate (blue) and parallel
-          (black) clustering wedges in two redshift bins, compared 
-          with the best-fit
-          cosmological model from our combined multi-probe analysis.  The errors, estimated from mock BOSS catalogues \citep{kitaura/etal:2016}, are highly correlated, particularly at large scales (see Fig.~\ref{fig:ttttpcov}).}
-        \label{fig:wedges}
-\end{figure*}
-
 Fig.~\ref{fig:wedges} presents the \citet{sanchez/etal:2017} BOSS-DR12 anisotropic clustering correlation functions in three wedges, and two redshift slices\footnote{We do not include the \citet{sanchez/etal:2017} central redshift bin measurements in this analysis.  The central bin fully overlaps with the two primary redshift bins, shown in Fig.~\ref{fig:wedges}, and was found not to add any significant constraining power.}, with $0.2<z\leq0.5$, and $0.5<z\leq0.75$, for the scales used in this analysis with $20  < s < 160\, h^{-1}\, {\rm Mpc}$.   The measured correlation functions can be compared to the theoretical expectation given the best-fit set of cosmological parameters from our joint multi-probe analysis in Sect.~\ref{sec:results}.
 
 \subsection{Galaxy-galaxy lensing}
 \label{sec:GGL}
+
+\begin{figure*}
+\begin{centering}
+        \includegraphics[width=0.95\textwidth]{Data_Plots/Pgk/Pgk_K1000_2Dbins_v2_goldclasses_Flag_SOM_Fid_C.pdf}
+        \caption{KiDS-1000 galaxy-galaxy lensing power spectra:
+          Tomographic band powers comparing the E-modes (left block)
+          with the best-fit
+          cosmological model from our combined multi-probe analysis.  The tomographic 
+        bin combination of BOSS and 2dFLenS lenses (L) with KiDS-1000
+        sources (S), is indicated in the upper right corner of each
+        sub-panel.  Data within grey regions are not included in the cosmological analysis.
+        The null-test B-modes (right block - note the reduced ordinate scale), are
+      consistent with zero for both the full data vector, and each
+     bin combination individually.  The errors are estimated analytically \citep{joachimi/etal:inprep}.}
+        \label{fig:Pgk}
+        \end{centering}
+\end{figure*}
+
+
 The observed galaxy-galaxy lensing angular power spectra, $C_{\rm n \epsilon}(\ell)$, measure a combination of weak lensing distortions around foreground galaxies (labelled with a subscript `gG') with a low-level intrinsic alignment signal arising from the fraction of the source galaxy population that reside physically close to the lenses (labelled with a subscript `gI').   We also consider the low-level lensing-induced magnification bias (labelled with a subscript `mG').   These three contributions can be separated as 
 \be
 \label{eq:cl_ggl}
@@ -149,24 +174,7 @@ The logarithm of the functions ${\cal F}_\alpha(k)$ are second-order polynomial 
 
 Fig.~\ref{fig:Pgk} presents the KiDS-1000 galaxy-galaxy lensing power spectra, around lenses from the BOSS and 2dFLenS surveys \citep[see][for the real-space KiDS-1000 galaxy-galaxy lensing measurements for BOSS and 2dFLenS separately]{blake/etal:2020}.   Each panel presents the cross-correlation between each of the five different tomographic source bins, denoted `S', with the two different lens bins, denoted `L' (see Table~\ref{tab:datatab} for details).  Here we have constructed both E-mode (left) and B-mode (right) band powers in order to isolate any non-lensing B-mode distortions.     As expected from the analysis of \citet{giblin/etal:inprep}, the measured B-modes are found to be consistent with zero.   The measured E-modes can be compared to the theoretical expectation given the best-fit set of cosmological parameters from our joint multi-probe analysis in Sect.~\ref{sec:results} in the non-shaded regions.    
 
-The shaded regions in Fig.~\ref{fig:Pgk} are excluded from our analysis for two reasons.   For overlapping lens-source bins (L1 with S1 and L2 with S1 to S3), the intrinsic alignment terms $C_{\rm gI}(\ell)$ are expected to become significant.   This raises the question of the validity of the arguably rudimentary `NLA' intrinsic alignment model when used in combination with a non-linear galaxy bias model \citep[see][for a self-consistent pertubative approach to both intrinsic alignment and galaxy bias modelling]{blazek/etal:2019}.   As these bin combinations carry little cosmological information, we exclude this data from our cosmological inference analysis, using it instead in a redshift-scaling null test of the catalogue in \citet{giblin/etal:inprep}.   For separated lens-source bins we introduce a maximum $\ell$-scale beyond which the contributions from scales $k > 0.3 h \,{\rm Mpc}^{-1}$ become significant \citep[see figure 2 in][]{joachimi/etal:inprep}  In this regime uncertainties in the extrapolation of the \citet{sanchez/etal:2017} non-linear galaxy bias model into the non-linear regime (Eq.~\ref{eq:pgm}) may well render the $C_{\rm n \epsilon}(\ell)$ model invalid.   The $\ell$-limit depends on the redshift of the lens bin.    Fig.~\ref{fig:Pgk} therefore serves as an important illustration of the necessity of improving non-linear galaxy bias and non-linear intrinsic alignment modelling for future studies, in order to fully exploit the cosmological signal contained within the galaxy-galaxy lensing observable.
-
-
-\begin{figure*}
-        \includegraphics[width=\textwidth]{Data_Plots/Pgk/Pgk_K1000_2Dbins_v2_goldclasses_Flag_SOM_Fid_C.pdf}
-        \caption{KiDS-1000 galaxy-galaxy lensing power spectra:
-          Tomographic band powers comparing the E-modes (left block)
-          with the best-fit
-          cosmological model from our combined multi-probe analysis.  The tomographic 
-        bin combination of BOSS and 2dFLenS lenses (L) with KiDS-1000
-        sources (S), is indicated in the upper right corner of each
-        sub-panel.  Data within grey regions are not included in the cosmological analysis.
-        The null-test B-modes (right block - note the reduced ordinate scale), are
-      consistent with zero for both the full data vector, and each
-     bin combination individually.  The errors are estimated analytically \citep{joachimi/etal:inprep}.}
-        \label{fig:Pgk}
-\end{figure*}
-
+The shaded regions in Fig.~\ref{fig:Pgk} are excluded from our analysis for two reasons.   For overlapping lens-source bins (L1 with S1 and L2 with S1 to S3), the intrinsic alignment terms $C_{\rm gI}(\ell)$ are expected to become significant.   This raises the question of the validity of the arguably rudimentary `NLA' intrinsic alignment model when used in combination with a non-linear galaxy bias model \citep[see][for a self-consistent pertubative approach to both intrinsic alignment and galaxy bias modelling]{blazek/etal:2019}.   As these bin combinations carry little cosmological information, we exclude this data from our cosmological inference analysis, using it instead in a redshift-scaling null test of the catalogue in \citet{giblin/etal:inprep}.   For separated lens-source bins we introduce a maximum $\ell$-scale beyond which the contributions from scales $k > 0.3 h \,{\rm Mpc}^{-1}$ become significant \citep[see figure 2 in][]{joachimi/etal:inprep}.  In this regime uncertainties in the extrapolation of the \citet{sanchez/etal:2017} non-linear galaxy bias model into the non-linear regime (Eq.~\ref{eq:pgm}) may well render the $C_{\rm n \epsilon}(\ell)$ model invalid.   The $\ell$-limit depends on the redshift of the lens bin.    Fig.~\ref{fig:Pgk} therefore serves as an important illustration of the necessity of improving non-linear galaxy bias and non-linear intrinsic alignment modelling for future studies, in order to fully exploit the cosmological signal contained within the galaxy-galaxy lensing observable.
 
 
 \subsection{Multi-probe covariance}
@@ -188,7 +196,7 @@ Adopted priors are usually survey-specific, with the intention to be uninformati
 Different prior choices, particularly on the amplitude of the primordial power spectrum of scalar density fluctuations, $A_{\rm s}$, have however been shown to lead to non-negligible changes in the derived $S_8$ parameter \citep{joudaki/etal:2017,chang/etal:2019, joudaki/etal:2020, asgari/etal:2020_KD}. 
 \citet{joachimi/etal:inprep} show that even with wide priors on $A_{\rm s}$,  the sampling region in the $\sigma_8$-$\Omega_{\rm m}$ plane is significantly truncated at low values of $\sigma_8$ and $\Omega_{\rm m}$, with the potential to introduce a subtle bias towards low values of $\sigma_8$.   In this analysis, we address this important issue of implicit informative priors by sampling directly in $S_8$.   By adopting a very wide $S_8$ prior, our constraints on $S_8$ are therefore not impacted by our choice of prior.  We note, however, that this approach is expected to lead to a more conservative constraint on $S_8$, compared to an analysis that adopts a uniform prior\footnote{For quantitative information about the impact of implicit $A_{\rm s}$ priors, see table 5 and figure 22 of \citet{joachimi/etal:inprep}.} on $\ln A_{\rm s}$.
 
-We account for the uncertainty in our source redshift distributions using nuisance parameters $\delta_z^i$ which modify the mean redshift of each tomographic bin $i$.   By analysing mock KiDS catalogues, \citet{wright/etal:2020} determined the mean bias per redshift bin $\mu^i$, and also the covariance between the different redshift bins, $C_{\delta z}$.   This covariance arises from sampling variance in the spectroscopic training sample, which impacts, to some degree, the redshift calibration of all bins.    We therefore adopt the multivariate Gaussian prior ${\cal N}(\vek{\mu};\vek{C}_{\delta z})$, for the vector $\vek{\delta}_z$ \citep[see section 3 of,][for details]{hildebrandt/etal:inprep}. 
+We account for the uncertainty in our source redshift distributions using nuisance parameters $\delta_z^i$ which modify the mean redshift of each tomographic bin $i$.   By analysing mock KiDS catalogues, \citet{wright/etal:2020} determined the mean bias per redshift bin $\mu^i$, and also the covariance between the different redshift bins, $C_{\delta z}$.   This covariance arises from sampling variance in the spectroscopic training sample, which impacts, to some degree, the redshift calibration of all bins.    We therefore adopt the multivariate Gaussian prior ${\cal N}(\vek{\mu};\vek{C}_{\delta z})$, for the vector $\vek{\delta}_z$ \citep[see section 3 of][for details]{hildebrandt/etal:inprep}. 
 
 Adopting the Bayesian paradigm for inference, we provide our constraints in the form of a series of samples that describe the full posterior 
 distribution\footnote{Our {\sc Multinest} full posterior samples will be publicly released on the acceptance of this paper.}.  
@@ -213,13 +221,13 @@ We note that the MAP reported by {\sc Multinest} provides a noisy estimate of th
 We use both the \citet{nelder/mead:1965} and \citet{Powell1964} optimisation algorithms, as well as two-step optimisation using both algorithms.  
 While the MAP estimates found in this optimisation step increase the posterior probability by a factor of 2 to 4 compared to the MAP estimated from the {\sc Multinest} samples, they exhibit scatter in parameters constrained by the galaxy clustering likelihood. 
 We suspect this is due to numerical noise in the galaxy clustering likelihood which results in many local minima that inhibit the convergence of the optimisation step. 
-This suspicion is strengthened by the fact that the cosmic shear, as well as the cosmic shear and GGL MAP estimates do not exhibit this scatter. 
+This suspicion is strengthened by the fact that the MAP estimates do not exhibit this scatter for probe combinations that exclude the clustering observable. 
 For this reason, we report the median of the MAP estimates, weighted by their posterior probability, for probes that include the galaxy clustering likelihood, since a global optimisation would be computationally prohibitively expensive. 
 For the other probes the reported MAP is given by the parameter set at the maximum posterior found amongst all estimates \citep[see also][who adopt a similar approach]{muir/etal:2020}. 
 
 We note that the presence of offsets between marginal $S_8$ constraints and those derived from the full multivariate joint posterior 
 highlights how efforts to accurately quantify tension based solely on one-point estimates should be undertaken with some level of caution.  
-Tension can also be assessed in terms of the overlap between the full posterior distributions \citep[see for example][]{handley/lemos:2019,lemos/etal:2019,Raveri2019}, which we discuss further in Sect.~\ref{sec:planck_comp}.
+Tension can also be assessed in terms of the overlap between the full posterior distributions \citep[see for example][]{handley/lemos:2019,lemos/etal:2019,Raveri2019}, which we discuss further in Sect.~\ref{sec:planck_comp} and Appendix~\ref{app:tensionest}.
 
 
 
