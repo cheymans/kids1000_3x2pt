@@ -51,9 +51,9 @@ Fig.~\ref{fig:ttttpcov} displays the correlation coefficients of the \tttp covar
 \section{Parameter priors}
 \label{app:priors}
 This Appendix tabulates the adopted KiDS-1000 priors and sampling parameters in Table~\ref{tab:priors}.   
-The uniform prior on the dimensionless Hubble constant, $h$, reflects distance-ladder $\pm 5 \sigma$ constraints from \citet{riess/etal:2016}, which encompasses the value of $h$ favoured by \citet{planck/etal:2018}.  
-The uniform prior on the baryon density, $\omega_{\rm b}= \Omega_{\rm b}h^2$, reflects big bang nucleosynthesis $\pm 5 \sigma$ constraints from \citet{olive/etal:2014}.   
-The uniform prior on the CDM density, $\omega_{\rm c} = \Omega_{\rm c}h^2$, reflects Supernova Type Ia $\pm 5 \sigma$ constraints on $\Omega_{\rm m}$ from \citet{scolnic/etal:2018} combined with the most extreme allowed values of $h$ and $\omega_{\rm b}$, given their priors.   
+The uniform prior on the dimensionless Hubble constant, $h$, reflects distance-ladder $\pm 5\,\sigma$ constraints from \citet{riess/etal:2016}, which encompasses the value of $h$ favoured by \citet{planck/etal:2018}.  
+The uniform prior on the baryon density, $\omega_{\rm b}= \Omega_{\rm b}h^2$, reflects big bang nucleosynthesis $\pm 5\, \sigma$ constraints from \citet{olive/etal:2014}.   
+The uniform prior on the CDM density, $\omega_{\rm c} = \Omega_{\rm c}h^2$, reflects Supernova Type Ia $\pm 5\, \sigma$ constraints on $\Omega_{\rm m}$ from \citet{scolnic/etal:2018} combined with the most extreme allowed values of $h$ and $\omega_{\rm b}$, given their priors.   
 
 As discussed in Sect.~\ref{sec:KCAP} we choose to sample with an uninformative uniform prior on $S_8$ to avoid implicit informative priors from a uniform prior on the primordial power spectrum amplitude $A_{\rm s}$.    
 We choose a fixed model for the properties of neutrinos, adopting the normal hierarchy at the minimum sum of masses, $\Sigma m_\nu = 0.06\,\mathrm{eV}$, following \citet{planck/etal:2018}.  
@@ -103,7 +103,7 @@ Wide uniform priors for the intrinsic alignment parameter $A_{\rm IA}$ are chose
 Uniform priors on the baryon feedback parameter $A_{\rm bary}$ are chosen such that the resulting \citet{mead/etal:2015} model of the non-linear matter power spectrum encompasses both the most aggressive feedback model from the \citet{vandaalen/etal:2011} suite of hydrodynamical simulations, along with the dark matter-only case where $A_{\rm bary}=3.13$.
 
 There are five additional correlated nuisance parameters, $\delta^i_z$, that model uncertainty in the mean of the source redshift distributions.  We adopt a multivariate Gaussian prior for the vector $\vek{\delta}_z$ with a mean $\vek{\mu} = (0.0001,0.0021,0.0129,0.0110,-0.0060)$, and a covariance, $C_{\delta z}$, as calibrated using mock galaxy catalogues in \citet{wright/etal:2020}.   
-The diagonal terms of $\vek{C}_{\delta z}$ are typically at the level of $\sim(0.01)^2$, with off-diagonal correlation coefficients ranging between $~\sim 0.1$ and $\sim 0.3$ \citep[see section 3 and figure 2 of][for details]{hildebrandt/etal:inprep}.
+The diagonal terms of $\vek{C}_{\delta z}$ are typically at the level of $\sim\!(0.01)^2$, with off-diagonal correlation coefficients ranging between $\sim\! 0.1$ and $\sim\! 0.3$ \citep[see section 3 and figure 2 of][for details]{hildebrandt/etal:inprep}.
 
 
 \section{Parameter constraints}
@@ -130,15 +130,15 @@ Here we find very little difference, as our \tttp analysis already favours high 
 Our choice of scales and adoption of the band-power cosmic shear statistic for this analysis also makes us less sensitive to uncertainties in the baryon feedback parameter, compared to a standard two-point correlation function analysis \citep{asgari/etal:2020_KD}.
 
 The removal of the two highest photometric redshift bins (blue and purple) primarily impacts $S_8$.   
-These two bins carry the majority of the signal-to-noise in our analysis, and so it is not surprising that the removal of nearly half the constraining data, in each case, can result in $\sim 1 \sigma$ changes in the recovered $S_8$ (see for example the discussion in Appendix~\ref{app:expectedoffsets}.   
+These two bins carry the majority of the signal-to-noise in our analysis, and so it is not surprising that the removal of nearly half the constraining data, in each case, can result in $\sim\! 1\,\sigma$ changes in the recovered $S_8$ (see for example the discussion in Appendix~\ref{app:expectedoffsets}.   
 We refer the reader to \citet{asgari/etal:inprep} where we present a detailed internal consistency analysis of the cosmic shear signal, following \citet{kohlinger/etal:2019}, \citep[see also][]{efstathiou/lemos:2018},  concluding that the two highest photometric redshift bins are consistent with the full data set.   
-A potential $\sim 3\sigma$-level flag is, however, raised in \citet{asgari/etal:inprep}, 
+A potential $\sim\! 3\,\sigma$-level flag is, however, raised in \citet{asgari/etal:inprep}, 
 over the internal consistency of the second tomographic bin.  
 In our analysis where we remove the two lowest photometric redshift bins (orange), we find that these bins contribute very little to the $S_8$ constraint, and only serve to tighten the constraints on the intrinsic alignment parameter $A_{\rm IA}$.
 
 Finally we turn to the galaxy bias test (lime green), where we limit the analysis to a linear galaxy bias model, $b_1$, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero\footnote{Removing all higher-order galaxy bias terms also requires the uncoupling of $b_1$ from $\gamma_2$.}, as well as imposing a Gaussian galaxy velocity distribution by setting $a_{\rm vir}$ to zero.   
 We can see that this biases the recovered cosmological constraints, as the amplitude of the linear galaxy bias increases in an attempt to model the enhanced power on small scales that the non-linear bias induces.   
-The erroneous increase in $b_1$ leads to a decrease in the recovered $S_8$, and also an overall reduction in the goodness-of-fit of the model with $\chi^2_{\rm MAP} = 379.8$ for $\sim 300$ degrees of freedom.  This result should serve as a point of caution for \tttp analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations that probe physical scales as low as $s_{\rm min}= 20 h^{-1}\, {\rm Mpc}$.
+The erroneous increase in $b_1$ leads to a decrease in the recovered $S_8$, and also an overall reduction in the goodness-of-fit of the model with $\chi^2_{\rm MAP} = 379.8$ for $\sim\! 300$ degrees of freedom.  This result should serve as a point of caution for \tttp analyses that adopt an effective linear bias model \citep[see also the discussion in][]{asgari/etal:2020}, although we note that our analysis is particularly sensitive to the galaxy bias model given the high signal-to-noise BOSS clustering observations that probe physical scales as low as $s_{\rm min}= 20 h^{-1}\, {\rm Mpc}$.
 
 \section{Expected $S_8$ differences between partially overlapping weak lensing surveys}
 \label{app:expectedoffsets}
@@ -201,7 +201,7 @@ where the normal distributions have means $\mu_{1,2}$ and variances $\sigma_{1,2
 We estimate the Hellinger distance between our samples via a discretised version of Eq.~(\ref{eq:hellinger_def}). The PDFs are built from the samples in two ways: through binning into a histogram (with the number of bins chosen to scale with the square root of the number of samples), and through kernel density estimation (using a Gaussian kernel with the width chosen by Scott's rule). The former approach will in general over-estimate tension as tails are underpopulated due to the discrete sampling, whereas the latter approach under-estimates tension due to the smoothing of the PDFs by the kernel density estimator. Empirically, we find that a simple average of the two approaches yields good accuracy over the few-$\sigma$ tension range that we are interested in.
 
 We invert Eq.~(\ref{eq:hellinger_gauss}) to determine the expected difference in the means, $|\mu_1 - \mu_2|$ if the two distributions were Gaussian, for a given value of $d_{\rm H}$. To do so, we use the standard deviations estimated from the samples. The resulting difference in the means is inserted into Eq.~(\ref{eq: std_tension}) to obtain a measure of tension in the familiar $\sigma$ units\footnote{Our Hellinger tension measure is validated by comparing to Eq.~(\ref{eq: std_tension}) for Gaussian random variates with the same number of realisations as the sizes of our posterior samples %(ca. $16\,000$ for KiDS and ca. $23\,000$ for \textit{Planck}). 
-We find that systematic deviations in the Hellinger tension are at $0.1 \sigma$ or less for tension up to $4\sigma$, with a standard deviation of $\pm 0.05 \sigma$.}.   
+We find that systematic deviations in the Hellinger tension are at $0.1\, \sigma$ or less for tension up to $4\,\sigma$, with a standard deviation of $\pm 0.05\, \sigma$.}.   
 
 Comparing the \tttp and {\it Planck} $S_8$ distributions, we find a Hellinger distance $d_{\rm H}=0.95$, which corresponds to a tension of $3.1\,\sigma$.
 
@@ -217,20 +217,20 @@ In other words, how much of the distribution of parameter shifts $P(\Delta\vec\t
 Accurately evaluating the integral in Eq.~\eqref{equ:ps} when $P(\Delta\vec\theta)$ is not centred on zero requires very large numbers of samples to sufficiently cover the tails of the distribution. 
 For a single parameter, $S_{8}$, we find $p_{\rm S} = 0.9981$, with a PTE of $0.0019$, or $3.1\,\sigma$. 
 This is in agreement with the other single-parameter tension estimators \eqref{eq: std_tension} and \eqref{eq:hellinger_def}. 
-For the five shared parameters between our \tttp analysis and {\it Planck} we find lower significances, around $2\, \sigma$, albeit with very large uncertainties owning to the insufficient sampling of the tails of the parameter shift distribution. 
+For the five shared parameters between our \tttp analysis and {\it Planck} we find lower significances, around $2\, \sigma$, albeit with very large uncertainties owing to the insufficient sampling of the tails of the parameter shift distribution. 
 
 \subsection{Suspiciousness: $S$}
 \label{app:sus} 
-\citet{handley/lemos:2019} propose the `suspiciousness' statistic $S$ based on the Bayes factor, $R$, but hardened against prior-dependences.
+\citet{handley/lemos:2019} propose the `suspiciousness' statistic $S$ based on the Bayes factor, $R$, but hardened against prior dependences.
 They define 
 \be
 \label{equ:suspiciousness}
- \log S = \log R - \log I \,,
+ \ln S = \ln R - \ln I \,,
 \ee
-where $\log R$ is the logarithm of the Bayes factor in Eq.~\eqref{equ:bayes-factor}:
+where $\ln R$ is the logarithm of the Bayes factor in Eq.~\eqref{equ:bayes-factor}:
 \be
 \label{eqn:logR}
-	\log R = \log Z_{{\rm 3\times2pt+}{\it Planck}}- \log Z_{\rm 3\times2pt} - \log Z_{\it Planck} \,,
+	\ln R = \ln Z_{{\rm 3\times2pt+}{\it Planck}}- \ln Z_{\rm 3\times2pt} - \ln Z_{\it Planck} \,,
 \ee 
 with the evidence $Z_{i}$ given by
 \be
@@ -239,21 +239,21 @@ with the evidence $Z_{i}$ given by
 the integral of the likelihood $\mathcal{L}$ and prior $\pi$ over the parameters $\vec\theta$. 
 The information ratio $I$ in Eq.~\eqref{equ:suspiciousness} is defined as
 \be
- \log I = \mathcal{D}_{\rm 3\times2pt} + \mathcal{D}_{\it Planck}  - \mathcal{D}_{{\rm 3\times2pt+}{\it Planck}} \,,
+ \ln I = \mathcal{D}_{\rm 3\times2pt} + \mathcal{D}_{\it Planck}  - \mathcal{D}_{{\rm 3\times2pt+}{\it Planck}} \,,
 \ee
 with $\mathcal{D}_{i}$ being the Kullback-Leibler divergence between the posterior $P$ and prior for probe $i$:
 \begin{splitequation}
-	\mathcal{D} &= \int P \log \frac{P}{\pi}\diff\vec\theta = \int P \log\mathcal{L}\, \diff\vec\theta - \log Z \\
-	&= \langle\log\mathcal{L}\rangle_{P} - \log Z \,.
+	\mathcal{D} &= \int P \ln \frac{P}{\pi}\diff\vec\theta = \int P \ln\mathcal{L}\, \diff\vec\theta - \ln Z \\
+	&= \langle\ln\mathcal{L}\rangle_{P} - \ln Z \,.
 \end{splitequation}
 The second equality follows from Bayes theorem: $P = \mathcal{L}\pi \,/\, Z$. 
 Using this definition of $\mathcal{D}$ allows us to rephrase the suspiciousness solely in terms of the expectation values of the log-likelihoods:
 \begin{splitequation}
-	\log S &= \langle\log\mathcal{L}_{{\rm 3\times2pt+}{\it Planck}}\rangle_{P_{{\rm 3\times2pt+}{\it Planck}}} - \langle\log\mathcal{L}_{\rm 3\times2pt}\rangle_{P_{\rm 3\times2pt}} \\
-	&\quad- \langle\log\mathcal{L}_{\it Planck}\rangle_{P_{\it Planck}} \,.
+	\ln S &= \langle\ln\mathcal{L}_{{\rm 3\times2pt+}{\it Planck}}\rangle_{P_{{\rm 3\times2pt+}{\it Planck}}} - \langle\ln\mathcal{L}_{\rm 3\times2pt}\rangle_{P_{\rm 3\times2pt}} \\
+	&\quad- \langle\ln\mathcal{L}_{\it Planck}\rangle_{P_{\it Planck}} \,.
 \end{splitequation}
-We find $\log S=-2.0\pm0.1$. 
-For Gaussian posteriors, the quantity $d-2\log S$ is distributed as $\chi^2_{d}$, where $d=d_{\rm 3\times2pt} + d_{\it Planck} - d_{{\rm 3\times2pt+}{\it Planck}}$ is the difference in the Bayesian model dimensionalities.
+We find $\ln S=-2.0\pm0.1$. 
+For Gaussian posteriors, the quantity $d-2\ln S$ is distributed as $\chi^2_{d}$, where $d=d_{\rm 3\times2pt} + d_{\it Planck} - d_{{\rm 3\times2pt+}{\it Planck}}$ is the difference in the Bayesian model dimensionalities.
 This allows us to assign a probability of the observed suspiciousness under the assumption that the two data sets are in concordance. 
 We calculate $d$, following \citet{handley/lemos:2019}, from the variances of the log-likelihoods. 
 Other estimates of the Bayesian model dimensionality, such as those introduced in \citet{Raveri2019} yield very similar results. 
@@ -261,10 +261,10 @@ We calculate $d=3.3\pm0.7$ and therefore conclude that the probability of observ
 
 \subsection{Goodness-of-fit change: $Q_{\rm DMAP}$}
 \label{app:QDMAP} 
-\citet{Raveri2019} introduce the $Q_{\rm DMAP}$ statistic that quantifies how the goodness-of-fit changes when two data sets are combined, based on the difference of the log-likelihoods, $\log\mathcal{L}(\vec\theta^{\rm MAP}_{i})$, at the MAP of the respective posteriors\footnote{As an interesting aside, we note that the combined quantity $Q_{\rm DMAP} + 4\log S$ corresponds to the twice the deviance information criterion ratio introduced in \citet{joudaki/etal:2017}.},
+\citet{Raveri2019} introduce the $Q_{\rm DMAP}$ statistic that quantifies how the goodness-of-fit changes when two data sets are combined, based on the difference of the log-likelihoods, $\ln\mathcal{L}(\vec\theta^{\rm MAP}_{i})$, at the MAP of the respective posteriors\footnote{As an interesting aside, we note that the combined quantity $Q_{\rm DMAP} + 4\ln S$ corresponds to the twice the deviance information criterion ratio introduced in \citet{joudaki/etal:2017}.},
 \be
 \label{eqn:QDMAP}
-	Q_{\rm DMAP} =  2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\rm 3\times2pt}) + 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{\it Planck}) - 2\log\mathcal{L}(\vec\theta^{\rm MAP}_{{\rm 3\times2pt+}{\it Planck}}) \,.
+	Q_{\rm DMAP} =  2\ln\mathcal{L}(\vec\theta^{\rm MAP}_{\rm 3\times2pt}) + 2\ln\mathcal{L}(\vec\theta^{\rm MAP}_{\it Planck}) - 2\ln\mathcal{L}(\vec\theta^{\rm MAP}_{{\rm 3\times2pt+}{\it Planck}}) \,.
 \ee
 For Gaussian posteriors, the sampling distribution of $Q_{\rm DMAP}$ is $\chi^{2}$-distributed with $d_{\rm 3\times2pt} + d_{\it Planck} - d_{{\rm 3\times2pt+}{\it Planck}}$ degrees of freedom. 
 Here we follow \citet{Raveri2019} and calculate the model dimensionalities by $d_{i} = N - \mathrm{tr}[\mathcal{C}_{\pi}^{-1}\mathcal{C}_{P}]$, where $N$ is the total number of varied parameters, $\mathcal{C}_{\pi}$ is the prior parameter covariance, and $\mathcal{C}_{P}$ is the posterior parameter covariance. 
@@ -299,9 +299,9 @@ In regards to software review, for the majority of cases we have adopted the `fo
 
 \section{Post-unblinding analyses}
 \label{app:unblinding}
-This analysis was carried out `blind',  such that our final key result, our constraint on $S_8$, was unknown until all analysis choices were fixed.   Our blinding strategy creates three versions of the catalogue, where one is the truth, and the other two are modified to introduce up to a $\sim \pm 2\sigma$ deviation in the recovered value of $S_8$ \citep{kuijken/etal:2015, giblin/etal:inprep}.   In contrast to previous KiDS analyses, we set ourselves a challenge to only run our blind data analysis inference once, after fully developing and road-testing the pipeline using mock catalogues and data vectors \citep{joachimi/etal:inprep}.     Unexpectedly, the only analysis where we failed to meet this challenge were for data vectors that included galaxy clustering.   Here a bug in a naming convention in an updated {\sc CosmoSIS-CAMB} interface resulted in $\sim 0.5\sigma$ errors in the recovery of $\sigma_8$ in our initial BOSS re-analysis.  This was corrected and updated for our fiducial analysis before unblinding.
+This analysis was carried out `blind',  such that our final key result, our constraint on $S_8$, was unknown until all analysis choices were fixed.   Our blinding strategy creates three versions of the catalogue, where one is the truth, and the other two are modified to introduce up to a $\sim\! \pm 2\,\sigma$ deviation in the recovered value of $S_8$ \citep{kuijken/etal:2015, giblin/etal:inprep}.   In contrast to previous KiDS analyses, we set ourselves a challenge to only run our blind data analysis inference once, after fully developing and road-testing the pipeline using mock catalogues and data vectors \citep{joachimi/etal:inprep}.     Unexpectedly, the only analysis where we failed to meet this challenge were for data vectors that included galaxy clustering.   Here a bug in a naming convention in an updated {\sc CosmoSIS-CAMB} interface resulted in $\sim\! 0.5\,\sigma$ errors in the recovery of $\sigma_8$ in our initial BOSS re-analysis.  This was corrected and updated for our fiducial analysis before unblinding.
 
-Our fiducial results, presented in Fig.~\ref{fig:cosmology-params} and tabulated in Appendix~\ref{app:parameter-constraints}, were carried out for all three blinds using a covariance matrix derived assuming a fiducial cosmology given by the best-fit parameters from \citet{troester/etal:2020}.  We reserved our iterated-covariance analysis, however, for post-unblinding, re-analysing the true data vector with an updated covariance matrix derived adopting the best-fit parameters from our initial blinded run of the true catalogue.   This iterative step changed our value for the full \tttp analysis $S_8$ by $0.2\,\sigma$ for the MAP constraint, and by $0.1 \sigma$ for the marginal constraint.   Our tension-consistency analysis with the CMB constraints from Planck was also conducted after unblinding, as we were unblind to Planck throughout the process.
+Our fiducial results, presented in Fig.~\ref{fig:cosmology-params} and tabulated in Appendix~\ref{app:parameter-constraints}, were carried out for all three blinds using a covariance matrix derived assuming a fiducial cosmology given by the best-fit parameters from \citet{troester/etal:2020}.  We reserved our iterated-covariance analysis, however, for post-unblinding, re-analysing the true data vector with an updated covariance matrix derived adopting the best-fit parameters from our initial blinded run of the true catalogue.   This iterative step changed our value for the full \tttp analysis $S_8$ by $0.2\,\sigma$ for the MAP constraint, and by $0.1\, \sigma$ for the marginal constraint.   Our tension-consistency analysis with the CMB constraints from Planck was also conducted after unblinding, as we were unblind to Planck throughout the process.
 
 As we are only interested in relative shifts in the sensitivity tests presented in Fig~\ref{fig:sensitivity_tests}, these were only conducted for a single blind, and re-calculated post-unblinding for the true catalogue.  Wishing to be fully transparent in this Appendix, we note that owing to limited resources the sensitivity test was not updated during the blinded phase of the project in order to correct for the {\sc CosmoSIS-CAMB} interface error which only impacted the BOSS constraints.   We argue that this was appropriate given the nature of the test and given that this error has been corrected post-unblinding.    Our cosmic shear and galaxy clustering analysis, featured in our internal consistency test in Fig.~\ref{fig:S8comp}, was also not re-processed blind after the BOSS error was corrected, as both our forecast in \citet{joachimi/etal:inprep}, and our initial analysis, confirmed that the constraints from our cosmic shear and galaxy clustering analysis were almost identical to constraints from the full \tttp analysis, which was correctly analysed for all three blinds.
 
