@@ -1,25 +1,27 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
+import matplotlib
 import sys
 from astropy.io import ascii
 import matplotlib.ticker as ticker
 from matplotlib.patches import Rectangle
 
 # Some font setting
-rcParams['ps.useafm'] = True
-rcParams['pdf.use14corefonts'] = True
+text_width = 523.5307/72
+column_width = 256.0748/72
 
-font = {'family' : 'serif',
-        'weight' : 'normal',
-        'size'   : 16}
+matplotlib.rc("text", usetex=True)
+matplotlib.rc("text.latex", preamble=
+r"""
+\usepackage{txfonts}
+\newcommand{\mathdefault}[1][]{}""")
 
-plt.rc('font', **font)
+matplotlib.rc("font", family="Times", size=10)
 
 #set up the figure grid PEE panels, a gap and then the PBB panels
 
 gridspec = dict(hspace=0.0, wspace=0.0, width_ratios=[1, 1, 0.2, 1, 1])
-fig, axes = plt.subplots(nrows=5, ncols=5, gridspec_kw=gridspec, figsize=(10, 7.5))
+fig, axes = plt.subplots(nrows=5, ncols=5, gridspec_kw=gridspec, figsize=(text_width, text_width*0.75))
 
 # Read in user input to set the patch, blind, zmin,zmax, nbootstrap
 #if len(sys.argv) <2: 
@@ -65,8 +67,9 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
 #MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+MD='/Users/yooken/Research/KiDS/Cat_to_Obs_K1000_P1'
 
 #Set the x/y limits
 xmin=101
@@ -94,7 +97,7 @@ for iz in range(1,nlensbin+1):
         binid=binid+1
 
         # read in the data
-        labelchar='L%s_S%s'%(iz,jz)
+        labelchar='L%s-S%s'%(iz,jz)
         tomochar='%s_%s'%(iz,jz)
         EBnfile='%s_%s_%s_%s.dat'%(filetop,LFVER,filetail,tomochar)
         indata = np.loadtxt(EBnfile)
@@ -124,8 +127,8 @@ for iz in range(1,nlensbin+1):
         grid_y_E=(5-jz)
         ax=axes[grid_y_E,grid_x_E]
 
-        ax.plot(elltheory,BPtheory/elltheory*1e5,color='m',linewidth=2)
-        ax.errorbar(ell, PEE/ell*1e5, yerr=Ediagerr/ell*1e5, fmt='o', markersize=4,color='b')
+        ax.plot(elltheory,BPtheory/elltheory*1e5,color='m',linewidth=1.5)
+        ax.errorbar(ell, PEE/ell*1e5, yerr=Ediagerr/ell*1e5, fmt='o', markersize=2.5,color='b')
 
         # only label the subplots at the edges
         ax.label_outer()
@@ -141,7 +144,7 @@ for iz in range(1,nlensbin+1):
 
         # add the tomographic bin combination
         ax.annotate(labelchar, xy=(0.95,0.9),xycoords='axes fraction',
-            size=14, ha='right', va='top')
+            size=10, ha='right', va='top')
         ax.axhline(y=0, color='black', ls=':')
 
         #Grey out data that isn't used
@@ -158,7 +161,7 @@ for iz in range(1,nlensbin+1):
         grid_x_B=(iz+2)
         grid_y_B=(5-jz)
         ax=axes[grid_y_B,grid_x_B]
-        ax.errorbar(ell, PBB/ell*1e5, yerr=Bdiagerr/ell*1e5, fmt='o', markersize=4,color='b')
+        ax.errorbar(ell, PBB/ell*1e5, yerr=Bdiagerr/ell*1e5, fmt='o', markersize=2.5,color='b')
         
         # only label the subplots at the edges
         ax.label_outer()
@@ -178,7 +181,7 @@ for iz in range(1,nlensbin+1):
 
         # add the tomographic bin combination and a horizontal line
         ax.annotate(labelchar, xy=(0.95,0.9),xycoords='axes fraction',
-                    size=14, ha='right', va='top')
+                    size=10, ha='right', va='top')
         ax.axhline(y=0, color='black', ls=':')
 
     # At the end of the first run through all the GGL sources - lens 1 combinations    

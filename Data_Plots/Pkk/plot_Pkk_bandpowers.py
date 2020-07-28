@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib as matplotlib
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
+import matplotlib
 import sys
 from astropy.io import ascii
 import matplotlib.ticker as ticker
@@ -10,28 +10,17 @@ import matplotlib.ticker as ticker
 text_width = 523.5307/72
 column_width = 256.0748/72
 
-#Not sure why but this line causes a crash?
-#matplotlib.rc("text", usetex=True)
-matplotlib.rc("text.latex", preamble=r"""
+matplotlib.rc("text", usetex=True)
+matplotlib.rc("text.latex", preamble=
+r"""
 \usepackage{txfonts}
 \newcommand{\mathdefault}[1][]{}""")
-#Also Times is missing for some reason
-#Did some stackoverflow seraching but decided time was of the essence :(
-#matplotlib.rc("font", family="Times")
 
-# Some font setting
-rcParams['ps.useafm'] = True
-rcParams['pdf.use14corefonts'] = True
-
-font = {'family' : 'serif',
-        'weight' : 'normal',
-        'size'   : 16}
-
-plt.rc('font', **font)
+matplotlib.rc("font", family="Times", size=10)
 
 #set up the figure grid
 tick_spacing = 2
-fig,axes= plt.subplots(6,7,figsize=(10, 7.5),gridspec_kw={'hspace': 0, 'wspace': 0})
+fig,axes= plt.subplots(6,7,figsize=(text_width, text_width*0.75),gridspec_kw={'hspace': 0, 'wspace': 0})
 
 # Read in user input to set the patch, blind, zmin,zmax, nbootstrap
 #if len(sys.argv) <2: 
@@ -77,8 +66,9 @@ filetail='nbins_8_Ell_100.0_1500.0_zbins'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
 #MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+MD='/Users/yooken/Research/KiDS/Cat_to_Obs_K1000_P1'
 
 #Set the x/y limits
 xmin=101
@@ -95,8 +85,8 @@ for iz in range(1,ntomobin+1):
         binid=binid+1
 
         # read in the data
-        tomochar='%s_%s'%(iz,jz)
-        EBnfile='%s_%s_%s_%s.dat'%(filetop,LFVER,filetail,tomochar)
+        tomochar='%s-%s'%(iz,jz)
+        EBnfile='%s_%s_%s_%s.dat'%(filetop,LFVER,filetail,tomochar.replace("-","_"))
         indata = np.loadtxt(EBnfile)
         ell=indata[:,0]
         PBB=indata[:,3]  # this is l^2 P_BB/ 2pi
@@ -123,8 +113,8 @@ for iz in range(1,ntomobin+1):
         grid_y_E=(5-jz)
         ax=axes[grid_y_E,grid_x_E]
 
-        ax.plot(elltheory,BPtheory/elltheory*1e7,color='m',linewidth=2)
-        ax.errorbar(ell, PEE/ell*1e7, yerr=Ediagerr/ell*1e7, fmt='o', markersize=4,color='b')
+        ax.plot(elltheory,BPtheory/elltheory*1e7,color='m',linewidth=1.5)
+        ax.errorbar(ell, PEE/ell*1e7, yerr=Ediagerr/ell*1e7, fmt='o', markersize=2.5,color='b')
 
         # only label the subplots at the edges
         ax.label_outer()
@@ -143,7 +133,7 @@ for iz in range(1,ntomobin+1):
 
         # add the tomographic bin combination
         ax.annotate(tomochar, xy=(0.95,0.9),xycoords='axes fraction',
-            size=14, ha='right', va='top')
+            size=10, ha='right', va='top')
         ax.axhline(y=0, color='black', ls=':')
         
         #PLOT THE BMODES!
@@ -152,7 +142,7 @@ for iz in range(1,ntomobin+1):
         grid_x_B=(jz+1)
         grid_y_B=(6-iz)
         ax=axes[grid_y_B,grid_x_B]
-        ax.errorbar(ell, PBB/ell*1e7, yerr=Bdiagerr/ell*1e7, fmt='o', markersize=4,color='b')
+        ax.errorbar(ell, PBB/ell*1e7, yerr=Bdiagerr/ell*1e7, fmt='o', markersize=2.5,color='b')
         
         # only label the subplots at the edges
         ax.label_outer()
@@ -169,7 +159,7 @@ for iz in range(1,ntomobin+1):
 
         # add the tomographic bin combination and a horizontal line
         ax.annotate(tomochar, xy=(0.95,0.9),xycoords='axes fraction',
-                    size=14, ha='right', va='top')
+                    size=10, ha='right', va='top')
         ax.axhline(y=0, color='black', ls=':')
 
 

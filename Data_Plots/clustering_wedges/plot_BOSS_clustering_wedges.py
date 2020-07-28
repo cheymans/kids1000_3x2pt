@@ -1,25 +1,27 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
+import matplotlib
 import sys
 from astropy.io import ascii
 import matplotlib.ticker as ticker
 from matplotlib.patches import Rectangle
 
 # Some font setting
-rcParams['ps.useafm'] = True
-rcParams['pdf.use14corefonts'] = True
+text_width = 523.5307/72
+column_width = 256.0748/72
 
-font = {'family' : 'serif',
-        'weight' : 'normal',
-        'size'   : 16}
+matplotlib.rc("text", usetex=True)
+matplotlib.rc("text.latex", preamble=
+r"""
+\usepackage{txfonts}
+\newcommand{\mathdefault}[1][]{}""")
 
-plt.rc('font', **font)
+matplotlib.rc("font", family="Times", size=10)
 
 #set up the figure grid PEE panels, a gap and then the PBB panels
 
 gridspec = dict(hspace=0.0, wspace=0.0, width_ratios=[1, 1])
-fig, axes = plt.subplots(nrows=1, ncols=2, gridspec_kw=gridspec, figsize=(10, 4.0))
+fig, axes = plt.subplots(nrows=1, ncols=2, gridspec_kw=gridspec, figsize=(text_width, text_width*0.4))
 
 # before we read in the per tomo bin combination data, we need to read in the full covariance from the mocks
 #These are 3x2pt covs, even though they are stored in the Pkk_cov directory
@@ -36,8 +38,9 @@ filetail='z.3xiwedges_measurements.txt'
 # theory curves
 #read in the expectation value for the Emode cosmic shear signal
 #MD='/home/cech/KiDSLenS/Cat_to_Obs_K1000_P1/'
-MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
+#MD='/Users/macleod/CH_work/Cat_to_Obs_K1000_P1/'
 #MD='/Users/heymans/KiDS/Cat_to_Obs_K1000_P1/'
+MD='/Users/yooken/Research/KiDS/Cat_to_Obs_K1000_P1'
 
 #Set the x/y limits
 xmin=20.0
@@ -82,14 +85,14 @@ for lensbin in ("low","high"):
 
     offset=0.5
     #transverse
-    trans,=ax.plot(stheory-offset,theory[0]*stheory*stheory,color='m',linewidth=2,label="Transverse")
-    ax.errorbar(s-offset, xi1*s*s, yerr=sigxi1*s*s, fmt='D', markersize=4,color='m')
+    trans,=ax.plot(stheory-offset,theory[0]*stheory*stheory,color='m',linewidth=1.5,label="Transverse")
+    ax.errorbar(s-offset, xi1*s*s, yerr=sigxi1*s*s, fmt='D', markersize=2.5,color='m')
     #intermediate
-    intermediate,=ax.plot(stheory,theory[1]*stheory*stheory,color='blue',linewidth=2,label="Intermediate")
-    ax.errorbar(s, xi2*s*s, yerr=sigxi1*s*s, fmt='s', markersize=4,color='blue',alpha=0.6)
+    intermediate,=ax.plot(stheory,theory[1]*stheory*stheory,color='blue',linewidth=1.5,label="Intermediate")
+    ax.errorbar(s, xi2*s*s, yerr=sigxi1*s*s, fmt='s', markersize=2.5,color='blue',alpha=0.6)
     #parallel
-    parallel,=ax.plot(stheory+offset,theory[2]*stheory*stheory,color='black',linewidth=2,label="Parallel")
-    ax.errorbar(s+offset, xi3*s*s, yerr=sigxi1*s*s, fmt='o', markersize=4,color='black',alpha=0.6)
+    parallel,=ax.plot(stheory+offset,theory[2]*stheory*stheory,color='black',linewidth=1.5,label="Parallel")
+    ax.errorbar(s+offset, xi3*s*s, yerr=sigxi1*s*s, fmt='o', markersize=2.5,color='black',alpha=0.6)
 
     # set the limits of the plot
     ax.set_xlim(xmin,xmax)
@@ -97,23 +100,24 @@ for lensbin in ("low","high"):
 
     # add the tomographic bin combination
     ax.annotate(labelchar, xy=(0.97,0.95),xycoords='axes fraction',
-            size=14, ha='right', va='top')
+            size=12, ha='right', va='top')
 
     # Split legend across both the panels
     if lensbin=="low":
-        ax.legend([trans,intermediate],["Transverse","Intermediate"],loc='lower left',fontsize=14)
+        plt.setp(ax.get_xticklabels()[-1], visible=False)
+        ax.legend([trans,intermediate],["Transverse","Intermediate"],loc='lower left',fontsize=10, frameon=False)
     else:
-        ax.legend([parallel],["Parallel"],loc='lower left',fontsize=14)
+        ax.legend([parallel],["Parallel"],loc='lower left',fontsize=10, frameon=False)
 
 #add plot labels
-axes[0].set_xlabel('s  [h$^{-1}$ Mpc]')
-axes[1].set_xlabel('s  [h$^{-1}$ Mpc]')
-axes[0].set_ylabel('s$^2 \, \\xi_{gg}$ [h$^{-1}$ Mpc]$^2$')
+axes[0].set_xlabel('s  [$h^{-1}$ Mpc]')
+axes[1].set_xlabel('s  [$h^{-1}$ Mpc]')
+axes[0].set_ylabel('s$^2 \, \\xi_{gg}$ [$h^{-2}$ Mpc$^2$]')
 
 plt.tight_layout()
 
 outfile='BOSS_Sanchez_wedges.pdf'
 plt.savefig(outfile,dpi=300)
-plt.show()
+#plt.show()
 
 
