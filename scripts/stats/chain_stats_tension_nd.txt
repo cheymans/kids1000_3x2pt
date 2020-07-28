@@ -1,0 +1,35 @@
+CS                  : d = 5.46, n_eff = 3.02, n_post = 4.00, <logL> = -78.04, D = 7.37, logZ = -85.41
+CS+GGL              : d = 12.78, n_eff = 7.35, n_post = 10.83, <logL> = -94.75, D = 15.70, logZ = -110.45
+CS+GC               : d = 15.82, n_eff = 11.87, n_post = 14.59, <logL> = -167.26, D = 30.90, logZ = -198.16
+GC                  : d = 10.90, n_eff = 10.59, n_post = 12.33, <logL> = -90.03, D = 25.69, logZ = -115.71
+3x2pt               : d = 17.66, n_eff = 12.50, n_post = 14.51, <logL> = -185.36, D = 32.28, logZ = -217.64
+3x2pt+Planck        : d = 20.47, n_eff = 14.92, n_post = 15.01, <logL> = -692.28, D = 37.16, logZ = -729.44
+Planck              : d = 6.13, n_eff = 5.98, n_post = 5.97, <logL> = -504.91, D = 11.63, logZ = -516.54
+log Z:  -516.34±0.11
+D:      11.44±0.10
+d:      6.12±0.15
+log Z:  -726.74±0.19
+D:      34.46±0.18
+d:      20.49±0.47
+log Z:  -213.47±0.16
+D:      28.11±0.16
+d:      17.65±0.39
+
+N-d tension statistics
+Stats 3x2pt vs Planck (chains)
+log R: 4.73, R: 113.48
+log I: 6.74, log S: -2.01
+d: 3.33
+PTE: 0.078, 1.76σ
+
+Q_DMAP: 9.48, n_eff: 3.57
+PTE: 0.037, 2.09σ
+
+Q_UDM (Planck vs joint): 7.66, n_eff: 3.00
+PTE: 0.054, 1.93σ
+
+Stats 3x2pt vs Planck (anesthetic)
+log R: 3.08±0.27, R: 22.56±6.23
+log I: 5.08±0.27, log S: -2.00±0.15
+d: 3.28±0.63
+PTE: 0.08±0.02, sigmas: 1.77±0.11
