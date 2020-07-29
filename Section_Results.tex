@@ -92,8 +92,10 @@ Fig.~\ref{fig:S8comp_sensitivity} illustrates the results of a series of sensiti
 we ignore the impact of baryon feedback (the `No baryon' case), fixing $A_{\rm bary}=3.13$, corresponding to the non-linear matter power spectrum for a dark-matter only cosmology; 
 we limit the analysis to a linear galaxy bias model, setting all higher-order bias terms in Eq. (\ref{eq:pgg}) to zero, as well as restricting the redshift-space distortion model to a Gaussian velocity distribution; 
 and we remove individual tomographic bins from our weak lensing observables. 
-The linear-bias model outlier in this series of tests highlights the importance of accurate non-linear galaxy bias modelling in \tttp analyses.     
-This series of tests is dissected further in Appendix~\ref{app:sensitivity}, and complements the detailed KiDS-1000 internal consistency analysis of \citet{asgari/etal:inprep}, which demonstrates that the change seen with the removal of tomographic bin 4 is consistent with expected statistical fluctuations.
+The systematic offset that arises from the use of a linear-bias model highlights the importance of accurate non-linear galaxy bias modelling in \tttp analyses.     
+This series of tests is dissected further in Appendix~\ref{app:sensitivity}, and complements the detailed KiDS-1000 
+internal consistency analysis of \citet[][appendix B]{asgari/etal:inprep}, 
+which demonstrates that the change seen with the removal of tomographic bin 4 is fully consistent with expected statistical fluctuations.
 
 Table~\ref{tab:goodness-of-fit} records the goodness-of-fit for each component in our \tttp analysis, where we report the $\chi^2$ value at the maximum posterior, $\chi^2_{\rm MAP}$ (see Sect.~\ref{sec:KCAP} for a discussion of our optimised MAP-finder).  
 The effective number of degrees of freedom (DoF) does not equate to the standard difference between the total number of data points (Data DoF) and the total number of model parameters (20 in the case of our \tttp analysis), as a result of the adopted priors and the non-linear dependencies that exist between the model parameters.   For some probe combinations we calculate the effective number of degrees of freedom in the model (Model DoF), using the estimator described in section 6.3 of \citet{joachimi/etal:inprep}.    
@@ -139,15 +141,15 @@ To quantify the level of discrepancy in the amplitude of matter fluctuations, we
 We define the widely used $S_8$-difference measure
 \begin{equation}
 \label{eq: std_tension}
-T = \frac{|\overline{S_{8}}^{\,\rm 3\times2pt}-\overline{S_{8}}^{\,\it Planck}|}{\sqrt{\mathrm{Var}[S_{8}^{\rm 3\times2pt}] + \mathrm{Var}[S_{8}^{\it Planck}]}} \,,
+\tau = \frac{|\overline{S_{8}}^{\,\rm 3\times2pt}-\overline{S_{8}}^{\,\it Planck}|}{\sqrt{\mathrm{Var}[S_{8}^{\rm 3\times2pt}] + \mathrm{Var}[S_{8}^{\it Planck}]}} \,,
 \end{equation}
-where $\overline{S_{8}}$ and $\mathrm{Var}[S_{8}] $ denote the mean and standard deviations of the {\it Planck} and \tttp $S_8$ posterior distributions.  If both distributions are Gaussian, $T$ can be used to measure how likely it is that the mean of the difference between the distributions is consistent with zero.
+where $\overline{S_{8}}$ and $\mathrm{Var}[S_{8}] $ denote the mean and standard deviations of the {\it Planck} and \tttp $S_8$ posterior distributions.  If both distributions are Gaussian, $\tau$ can be used to measure how likely it is that the mean of the difference between the distributions is consistent with zero.
 
-Comparing the $S_{8}$ posterior distributions between our \tttp analysis and the {\it Planck} \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, we find $T=3.1$, i.e. that there is a $3.1\,\sigma$ difference between the KiDS-1000 and {\it Planck} constraints. 
+Comparing the $S_{8}$ posterior distributions between our \tttp analysis and the {\it Planck} \software{plik\_lite\_TTTEEE}+\software{lowl}+\software{lowE} likelihood, we find $\tau=3.1$, i.e. that there is a $3.1\,\sigma$ difference between the KiDS-1000 and {\it Planck} constraints. 
 %  
 Adopting two tension measures that do not assume Gaussianity of the marginal posterior distributions, both, the `Hellinger' distance and the distribution of the $S_{8}$ parameter shifts, indicate $3.1\,\sigma$ difference between our \tttp analysis and {\it Planck} (see Appendices~\ref{app:hellinger} and \ref{app:paramshift} for details).  
 %
-Our result thus continues the general trend of low-redshift probes preferring low amplitudes of matter fluctuations \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, bocquet/etal:2019, wright/etal:2020b,DESclusters/etal:2020}. 
+Our result thus continues the general trend of low-redshift probes preferring low amplitudes of matter fluctuations\footnote{Although we note the very recent clustering analysis released from e-BOSS which is fully consistent with Planck \citep{eBOSS/etal:2020}.} \citep{heymans/etal:2013, alam/etal:2017, abbott/etal:2018, hikage/etal:2019, bocquet/etal:2019, palanque-delabrouille/etal:2020, wright/etal:2020b,DESclusters/etal:2020}. 
 In these cases the reported low $S_8$, or $\sigma_8$, constraints are formally statistically consistent with {\it Planck}, and well below the detection of any anomalies at the $5\,\sigma$-level. 
 Considering, however, the $\sim\! 3\,\sigma$ difference that we have reported, and the overall trend in the literature, we would argue that we are reaching an uncomfortable point when it comes to regarding the $S_8$ offset as a simple statistical fluke.
 
@@ -157,7 +159,7 @@ In this way, constraints on $\sigma_8$ derived from data sets with different pos
 %
 We therefore also consider $S_{12} = \sigma_{12}\left(\Omega_{\rm m}\,h^2/0.14\right)^{0.4}$ \citep{Sanchez2020}, where $\sigma_{12}^{2}$ is the variance of the linear matter field at redshift zero in spheres of radius $12\,\mathrm{Mpc}$.
 We find $S_{12} = 0.754^{+0.015}_{-0.018}$, with the value inferred by {\it Planck} being $S_{12} = 0.817_{-0.015}^{+0.011}
-$, a difference of $T=3.0$, in agreement with the $S_8$ results. 
+$, a difference of $\tau=3.0$, in agreement with the $S_8$ results. 
 
 In light of the large parameter spaces that are being considered, we recognise that focussing on a single parameter can paint a simplistic picture of the agreement, or disagreement, between probes.
 On a fundamental level, the question we wish to answer is whether a single model of the Universe can describe both the CMB as well as the low-redshift large-scale structure of the Universe.
@@ -185,7 +187,7 @@ We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandle
     \toprule
    Metric   & Reference          & Value &PTE   & PTE [$\sigma$]\\
     \midrule
-	$T$ & Eq.~(\ref{eq: std_tension})    & 3.1 & -- & \kpoff  \\
+	$\tau$ & Eq.~(\ref{eq: std_tension})    & 3.1 & -- & \kpoff  \\
 	$d_{\rm H}$ & Eq.~(\ref{eq:hellinger_def})& 0.95&-- & $3.1\,\sigma$\\
 	$p_{\rm S}$ & Eq.~(\ref{equ:ps})& 0.9981& 0.0019&  $3.1\,\sigma$\\
     \midrule
@@ -197,7 +199,7 @@ We use \software{anesthetic}\footnote{\url{https://github.com/williamjameshandle
     \bottomrule
 \end{tabular}
 	\end{center}
-	\tablefoot{The considered tension metrics are: 1) the differences between the means in $S_{8}$, divided by the standard deviations added in quadrature, $T$; 2) the Hellinger distance, $d_H$, between $S_8$ posterior distributions (Appendix~\ref{app:hellinger}); 3) the fraction of the $S_{8}$ parameter shift distribution that has a higher probability than no shifts (Appendix~\ref{app:paramshift}); 4) the Bayes ratio $R$ between a model that assumes a single cosmology for both our \tttp and the {\it Planck} data, and a model that uses separate cosmologies for the two data sets; 5) the logarithm $\ln R$ of the Bayes ratio; 6) the suspiciousness $\ln S$ \citep{handley/lemos:2019}; 7 \& 8) the concordance/discordance estimators $Q_{\rm DMAP}$ and $Q_{\rm UDM}$ \citep{Raveri2019}. 
+	\tablefoot{The considered tension metrics are: 1) the differences between the means in $S_{8}$, divided by the standard deviations added in quadrature, $\tau$; 2) the Hellinger distance, $d_H$, between $S_8$ posterior distributions (Appendix~\ref{app:hellinger}); 3) the fraction of the $S_{8}$ parameter shift distribution that has a higher probability than no shifts (Appendix~\ref{app:paramshift}); 4) the Bayes ratio $R$ between a model that assumes a single cosmology for both our \tttp and the {\it Planck} data, and a model that uses separate cosmologies for the two data sets; 5) the logarithm $\ln R$ of the Bayes ratio; 6) the suspiciousness $\ln S$ \citep{handley/lemos:2019}; 7 \& 8) the concordance/discordance estimators $Q_{\rm DMAP}$ and $Q_{\rm UDM}$ \citep{Raveri2019}. 
 		The columns list the estimator metric considered, the relevant equation reference, the measured value, and the `probability-to-exceed' the measured value (PTE), under the assumption that the two data sets are consistent.}
 \end{table}
 
