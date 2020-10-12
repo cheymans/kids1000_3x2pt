@@ -327,7 +327,7 @@ def load_chains(chain_path):
                 {"root_dir" : os.path.join(base_dir, 
                                             "cosmology/multinest_blindC_EE_nE_w"),
                 "name"     : "multinest_blindC_EE_nE_w",
-                "label"    : "KiDS-1000 $3\\times2$pt",
+                "label"    : "$3\\times2$pt",
                 "blind"    : "C",
                 "probes"   : ("EE", "nE", "w"),
                 "MAP_path" : [os.path.join(base_dir, "MAP/run_1/cosmology/MAP_*_blindC_EE_nE_w_Powell/chain/samples_MAP_*_blindC_EE_nE_w_Powell.txt"),
@@ -361,7 +361,7 @@ def load_chains(chain_path):
                 {"root_dir" : os.path.join(base_dir, 
                                             "cosmology/multinest_blindC_EE"),
                 "name"     : "multinest_blindC_EE",
-                "label"    : "Cosmic shear",
+                "label"    : "KiDS-1000 cosmic shear",
                 "blind"    : "C",
                 "probes"   : ("EE",),
                 "MAP_path" : [os.path.join(base_dir, "MAP/run_1/cosmology/MAP_*_blindC_EE_Powell/chain/samples_MAP_*_blindC_EE_Powell.txt")],
@@ -372,7 +372,7 @@ def load_chains(chain_path):
                 {"root_dir" : os.path.join(base_dir, 
                                             "cosmology/multinest_blindC_w"),
                 "name"     : "multinest_w",
-                "label"    : "Galaxy clustering",
+                "label"    : "BOSS galaxy clustering",
                 "blind"    : "None",
                 "probes"   : ("w",),
                 "MAP_path" : [os.path.join(base_dir, "MAP/run_1/cosmology/MAP_*_blindC_w_Powell/chain/samples_MAP_*_blindC_w_Powell.txt"),
@@ -397,7 +397,7 @@ def load_chains(chain_path):
                 {"root_dir" : os.path.join(base_dir, 
                                             "cosmology/multinest_Planck"),
                 "name"     : "multinest_Planck",
-                "label"    : "Planck 2018 TTTEEE+lowE",
+                "label"    : "\\textit{Planck} TTTEEE+lowE",
                 "blind"    : "None",
                 "probes"   : ("CMB",),
                 "MAP_path" : [os.path.join(base_dir, "MAP/run_1/cosmology_with_Planck/MAP_*_blindC_Planck_Powell/chain/samples_MAP_*_blindC_Planck_Powell.txt")],
@@ -514,7 +514,7 @@ def plot_systematics_contours(chains, plot_settings, text_width):
                     params=params_to_plot,
                     filled_compare=True,
                     contour_colors=chain_colors,
-                    legend_labels=chain_labels,
+                    legend_labels=["No baryon", "No z-bin 1+2", "No z-bin 4", "No z-bin 5", "No higher order GC", "Fiducial $3\\times2$pt"],
                     diag1d_kwargs={"normalized" : True}, 
                     param_limits={"h" : (0.64, 0.78),
                                 "a_ia" : (-0.2,2.5),},
@@ -570,7 +570,8 @@ def plot_3x2pt_contours_small(chains, plot_settings, column_width):
                     params=params_to_plot,
                     filled_compare=True,
                     contour_colors=chain_colors,
-                    legend_labels=chain_labels,
+                    legend_labels=["KiDS-1000 cosmic shear", "BOSS galaxy clustering", "$3\\times2$pt",
+                                   "\\textit{Planck} TTTEEE+lowE"],
                     diag1d_kwargs={"normalized" : True},
                     param_limits={"omegam" : (0.2, 0.4),
                                   "sigma8" : (0.55, 0.9),
@@ -619,14 +620,17 @@ def plot_3x2pt_contours_big(chains, plot_settings, text_width):
                     params=params_to_plot,
                     filled_compare=True,
                     contour_colors=chain_colors,
-                    legend_labels=chain_labels,
+                    legend_labels=["KiDS-1000 cosmic shear", "BOSS galaxy clustering", 
+                                   "Cosmic shear + GGL", "Cosmic shear + galaxy clustering",
+                                   "$3\\times2$pt",
+                                   "\\textit{Planck} TTTEEE+lowE"],
                     diag1d_kwargs={"normalized" : True},
                     param_limits={"h"   : (0.64, 0.78),
                                   "a_ia" : (0,2),
                                   "b1l" : (0.5, 4.5),
                                   "b1h" : (0.5, 4.5),
                                  },
-                    legend_ncol=3,
+                    legend_ncol=2,
                    )
 
     process_chains.plot_CI(g, chains_to_plot, params_to_plot, 
@@ -682,7 +686,9 @@ def plot_survey_contours(chains, boss_kv450_samples, des_3x2pt_samples, planck_s
             colors=chain_colors, lims=[0.2,0.38, 0.6, 1.1], _no_finish=True)
 
 
-    g.add_legend(chain_labels, figure=False, #legend_loc="upper left", 
+    g.add_legend(["BOSS+KV450 (Tröster et al. 2020)", "DES Y1 $3\\times2$pt (DES Collaboration 2018)",
+                  "KiDS-1000+BOSS+2dFLenS $3\\times2$pt", 
+                  "\\textit{Planck} TTTEEE+lowE",], figure=False, #legend_loc="upper left", 
                 fontsize=8, frameon=False)
     #g.finish_plot()
 
@@ -704,10 +710,10 @@ def plot_S8_shifts(chains, planck_samples, boss_kv450_samples, des_3x2pt_samples
 
     blind = "C"
     chain_selection = [{"probes" : ("EE", "nE", "w"), "blind" : blind,  "type" : "cosmology"},
-                    {"probes" : ("EE", "nE"),      "blind" : blind,  "type" : "cosmology"},
-                    {"probes" : ("EE", "w"),       "blind" : blind,  "type" : "cosmology"}, 
-                    {"probes" : ("EE",),           "blind" : blind,  "type" : "cosmology"},
-                    {"probes" : ("w",),            "blind" : "None", "type" : "cosmology"}, 
+                       {"probes" : ("EE",),           "blind" : blind,  "type" : "cosmology"},
+                       {"probes" : ("w",),            "blind" : "None", "type" : "cosmology"}, 
+                       {"probes" : ("EE", "nE"),      "blind" : blind,  "type" : "cosmology"},
+                       {"probes" : ("EE", "w"),       "blind" : blind,  "type" : "cosmology"}, 
                     ]
 
     spacing_idx = []
@@ -850,7 +856,7 @@ def plot_clustering_ns(chains, BOSS_fixed, BOSS_fixed_wide_ns, plot_settings, co
                     params=params_to_plot,
                     filled_compare=True,
                     contour_colors=["C1", "C0"],
-                    legend_labels=["Galaxy clustering, wide $n_s$ prior", "Galaxy clustering, fiducial"],
+                    legend_labels=["BOSS galaxy clustering, wide $n_s$ prior", "BOSS galaxy clustering, fiducial"],
                     diag1d_kwargs={"normalized" : True},
                 )
 
@@ -1357,7 +1363,7 @@ r"""
                                 "color" : "darkslategrey",
                                 "type" : "external",
                                 "prones" : ("CMB",),
-                                "label" : "Planck 2018 TTTEEE+lowE"}
+                                "label" : "\\textit{Planck} TTTEEE+lowE"}
 
     hsc_xipm_samples = getdist.loadMCSamples(os.path.join(external_chain_path, "HSC/xipm/HSC_hamana2020_fiducial/hsc_hamana2020_fiducial"),
                                             )
@@ -1476,8 +1482,8 @@ r"""
                    kv450_samples, des_cs_samples, hsc_pCl_samples, hsc_xipm_samples, 
                    plot_settings, column_width)
     
-    calculate_1d_tension(chains, planck_samples)
-    stats_chain, stats_nested = calculate_nd_tension(chains, KiDS1000_chain_path)
+    # calculate_1d_tension(chains, planck_samples)
+    # stats_chain, stats_nested = calculate_nd_tension(chains, KiDS1000_chain_path)
 
-    create_goodness_of_fit_table(chains, stats_chain)
-    create_parameter_constraint_table(chains)
+    # create_goodness_of_fit_table(chains, stats_chain)
+    # create_parameter_constraint_table(chains)
